@@ -12,14 +12,19 @@ var typeThree = 16
 var typeFour =16
 
 // type scale ratios
-var ratioOne = 1.2 /* ratioOne = Minor third */
-var ratioTwo = 1.25 /* ratioOne = Major third */
-var ratioThree = 1.333 /* ratioOne = Perfect fourth */
-var ratioFour = 1.414 /* ratioOne = Augmented fourth */
+var ratioOne = 1.25 /* ratioOne = Major third */
+var ratioTwo = 1.25 /* ratioTwo = Major third */
+var ratioThree = 1.333 /* ratioThree = Perfect fourth */
+var ratioFour = 1.414 /* ratioFour = Augmented fourth */
 
 
 
 //////////// No touchy beyond this point! //////////////
+
+// base ratio
+var ratio = 1
+// breakpoint determining variable
+var screenBase = 1
 
 // typographic levels
 var levelMinTwo = ratio / ratio / ratio
@@ -31,10 +36,7 @@ var levelFour = ratio * ratio * ratio * ratio
 var levelFive = ratio * ratio * ratio * ratio * ratio
 var levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
-// base ratio
-var ratio = 1.2
-// breakpoint determining variable
-var screenBase = 1
+
 
 // Run function on DOM load
 function breakHandlerInitial() {
@@ -60,7 +62,9 @@ function breakHandlerInitial() {
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
+   levelTwo = ratio * ratio
    levelThree = ratio * ratio * ratio
+   levelFour = ratio * ratio * ratio * ratio
    levelFive = ratio * ratio * ratio * ratio * ratio
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
@@ -140,7 +144,9 @@ function breakHandler() {
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
+   levelTwo = ratio * ratio
    levelThree = ratio * ratio * ratio
+   levelFour = ratio * ratio * ratio * ratio
    levelFive = ratio * ratio * ratio * ratio * ratio
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 

@@ -6,7 +6,9 @@
    --level-min-two: 0;
    --level-min-one: 0;
    --level-one: 0;
+   --level-two: 0;
    --level-three: 0;
+   --level-four: 0;
    --level-five: 0;
    --level-six: 0;
 }
@@ -20,7 +22,9 @@
    --level-min-two: 0;
    --level-min-one: 0;
    --level-one: 0;
+   --level-two: 0;
    --level-three: 0;
+   --level-four: 0;
    --level-five: 0;
    --level-six: 0;
    }
@@ -35,7 +39,9 @@
    --level-min-two: 0;
    --level-min-one: 0;
    --level-one: 0;
+   --level-two: 0;
    --level-three: 0;
+   --level-four: 0;
    --level-five: 0;
    --level-six: 0;
    }
@@ -47,12 +53,14 @@
    --type-base: 0;
 
    /* type levels */
-   --level-min-two: 12px;
-   --level-min-one: 15px;
-   --level-one: 16px;
-   --level-three: 20px;
-   --level-five: 30px;
-   --level-six: 42px;
+   --level-min-two: 0;
+   --level-min-one: 0;
+   --level-one: 0;
+   --level-two: 0;
+   --level-three: 0;
+   --level-four: 0;
+   --level-five: 0;
+   --level-six: 0;
    }
 }
 
@@ -71,8 +79,18 @@
    line-height: 1.2;
 }
 
+.h2 {
+   font-size: calc(var(--type-base) * var(--level-four));
+   line-height: 1.2;
+}
+
 .h3 {
    font-size: calc(var(--type-base) * var(--level-three));
+   line-height: 1.2;
+}
+
+.h4 {
+   font-size: calc(var(--type-base) * var(--level-two));
    line-height: 1.4;
 }
 
@@ -85,15 +103,13 @@
 }
 
 strong {
-   border-bottom: 4px solid #FF375F;
+   border-bottom: 6px solid #FF375F;
 }
 
 
 /* region medium */
 @media (min-width: 720px) {
-   body {
-      font-size: 17px;
-   }
+
    /* note these styles are only here to facilitate css recalling the updated properties */
 
    .hero {
@@ -104,8 +120,20 @@ strong {
       font-size: calc(var(--type-base) * var(--level-five));
    }
 
+   .h2 {
+      font-size: calc(var(--type-base) * var(--level-four));
+   }
+
    .h3 {
       font-size: calc(var(--type-base) * var(--level-three));
+   }
+
+   .h4 {
+      font-size: calc(var(--type-base) * var(--level-two));
+   }
+
+   .body {
+      font-size: calc(var(--type-base) * var(--level-One));
    }
 
    .body-small {
@@ -123,9 +151,6 @@ strong {
 
 /* region large */
 @media (min-width: 1080px) {
-   body {
-      font-size: 18px;
-   }
 
    .hero {
       font-size: calc(var(--type-base) * var(--level-six));
@@ -135,8 +160,20 @@ strong {
       font-size: calc(var(--type-base) * var(--level-five));
    }
 
+   .h2 {
+      font-size: calc(var(--type-base) * var(--level-four));
+   }
+
    .h3 {
       font-size: calc(var(--type-base) * var(--level-three));
+   }
+
+   .h4 {
+      font-size: calc(var(--type-base) * var(--level-two));
+   }
+
+   .body {
+      font-size: calc(var(--type-base) * var(--level-One));
    }
 
    .body-small {
@@ -155,9 +192,6 @@ strong {
 
 /* region xtra-large */
 @media (min-width: 1440px) {
-   body {
-      font-size: 19px;
-   }
 
    .hero {
       font-size: calc(var(--type-base) * var(--level-six));
@@ -167,8 +201,20 @@ strong {
       font-size: calc(var(--type-base) * var(--level-five));
    }
 
+   .h2 {
+      font-size: calc(var(--type-base) * var(--level-four));
+   }
+
    .h3 {
       font-size: calc(var(--type-base) * var(--level-three));
+   }
+
+   .h4 {
+      font-size: calc(var(--type-base) * var(--level-two));
+   }
+
+   .body {
+      font-size: calc(var(--type-base) * var(--level-One));
    }
 
    .body-small {

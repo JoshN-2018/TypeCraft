@@ -65,8 +65,12 @@ body {
    margin-bottom: 2.5rem;
 }
 
-.type-block .h1 {
+.type-block .h1, .h2, .h3, .h4 {
    margin-bottom: 1rem;
+}
+
+.type-block .body, .body-small, .body-chart {
+   margin-bottom: 0.5rem;
 }
 
 .type-block .bread-crumb {
@@ -82,7 +86,7 @@ body {
       margin-bottom: 3rem;
    }
 
-   .type-block .h1 {
+   .type-block .h1, .h2, .h3, .h4 {
       margin-bottom: 1.5rem;
    }
 }
@@ -97,8 +101,12 @@ body {
       margin-bottom: 3.5rem;
    }
 
-   .type-block .h1 {
+   .type-block .h1, .h2, .h3, .h4 {
       margin-bottom: 2rem;
+   }
+
+   .type-block .body, .body-small, .body-chart {
+      margin-bottom: 0.75rem;
    }
 }
 
@@ -112,8 +120,12 @@ body {
       margin-bottom: 3.5rem;
    }
 
-   .type-block .h1 {
+   .type-block .h1, .h2, .h3, .h4 {
       margin-bottom: 2.5rem;
+   }
+
+   .type-block .body, .body-small, .body-chart {
+      margin-bottom: 1rem;
    }
 }
 

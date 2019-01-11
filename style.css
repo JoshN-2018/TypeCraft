@@ -76,7 +76,7 @@ body {
 /* region medium */
 @media (min-width: 720px) {
    .type-block {
-      width: 80%;
+      width: 90%;
    }
    .type-block .hero {
       margin-bottom: 3rem;
@@ -114,5 +114,12 @@ body {
 
    .type-block .h1 {
       margin-bottom: 2.5rem;
+   }
+}
+
+/* region xtra-large */
+@media (min-width: 1850px) {
+   .type-block {
+      width: 65%;
    }
 }

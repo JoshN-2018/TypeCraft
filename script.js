@@ -1,23 +1,25 @@
-//var width = // (quadrant determined by width of screen)
-//var screenBase = // number allocated for qudrant ie 380w = 40px type screenBase
+//////////// Adjust the below //////////////
 
 // screen break points
 var breakOne = 720
 var breakTwo = 1080
 var breakThree = 1440
 
+// type base
+var typeOne = 16
+var typeTwo = 17
+var typeThree = 18
+var typeFour =19
 
-// breakpoint determining variable
-var screenBase = 1
-
-// breakpoint ratios
+// type scale ratios
 var ratioOne = 1.2 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioOne = Major third */
 var ratioThree = 1.333 /* ratioOne = Perfect fourth */
 var ratioFour = 1.414 /* ratioOne = Augmented fourth */
 
-// base ratio
-var ratio = 1.2
+
+
+//////////// No touching beyond this point! //////////////
 
 // typographic levels
 var levelMinTwo = ratio / ratio / ratio
@@ -26,6 +28,11 @@ var levelOne = ratio
 var levelThree = ratio * ratio * ratio
 var levelFive = ratio * ratio * ratio * ratio * ratio
 var levelSix = ratio * ratio * ratio * ratio * ratio * ratio
+
+// base ratio
+var ratio = 1.2
+// breakpoint determining variable
+var screenBase = 1
 
 // Run function on DOM load
 function breakHandlerInitial() {
@@ -58,6 +65,7 @@ function breakHandlerInitial() {
 
    // execute based on break breakpoints
    if(screenBase === 2) {
+      document.documentElement.style.setProperty('--type-base', typeTwo);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -66,6 +74,7 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 3) {
+      document.documentElement.style.setProperty('--type-base', typeThree);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -74,6 +83,7 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 4) {
+      document.documentElement.style.setProperty('--type-base', typeFour);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -82,6 +92,7 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 1) {
+      document.documentElement.style.setProperty('--type-base', typeOne);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -127,6 +138,7 @@ function breakHandler() {
 
    // execute based on break breakpoints
    if(screenBase === 2) {
+      document.documentElement.style.setProperty('--type-base', typeTwo);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -135,6 +147,7 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 3) {
+      document.documentElement.style.setProperty('--type-base', typeThree);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -143,6 +156,7 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 4) {
+      document.documentElement.style.setProperty('--type-base', typeFour);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
@@ -151,6 +165,7 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 1) {
+      document.documentElement.style.setProperty('--type-base', typeOne);
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');

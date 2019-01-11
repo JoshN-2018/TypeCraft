@@ -1,0 +1,192 @@
+:root {
+   /* type base */
+   --type-base: 16;
+
+   /* type levels */
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
+   --level-three: 20px;
+   --level-five: 30px;
+   --level-six: 42px;
+}
+
+@media (min-width: 720px) {
+   :root {
+   /* type base */
+   --type-base: 17;
+
+   /* type levels */
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
+   --level-three: 20px;
+   --level-five: 30px;
+   --level-six: 42px;
+   }
+}
+
+@media (min-width: 1080px) {
+   :root {
+   /* type base */
+   --type-base: 18;
+
+   /* type levels */
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
+   --level-three: 20px;
+   --level-five: 30px;
+   --level-six: 42px;
+   }
+}
+
+@media (min-width: 1440px) {
+   :root {
+   /* type base */
+   --type-base: 19;
+
+   /* type levels */
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
+   --level-three: 20px;
+   --level-five: 30px;
+   --level-six: 42px;
+   }
+}
+
+
+/* Type styles */
+
+/* css does not update the DOM when a variable is changed */
+.hero {
+   font-size: calc(var(--type-base) * var(--level-six));
+   color: #FFF;
+   font-family: "Relative-faux";
+}
+
+.h1 {
+   font-size: var(--level-five);
+   line-height: 1.2;
+}
+
+.h3 {
+   font-size: var(--level-three);
+   line-height: 1.4;
+}
+
+.body-small {
+   font-size: var(--level-min-one);
+}
+
+.body-chart {
+   font-size: var(--level-min-two);
+}
+
+strong {
+   border-bottom: 4px solid #FF375F;
+}
+
+
+/* region medium */
+@media (min-width: 720px) {
+   body {
+      font-size: 17px;
+   }
+
+   .hero {
+      font-size: calc(var(--level-six) * var(--type-base));
+      color: #FFF;
+      font-family: "Relative-faux";
+   }
+
+   .h1 {
+      font-size: var(--level-five);
+   }
+
+   .h3 {
+      font-size: var(--level-three);
+   }
+
+   .body-small {
+      font-size: var(--level-min-one);
+   }
+
+   .body-chart {
+      font-size: var(--level-min-two);
+   }
+
+   strong {
+      border-bottom: 6px solid #FF375F;
+   }
+}
+
+/* region large */
+@media (min-width: 1080px) {
+   body {
+      font-size: 18px;
+   }
+
+   .hero {
+      font-size: calc(var(--level-six) * var(--type-base));
+      color: #FFF;
+      font-family: "Relative-faux";
+   }
+
+   .h1 {
+      font-size: var(--level-five);
+   }
+
+   .h3 {
+      font-size: var(--level-three);
+   }
+
+   .body-small {
+      font-size: var(--level-min-one);
+   }
+
+   .body-chart {
+      font-size: var(--level-min-two);
+   }
+
+   strong {
+      border-bottom: 7px solid #FF375F;
+   }
+}
+
+
+/* region xtra-large */
+@media (min-width: 1440px) {
+   body {
+      font-size: 19px;
+   }
+
+   .hero {
+      font-size: calc(var(--level-six) * var(--type-base));
+      color: #FFF;
+      font-family: "Relative-faux";
+   }
+
+   .h1 {
+      font-size: var(--level-five);
+   }
+
+   .h3 {
+      font-size: var(--level-three);
+   }
+
+   .body-small {
+      font-size: var(--level-min-one);
+   }
+
+   .body-chart {
+      font-size: var(--level-min-two);
+   }
+
+   strong {
+      border-bottom: 8px solid #FF375F;
+   }
+}
+/* reference point can be determined by screen width */
+/* how can ratio be determined? */

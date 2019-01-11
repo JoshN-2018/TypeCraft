@@ -64,55 +64,41 @@
    }
 }
 
-
 /* Type styles */
 
 /* css does not update the DOM when a variable is changed */
 .hero {
    font-size: calc(var(--type-base) * var(--level-six));
-   color: #FFF;
-   font-family: "Relative-faux";
 }
 
 .h1 {
    font-size: calc(var(--type-base) * var(--level-five));
-   line-height: 1.2;
 }
 
 .h2 {
    font-size: calc(var(--type-base) * var(--level-four));
-   line-height: 1.2;
 }
 
 .h3 {
    font-size: calc(var(--type-base) * var(--level-three));
-   line-height: 1.2;
 }
 
 .h4 {
    font-size: calc(var(--type-base) * var(--level-two));
-   line-height: 1.4;
 }
 
 .body {
    font-size: calc(var(--type-base) * var(--level-One));
-   line-height: 1.5;
 }
-
 
 .body-small {
    font-size: calc(var(--type-base) * var(--level-min-one));
-   line-height: 1.4;
 }
 
 .body-chart {
    font-size: calc(var(--type-base) * var(--level-min-two));
-   line-height: 1.2;
 }
 
-strong {
-   border-bottom: 5px solid #FF375F;
-}
 
 
 /* region medium */
@@ -151,10 +137,6 @@ strong {
    .body-chart {
       font-size: calc(var(--type-base) * var(--level-min-two));
    }
-
-   strong {
-      border-bottom: 6px solid #FF375F;
-   }
 }
 
 /* region large */
@@ -190,10 +172,6 @@ strong {
 
    .body-chart {
       font-size: calc(var(--type-base) * var(--level-min-two));
-   }
-
-   strong {
-      border-bottom: 9px solid #FF375F;
    }
 }
 
@@ -231,10 +209,6 @@ strong {
 
    .body-chart {
       font-size: calc(var(--type-base) * var(--level-min-two));
-   }
-
-   strong {
-      border-bottom: 13px solid #FF375F;
    }
 }
 /* reference point can be determined by screen width */

@@ -6,11 +6,45 @@
    --level-three: 00px;
    --level-five: 00px;
    --level-six: 00px;
-
-   /* --text-base: 65px;
-   --text-base: 60px;
-   --text-base: 42px; */
 }
+
+@media (min-width: 720px) {
+   :root {
+   /* type levels */
+   --level-min-two: 00px;
+   --level-min-one: 00px;
+   --level-one: 00px;
+   --level-three: 20px;
+   --level-five: 00px;
+   --level-six: 00px;
+   }
+}
+
+@media (min-width: 1080px) {
+   :root {
+   /* type levels */
+   --level-min-two: 00px;
+   --level-min-one: 00px;
+   --level-one: 00px;
+   --level-three: 20px;
+   --level-five: 00px;
+   --level-six: 00px;
+   }
+}
+
+@media (min-width: 1440px) {
+   :root {
+   /* type levels */
+   --level-min-two: 00px;
+   --level-min-one: 00px;
+   --level-one: 00px;
+   --level-three: 20px;
+   --level-five: 00px;
+   --level-six: 00px;
+   }
+}
+
+
 
 /* Set-up */
 body {
@@ -133,6 +167,7 @@ body {
 
 /* Type styles */
 
+/* css does not update the DOM when a variable is changed */
 .hero {
    font-size: calc(var(--text-base) * 1);
    color: #FFF;

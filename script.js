@@ -67,13 +67,28 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 3) {
-      document.documentElement.style.setProperty('--ref-xtra-large', '65px');
+      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
+      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
+      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
+      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 4) {
-      document.documentElement.style.setProperty('--ref-xtra-large', '75px');
+      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
+      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
+      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
+      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
    if(screenBase === 1) {
-      document.documentElement.style.setProperty('--ref-xtra-large', '42px');
+      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
+      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
+      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
+      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
 
 }

@@ -1,5 +1,12 @@
 :root {
-   --text-base: 42px;
+   /* type levels */
+   --level-min-two: 00px;
+   --level-min-one: 00px;
+   --level-one: 00px;
+   --level-three: 00px;
+   --level-five: 00px;
+   --level-six: 00px;
+
    /* --text-base: 65px;
    --text-base: 60px;
    --text-base: 42px; */
@@ -153,6 +160,10 @@ strong {
 
 /* region medium */
 @media (min-width: 720px) {
+   body {
+      font-size: 17px;
+   }
+
    .hero {
       font-size: calc(var(--text-base) * 1);
       color: #FFF;
@@ -182,6 +193,10 @@ strong {
 
 /* region large */
 @media (min-width: 1080px) {
+   body {
+      font-size: 18px;
+   }
+
    .hero {
       font-size: calc(var(--text-base) * 1);
       color: #FFF;
@@ -212,6 +227,10 @@ strong {
 
 /* region xtra-large */
 @media (min-width: 1440px) {
+   body {
+      font-size: 19px;
+   }
+
    .hero {
       font-size: calc(var(--ref-xtra-large) * 1);
       color: #FFF;

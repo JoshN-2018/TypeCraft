@@ -19,13 +19,15 @@ var ratioFour = 1.414 /* ratioOne = Augmented fourth */
 
 
 
-//////////// No touching beyond this point! //////////////
+//////////// No touchy beyond this point! //////////////
 
 // typographic levels
 var levelMinTwo = ratio / ratio / ratio
 var levelMinOne = ratio / ratio
 var levelOne = ratio
+var levelTwo = ratio * ratio
 var levelThree = ratio * ratio * ratio
+var levelFour = ratio * ratio * ratio * ratio
 var levelFive = ratio * ratio * ratio * ratio * ratio
 var levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
@@ -69,7 +71,9 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -78,7 +82,9 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -87,7 +93,9 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -96,7 +104,9 @@ function breakHandlerInitial() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -104,7 +114,6 @@ function breakHandlerInitial() {
 
 // Call function
 breakHandlerInitial();
-
 
 // Function to be run on window resize
 function breakHandler() {
@@ -142,7 +151,9 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -151,7 +162,9 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -160,7 +173,9 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
@@ -169,14 +184,13 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
       document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
       document.documentElement.style.setProperty('--level-one', levelOne + 'px');
+      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
       document.documentElement.style.setProperty('--level-three', levelThree + 'px');
+      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
-
 }
-
-
 
 // this listens for 'resize' events (first argument) on the window object, if one occurs it calls the 'breakHandler' function (second argument).
 

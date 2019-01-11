@@ -105,7 +105,7 @@ body {
 /* region xtra-large */
 @media (min-width: 1440px) {
    .type-block {
-      width: 70%;
+      width: 85%;
    }
 
    .type-block .hero {

@@ -1,6 +1,6 @@
 :root {
    /* type base */
-   --type-base: 16;
+   --type-base: 15;
 
    /* type levels */
    --level-min-two: 12px;
@@ -14,7 +14,7 @@
 @media (min-width: 720px) {
    :root {
    /* type base */
-   --type-base: 17;
+   --type-base: 16;
 
    /* type levels */
    --level-min-two: 12px;
@@ -29,7 +29,7 @@
 @media (min-width: 1080px) {
    :root {
    /* type base */
-   --type-base: 18;
+   --type-base: 17;
 
    /* type levels */
    --level-min-two: 12px;
@@ -44,7 +44,7 @@
 @media (min-width: 1440px) {
    :root {
    /* type base */
-   --type-base: 19;
+   --type-base: 17;
 
    /* type levels */
    --level-min-two: 12px;
@@ -67,21 +67,21 @@
 }
 
 .h1 {
-   font-size: var(--level-five);
+   font-size: calc(var(--type-base) * var(--level-five));
    line-height: 1.2;
 }
 
 .h3 {
-   font-size: var(--level-three);
+   font-size: calc(var(--type-base) * var(--level-three));
    line-height: 1.4;
 }
 
 .body-small {
-   font-size: var(--level-min-one);
+   font-size: calc(var(--type-base) * var(--level-min-one));
 }
 
 .body-chart {
-   font-size: var(--level-min-two);
+   font-size: calc(var(--type-base) * var(--level-min-two));
 }
 
 strong {
@@ -94,27 +94,26 @@ strong {
    body {
       font-size: 17px;
    }
+   /* note these styles are only here to facilitate css recalling the updated properties */
 
    .hero {
-      font-size: calc(var(--level-six) * var(--type-base));
-      color: #FFF;
-      font-family: "Relative-faux";
+      font-size: calc(var(--type-base) * var(--level-six));
    }
 
    .h1 {
-      font-size: var(--level-five);
+      font-size: calc(var(--type-base) * var(--level-five));
    }
 
    .h3 {
-      font-size: var(--level-three);
+      font-size: calc(var(--type-base) * var(--level-three));
    }
 
    .body-small {
-      font-size: var(--level-min-one);
+      font-size: calc(var(--type-base) * var(--level-min-one));
    }
 
    .body-chart {
-      font-size: var(--level-min-two);
+      font-size: calc(var(--type-base) * var(--level-min-two));
    }
 
    strong {
@@ -129,29 +128,27 @@ strong {
    }
 
    .hero {
-      font-size: calc(var(--level-six) * var(--type-base));
-      color: #FFF;
-      font-family: "Relative-faux";
+      font-size: calc(var(--type-base) * var(--level-six));
    }
 
    .h1 {
-      font-size: var(--level-five);
+      font-size: calc(var(--type-base) * var(--level-five));
    }
 
    .h3 {
-      font-size: var(--level-three);
+      font-size: calc(var(--type-base) * var(--level-three));
    }
 
    .body-small {
-      font-size: var(--level-min-one);
+      font-size: calc(var(--type-base) * var(--level-min-one));
    }
 
    .body-chart {
-      font-size: var(--level-min-two);
+      font-size: calc(var(--type-base) * var(--level-min-two));
    }
 
    strong {
-      border-bottom: 7px solid #FF375F;
+      border-bottom: 9px solid #FF375F;
    }
 }
 
@@ -163,29 +160,27 @@ strong {
    }
 
    .hero {
-      font-size: calc(var(--level-six) * var(--type-base));
-      color: #FFF;
-      font-family: "Relative-faux";
+      font-size: calc(var(--type-base) * var(--level-six));
    }
 
    .h1 {
-      font-size: var(--level-five);
+      font-size: calc(var(--type-base) * var(--level-five));
    }
 
    .h3 {
-      font-size: var(--level-three);
+      font-size: calc(var(--type-base) * var(--level-three));
    }
 
    .body-small {
-      font-size: var(--level-min-one);
+      font-size: calc(var(--type-base) * var(--level-min-one));
    }
 
    .body-chart {
-      font-size: var(--level-min-two);
+      font-size: calc(var(--type-base) * var(--level-min-two));
    }
 
    strong {
-      border-bottom: 8px solid #FF375F;
+      border-bottom: 13px solid #FF375F;
    }
 }
 /* reference point can be determined by screen width */

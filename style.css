@@ -11,7 +11,6 @@ body {
    align-items: center;
 }
 
-
 .container {
    padding: 0 2rem;
 }
@@ -106,7 +105,7 @@ body {
 /* region xtra-large */
 @media (min-width: 1440px) {
    .type-block {
-      width: 60%;
+      width: 70%;
    }
 
    .type-block .hero {

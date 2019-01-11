@@ -102,14 +102,16 @@
 
 .body-small {
    font-size: calc(var(--type-base) * var(--level-min-one));
+   line-height: 1.4;
 }
 
 .body-chart {
    font-size: calc(var(--type-base) * var(--level-min-two));
+   line-height: 1.2;
 }
 
 strong {
-   border-bottom: 6px solid #FF375F;
+   border-bottom: 5px solid #FF375F;
 }
 
 

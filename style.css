@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-   padding: 0 2rem;
+   padding: 0 1rem;
 }
 
 @media (min-width: 720px) {
@@ -40,7 +40,7 @@ body {
 /* nav */
 .nav-block {
    background-color: #3D3D41;
-   height: 35px;
+   height: 45px;
 }
 
 @media (min-width: 450px) {
@@ -56,13 +56,13 @@ body {
 .type-block {
    flex-direction: column;
    justify-content: space-between;
-   padding: 3rem 0;
+   padding: 2rem 0;
    height: 85vh;
    width: 100%;
 }
 
 .type-block .hero {
-   margin-bottom: 2.5rem;
+   margin-bottom: 2rem;
 }
 
 .type-block .h1, .h2, .h3, .h4 {
@@ -74,13 +74,14 @@ body {
 }
 
 .type-block .bread-crumb {
-   margin-bottom: 3.5rem;
+   margin-bottom: 2.5rem;
 }
 
 /* region medium */
 @media (min-width: 720px) {
    .type-block {
       width: 90%;
+      padding: 3rem 0;
    }
    .type-block .hero {
       margin-bottom: 3rem;
@@ -89,6 +90,8 @@ body {
    .type-block .h1, .h2, .h3, .h4 {
       margin-bottom: 1.5rem;
    }
+   .type-block .bread-crumb {
+      margin-bottom: 3rem;
 }
 
 /* region large */
@@ -108,6 +111,8 @@ body {
    .type-block .body, .body-small, .body-chart {
       margin-bottom: 0.75rem;
    }
+   .type-block .bread-crumb {
+      margin-bottom: 3.5rem;
 }
 
 /* region xtra-large */

@@ -1,46 +1,58 @@
 :root {
+   /* type base */
+   --type-base: 16px;
+
    /* type levels */
-   --level-min-two: 00px;
-   --level-min-one: 00px;
-   --level-one: 00px;
-   --level-three: 00px;
-   --level-five: 00px;
-   --level-six: 00px;
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
+   --level-three: 20px;
+   --level-five: 30px;
+   --level-six: 42px;
 }
 
 @media (min-width: 720px) {
    :root {
+   /* type base */
+   --type-base: 17px;
+
    /* type levels */
-   --level-min-two: 00px;
-   --level-min-one: 00px;
-   --level-one: 00px;
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
    --level-three: 20px;
-   --level-five: 00px;
-   --level-six: 00px;
+   --level-five: 30px;
+   --level-six: 42px;
    }
 }
 
 @media (min-width: 1080px) {
    :root {
+   /* type base */
+   --type-base: 18px;
+
    /* type levels */
-   --level-min-two: 00px;
-   --level-min-one: 00px;
-   --level-one: 00px;
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
    --level-three: 20px;
-   --level-five: 00px;
-   --level-six: 00px;
+   --level-five: 30px;
+   --level-six: 42px;
    }
 }
 
 @media (min-width: 1440px) {
    :root {
+   /* type base */
+   --type-base: 19px;
+
    /* type levels */
-   --level-min-two: 00px;
-   --level-min-one: 00px;
-   --level-one: 00px;
+   --level-min-two: 12px;
+   --level-min-one: 15px;
+   --level-one: 16px;
    --level-three: 20px;
-   --level-five: 00px;
-   --level-six: 00px;
+   --level-five: 30px;
+   --level-six: 42px;
    }
 }
 
@@ -169,23 +181,27 @@ body {
 
 /* css does not update the DOM when a variable is changed */
 .hero {
-   font-size: calc(var(--text-base) * 1);
+   font-size: calc(var(--level-six) * var(--type-base));
    color: #FFF;
    font-family: "Relative-faux";
 }
 
 .h1 {
-   font-size: calc(var(--text-base) * 0.71);
+   font-size: var(--level-five);
    line-height: 1.2;
 }
 
 .h3 {
-   font-size: calc(var(--text-base) * 0.5);
+   font-size: var(--level-three);
    line-height: 1.4;
 }
 
 .body-small {
-   font-size: calc(var(--text-base) * 0.36);
+   font-size: var(--level-min-one);
+}
+
+.body-chart {
+   font-size: var(--level-min-two);
 }
 
 strong {
@@ -200,25 +216,25 @@ strong {
    }
 
    .hero {
-      font-size: calc(var(--text-base) * 1);
+      font-size: calc(var(--level-six) * var(--type-base));
       color: #FFF;
       font-family: "Relative-faux";
    }
 
    .h1 {
-      font-size: calc(var(--text-base) * 0.71);
+      font-size: var(--level-five);
    }
 
    .h3 {
-      font-size: calc(var(--text-base) * 0.5);
+      font-size: var(--level-three);
    }
 
    .body-small {
-      font-size: calc(var(--text-base) * 0.36);
+      font-size: var(--level-min-one);
    }
 
    .body-chart {
-      font-size: calc(var(--text-base) * 0.29);
+      font-size: var(--level-min-two);
    }
 
    strong {
@@ -233,25 +249,25 @@ strong {
    }
 
    .hero {
-      font-size: calc(var(--text-base) * 1);
+      font-size: calc(var(--level-six) * var(--type-base));
       color: #FFF;
       font-family: "Relative-faux";
    }
 
    .h1 {
-      font-size: calc(var(--text-base) * 0.71);
+      font-size: var(--level-five);
    }
 
    .h3 {
-      font-size: calc(var(--text-base) * 0.5);
+      font-size: var(--level-three);
    }
 
    .body-small {
-      font-size: calc(var(--text-base) * 0.36);
+      font-size: var(--level-min-one);
    }
 
    .body-chart {
-      font-size: calc(var(--text-base) * 0.29);
+      font-size: var(--level-min-two);
    }
 
    strong {
@@ -267,25 +283,25 @@ strong {
    }
 
    .hero {
-      font-size: calc(var(--ref-xtra-large) * 1);
+      font-size: calc(var(--level-six) * var(--type-base));
       color: #FFF;
       font-family: "Relative-faux";
    }
 
    .h1 {
-      font-size: calc(var(--ref-xtra-large) * 0.71);
+      font-size: var(--level-five);
    }
 
    .h3 {
-      font-size: calc(var(--ref-xtra-large) * 0.5);
+      font-size: var(--level-three);
    }
 
    .body-small {
-      font-size: calc(var(--ref-xtra-large) * 0.36);
+      font-size: var(--level-min-one);
    }
 
    .body-chart {
-      font-size: calc(var(--ref-xtra-large) * 0.29);
+      font-size: var(--level-min-two);
    }
 
    strong {

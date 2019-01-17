@@ -69,7 +69,10 @@ function breakHandlerInitial() {
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
    // create type levels
-   
+   type1 = 
+   type2
+   type3
+
 
    // execute based on break breakpoints
    if(screenBase === 2) {

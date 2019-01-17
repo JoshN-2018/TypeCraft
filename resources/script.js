@@ -6,7 +6,7 @@ var breakTwo = 1080
 var breakThree = 1440
 
 // type base
-var typeOne = 18
+var typeOne = 20
 var typeTwo = 16
 var typeThree = 16
 var typeFour = 16
@@ -43,20 +43,30 @@ var levelFive
 var levelSix
 
 // final type sizes
-var typeOne
-var typeTwo
-var typeThree
-var typeFour
-var typeFive
-var typeSix
-var typeSeven
-var typeEight
-var typeNine
+var typeBodyXSmall
+var typeBodySmall
+var typeBody
+var typeH4
+var typeH3
+var typeH2
+var typeH1
+var typeHero
+
+// classes to be updated
+var bodyXSmallClass = document.getElementsByClassName("body-x-small");
+var bodySmallClass = document.getElementsByClassName("body-small");
+var bodyClass = document.getElementsByClassName("body");
+var h4Class = document.getElementsByClassName("h4");
+var h3Class = document.getElementsByClassName("h3");
+var h2Class = document.getElementsByClassName("h2");
+var h1Class = document.getElementsByClassName("h1");
+var heroClass = document.getElementsByClassName("hero");
 
 
 // Run function on DOM load
-function breakHandlerInitial() {
-   // determine screen breakpoints
+function breakHandler() {
+
+   // determine screen breakpoints and assign base values
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
@@ -78,7 +88,7 @@ function breakHandlerInitial() {
       typeBase = typeOne
    }
 
-   // give values to levels
+   // give values to scale multipliers
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
@@ -88,130 +98,56 @@ function breakHandlerInitial() {
    levelFive = ratio * ratio * ratio * ratio * ratio
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
+   // give values to final type sizes
+   typeBodyXSmall = typeBase * levelMinTwo
+   typeBodySmall = typeBase * levelMinOne
+   typeBody = typeBase * levelOne
+   typeH4 = typeBase * levelTwo
+   typeH3 = typeBase * levelThree
+   typeH2 = typeBase * levelFour
+   typeH1 = typeBase * levelFive
+   typeHero = typeBase * levelSix
+
 
    // execute based on break breakpoints
-   if(screenBase === 2) {
-      // create type levels
-      type1 = typeBase * levelMinTwo
 
+   function typeUpdater() {
+
+      for (var i = 0; i < bodyXSmallClass.length; i++) {
+         bodyXSmallClass[i].style.fontSize = typeBodyXSmall + 'px';
+      }
+
+      for (var i = 0; i < bodySmallClass.length; i++) {
+         bodySmallClass[i].style.fontSize = typeBodySmall + 'px';
+      }
+
+      for (var i = 0; i < bodyClass.length; i++) {
+         bodyClass[i].style.fontSize = typeBody + 'px';
+      }
+
+      for (var i = 0; i < h4Class.length; i++) {
+         h4Class[i].style.fontSize = typeH4 + 'px';
+      }
+
+      for (var i = 0; i < h3Class.length; i++) {
+         h3Class[i].style.fontSize = typeH3 + 'px';
+      }
+
+      for (var i = 0; i < h2Class.length; i++) {
+         h2Class[i].style.fontSize = typeH2 + 'px';
+      }
+
+      for (var i = 0; i < h1Class.length; i++) {
+         h1Class[i].style.fontSize = typeH1 + 'px';
+      }
+
+      for (var i = 0; i < heroClass.length; i++) {
+         heroClass[i].style.fontSize = typeHero + 'px';
+      }
    }
-   if(screenBase === 3) {
-      document.documentElement.style.setProperty('--type-base', typeThree);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-   if(screenBase === 4) {
-      document.documentElement.style.setProperty('--type-base', typeFour);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-   if(screenBase === 1) {
-      document.documentElement.style.setProperty('--type-base', typeOne);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
+   typeUpdater();
 }
 
 // Call function
-breakHandlerInitial();
-
-// Function to be run on window resize
-function breakHandler() {
-
-   // determine screen breakpoints
-   if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
-      screenBase = 2
-      ratio = ratioTwo
-   }
-   if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
-      screenBase = 3
-      ratio = ratioThree
-   }
-   if(window.innerWidth > breakThree) {
-      screenBase = 4
-      ratio = ratioFour
-   }
-   if(window.innerWidth < breakOne) {
-      screenBase = 1
-      ratio = ratioOne
-   }
-
-   // level update
-   levelMinTwo = ratio / ratio / ratio
-   levelMinOne = ratio / ratio
-   levelOne = ratio
-   levelTwo = ratio * ratio
-   levelThree = ratio * ratio * ratio
-   levelFour = ratio * ratio * ratio * ratio
-   levelFive = ratio * ratio * ratio * ratio * ratio
-   levelSix = ratio * ratio * ratio * ratio * ratio * ratio
-
-
-   // execute based on break breakpoints
-   if(screenBase === 2) {
-      document.documentElement.style.setProperty('--type-base', typeTwo);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-   if(screenBase === 3) {
-      document.documentElement.style.setProperty('--type-base', typeThree);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-   if(screenBase === 4) {
-      document.documentElement.style.setProperty('--type-base', typeFour);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-   if(screenBase === 1) {
-      document.documentElement.style.setProperty('--type-base', typeOne);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
-   }
-}
-
-// this listens for 'resize' events (first argument) on the window object, if one occurs it calls the 'breakHandler' function (second argument).
-
+breakHandler();
 window.addEventListener('resize', breakHandler);

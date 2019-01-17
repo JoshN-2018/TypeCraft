@@ -18,25 +18,41 @@ var ratioThree = 1.333 /* ratioThree = Perfect fourth */
 var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 // type minimum size
-var minSize = 12
+// var minSize = 12
 
 
 //////////// No touchy beyond this point! //////////////
 
 // base ratio
 var ratio = 1
-// breakpoint determining variable
-var screenBase = 1
 
-// typographic levels
-var levelMinTwo = ratio
-var levelMinOne = ratio
-var levelOne = ratio
-var levelTwo = ratio
-var levelThree = ratio
-var levelFour = ratio
-var levelFive = ratio
-var levelSix = ratio
+// base type
+var typeBase
+
+// breakpoint determining variable
+var screenBase
+
+// scale multipliers
+var levelMinTwo
+var levelMinOne
+var levelOne
+var levelTwo
+var levelThree
+var levelFour
+var levelFive
+var levelSix
+
+// final type sizes
+var typeOne
+var typeTwo
+var typeThree
+var typeFour
+var typeFive
+var typeSix
+var typeSeven
+var typeEight
+var typeNine
+
 
 // Run function on DOM load
 function breakHandlerInitial() {
@@ -44,21 +60,25 @@ function breakHandlerInitial() {
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
+      typeBase = typeTwo
    }
    if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
       screenBase = 3
       ratio = ratioThree
+      typeBase = typeThree
    }
    if(window.innerWidth > breakThree) {
       screenBase = 4
       ratio = ratioFour
+      typeBase = typeFour
    }
    if(window.innerWidth < breakOne) {
       screenBase = 1
       ratio = ratioOne
+      typeBase = typeOne
    }
 
-   // level update
+   // give values to levels
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
@@ -68,23 +88,12 @@ function breakHandlerInitial() {
    levelFive = ratio * ratio * ratio * ratio * ratio
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
-   // create type levels
-   type1 = 
-   type2
-   type3
-
 
    // execute based on break breakpoints
    if(screenBase === 2) {
-      document.documentElement.style.setProperty('--type-base', typeTwo);
-      document.documentElement.style.setProperty('--level-min-two', levelMinTwo + 'px');
-      document.documentElement.style.setProperty('--level-min-one', levelMinOne + 'px');
-      document.documentElement.style.setProperty('--level-one', levelOne + 'px');
-      document.documentElement.style.setProperty('--level-two', levelTwo + 'px');
-      document.documentElement.style.setProperty('--level-three', levelThree + 'px');
-      document.documentElement.style.setProperty('--level-four', levelFour + 'px');
-      document.documentElement.style.setProperty('--level-five', levelFive + 'px');
-      document.documentElement.style.setProperty('--level-six', levelSix + 'px');
+      // create type levels
+      type1 = typeBase * levelMinTwo
+
    }
    if(screenBase === 3) {
       document.documentElement.style.setProperty('--type-base', typeThree);

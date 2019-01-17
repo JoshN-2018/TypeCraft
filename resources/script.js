@@ -9,13 +9,13 @@ var breakThree = 1440
 var typeOne = 18
 var typeTwo = 16
 var typeThree = 16
-var typeFour =16
+var typeFour = 16
 
 // type scale ratios
-var ratioOne = 1.18 /* ratioOne = Major third */
+var ratioOne = 1.18 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.333 /* ratioThree = Perfect fourth */
-var ratioFour = 1.414 /* ratioFour = Augmented fourth */
+var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 
 
@@ -36,7 +36,8 @@ var levelFour = ratio * ratio * ratio * ratio
 var levelFive = ratio * ratio * ratio * ratio * ratio
 var levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
-
+var finePrint1 = document.getElementsByClassName("body-small");
+var finePrint2 = document.getElementsByClassName("body-chart");
 
 // Run function on DOM load
 function breakHandlerInitial() {
@@ -196,6 +197,12 @@ function breakHandler() {
       document.documentElement.style.setProperty('--level-five', levelFive + 'px');
       document.documentElement.style.setProperty('--level-six', levelSix + 'px');
    }
+/*
+   if() {
+      for (var i = 0; i < anMarkProps.length; i++) {
+         fin[i].classList.add("offset-an-props");
+   }
+   */
 }
 
 // this listens for 'resize' events (first argument) on the window object, if one occurs it calls the 'breakHandler' function (second argument).

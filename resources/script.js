@@ -6,7 +6,7 @@ var breakTwo = 1080
 var breakThree = 1440
 
 // type base
-var typeOne = 20
+var typeOne = 18
 var typeTwo = 16
 var typeThree = 16
 var typeFour = 16
@@ -18,7 +18,7 @@ var ratioThree = 1.333 /* ratioThree = Perfect fourth */
 var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 // type minimum size
-// var minSize = 12
+var minSize = 12
 
 
 //////////// No touchy beyond this point! //////////////
@@ -109,7 +109,16 @@ function breakHandler() {
    typeHero = typeBase * levelSix
 
 
-   // execute based on break breakpoints
+   // Min size limiting
+   if (typeBodyXSmall < minSize) {
+      typeBodyXSmall = minSize;
+   }
+   if (typeBodySmall < minSize) {
+      typeBodySmall = minSize;
+   }
+
+
+   // Update CSS based on the above
 
    function typeUpdater() {
 

@@ -1,0 +1,83 @@
+.control-panel {
+   color: #8A8A8D;
+   font-family: 'Roboto', sans-serif;
+}
+
+.cp-background {
+   width: 300px;
+   height: 100%;
+   background-color: #3D3D41;
+   padding: 3rem 2rem;
+   position: fixed;
+   right: 0;
+   top: 0;
+   z-index: 2;
+   box-shadow: -12px 0px 60px #222;
+   transition: all 0.5s ease;
+}
+
+.cp-button {
+   height: 40px;
+   width: 40px;
+   transform: rotate(45deg);
+   border-bottom-left-radius: 10px;
+   position: absolute;
+   left: -20px;
+   top: 48vh;
+   z-index: 3;
+   background-color: #3D3D41;
+   transition: all 0.3s ease;
+}
+
+.cp-button:hover {
+   transform: scale(1.1) rotate(45deg);
+}
+
+.control-panel h1 {
+   color: #CACACA;
+   font-size: 24px;
+   margin-bottom: 0.5rem;
+}
+
+hr {
+   margin-bottom: 1rem;
+}
+
+.control-panel h4 {
+   margin-bottom: 0.5rem;
+}
+
+.control-panel p {
+   line-height: 1.4;
+}
+
+.cp-panel .cp-form-block:first-child {
+   margin-top: 2.5rem;
+}
+
+.cp-form {
+   display: flex;
+   justify-content: space-between;
+}
+
+.cp-form-block p {
+   margin-top: 0.25rem;
+}
+
+.control-panel input {
+   font-size: 15px;
+   color: #585858;
+   background-color: #3D3D41;
+   margin-top: 0.25rem;
+   height: 25px;
+   width: 35px;
+   display: block;
+   border-left: 0px;
+   border-top: 0px;
+   border-right: 0px;
+   border-color: #8A8A8D;
+}
+
+.cp-input-block input:first-child {
+   margin-top: 0;
+}

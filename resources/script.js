@@ -6,15 +6,15 @@ var breakTwo = 1080
 var breakThree = 1440
 
 // type base
-var typeOne = 18
-var typeTwo = 16
-var typeThree = 16
-var typeFour = 16
+var typeOne = 12
+var typeTwo = 14
+var typeThree = 14
+var typeFour = 12
 
 // type scale ratios
-var ratioOne = 1.18 /* ratioOne = Minor third */
-var ratioTwo = 1.25 /* ratioTwo = Major third */
-var ratioThree = 1.333 /* ratioThree = Perfect fourth */
+var ratioOne = 1.4 /* ratioOne = Minor third */
+var ratioTwo = 1.3 /* ratioTwo = Major third */
+var ratioThree = 1.33 /* ratioThree = Perfect fourth */
 var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 // type minimum size

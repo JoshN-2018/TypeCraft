@@ -58,21 +58,26 @@
 <!-- Control panel -->
 
    <section class="control-panel">
-      <div class="cp-background">
+      <div class="cp-block" id="cp-block">
 
-         <div class="cp-button">
-            <img src="" alt="button">
+         <!-- Button -->
+         <div class="cp-button" id="cp-button-on">
+            <img src="images/carot.svg" alt="button">
          </div>
+
+         <div class="cp-button" id="cp-button-off">
+            <img src="images/carot-reverse.svg" alt="button">
+         </div>
+
          <!-- Type -->
          <h1>Control panel</h1>
-         <p>Welcome to your new browser based playground, experiment with the below variables to everything is just right.</p>
+         <p>Welcome to your new browser based playground. Experiment with the below variables until Lekker.</p>
 
          <div class="cp-panel">
-            <div class="cp-form-block">
 
+            <div class="cp-form-block">
                <hr>
                <h4>Base type size</h4>
-
                <div class="cp-form">
                   <!-- labels -->
                   <div>
@@ -89,10 +94,73 @@
                      <input type="text" name="b-type-small" value="16px">
                   </div>
                </div>
-
             </div>
 
+            <div class="cp-form-block">
+               <hr>
+               <h4>Type scale</h4>
+               <div class="cp-form">
+                  <!-- labels -->
+                  <div>
+                     <p>small</p>
+                     <p>medium</p>
+                     <p>large</p>
+                     <p>x-large</p>
+                  </div>
+                  <!-- inputs -->
+                  <div class="cp-input-block">
+                     <input type="text" name="b-type-small" value="1.25">
+                     <input type="text" name="b-type-small" value="1.33">
+                     <input type="text" name="b-type-small" value="1.418">
+                     <input type="text" name="b-type-small" value="1.618">
+                  </div>
+               </div>
             </div>
+
+            <div class="cp-form-block">
+               <hr>
+               <h4>Min type size</h4>
+               <div class="cp-form">
+                  <!-- labels -->
+                  <div>
+                     <p>limit</p>
+                  </div>
+                  <!-- inputs -->
+                  <div class="cp-input-block">
+                     <input type="text" name="b-type-small" value="12px">
+                  </div>
+               </div>
+            </div>
+
+            <div class="cp-form-block">
+               <hr>
+               <h4>Base type size</h4>
+               <div class="cp-form">
+                  <!-- labels -->
+                  <div>
+                     <p>hero</p>
+                     <p>h1</p>
+                     <p>h2</p>
+                     <p>h3</p>
+                     <p>h4</p>
+                     <p>body</p>
+                     <p>body-small</p>
+                     <p>body-x-small</p>
+                  </div>
+                  <!-- inputs -->
+                  <div class="cp-print-block">
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                     <p>00px</p>
+                  </div>
+               </div>
+            </div>
+
          </div>
 
       </div>

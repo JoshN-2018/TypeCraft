@@ -160,3 +160,37 @@ function breakHandler() {
 // Call function
 breakHandler();
 window.addEventListener('resize', breakHandler);
+
+// panel slide in/out
+var cpBlock = document.getElementById("cp-block");
+var cpButtonOn = document.getElementById("cp-button-on");
+var cpButtonOff = document.getElementById("cp-button-off");
+
+cpBlock.classList.add("cp-shift");
+
+cpButtonOn.addEventListener("click", function(){
+   cpBlock.classList.add("cp-shift");
+   cpButtonOn.style.display = "none";
+   cpButtonOff.style.display = "initial";
+});
+
+cpButtonOff.addEventListener("click", function(){
+   cpBlock.classList.remove("cp-shift");
+   cpButtonOn.style.display = "initial";
+   cpButtonOff.style.display = "none";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -6,14 +6,14 @@ var breakTwo = 1080
 var breakThree = 1440
 
 // type base
-var typeOne = 12
-var typeTwo = 14
-var typeThree = 14
-var typeFour = 12
+var typeOne = 16
+var typeTwo = 16
+var typeThree = 16
+var typeFour = 16
 
 // type scale ratios
-var ratioOne = 1.4 /* ratioOne = Minor third */
-var ratioTwo = 1.3 /* ratioTwo = Major third */
+var ratioOne = 1.18 /* ratioOne = Minor third */
+var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.33 /* ratioThree = Perfect fourth */
 var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
@@ -161,6 +161,7 @@ function breakHandler() {
 breakHandler();
 window.addEventListener('resize', breakHandler);
 
+
 // panel slide in/out
 var cpBlock = document.getElementById("cp-block");
 var cpButtonOn = document.getElementById("cp-button-on");
@@ -181,9 +182,31 @@ cpButtonOff.addEventListener("click", function(){
 });
 
 
+function userInput() {
+   // base numbers
+   typeOne = document.getElementById('base-type-s').value;
+   typeTwo = document.getElementById('base-type-m').value;
+   typeThree = document.getElementById('base-type-l').value;
+   typeFour = document.getElementById('base-type-xl').value;
+
+   // type scales
+   typeOne = document.getElementById('base-type-s').value;
+   typeTwo = document.getElementById('base-type-m').value;
+   typeThree = document.getElementById('base-type-l').value;
+   typeFour = document.getElementById('base-type-xl').value;
+
+   // min size
+   typeOne = document.getElementById('base-type-s').value;
 
 
+   breakHandler();
+   console.log("input recieved");
+}
+// HTMLInputElementObject.addEventListener('input', (evt) => {
+//   console.log('you inputed');
+// });
 
+cpBlock.addEventListener("input", userInput);
 
 
 

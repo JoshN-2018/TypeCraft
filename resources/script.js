@@ -155,6 +155,7 @@ function breakHandler() {
       }
    }
    typeUpdater();
+   valuePublisher();
 }
 
 // Call function
@@ -190,13 +191,13 @@ function userInput() {
    typeFour = document.getElementById('base-type-xl').value;
 
    // type scales
-   typeOne = document.getElementById('base-type-s').value;
-   typeTwo = document.getElementById('base-type-m').value;
-   typeThree = document.getElementById('base-type-l').value;
-   typeFour = document.getElementById('base-type-xl').value;
+   ratioOne = document.getElementById('base-scale-s').value;
+   ratioTwo = document.getElementById('base-scale-m').value;
+   ratioThree = document.getElementById('base-scale-l').value;
+   ratioFour = document.getElementById('base-scale-xl').value;
 
    // min size
-   typeOne = document.getElementById('base-type-s').value;
+   minSize = document.getElementById('min-type').value;
 
 
    breakHandler();
@@ -208,7 +209,18 @@ function userInput() {
 
 cpBlock.addEventListener("input", userInput);
 
-
+// Publish rendered values
+function valuePublisher() {
+  document.getElementById("hero-final").value = typeHero + 'px';
+  document.getElementById("h1-final").value = typeH1 + 'px';
+  document.getElementById("h2-final").value = typeH2 + 'px';
+  document.getElementById("h3-final").value = typeH3 + 'px';
+  document.getElementById("h4-final").value = typeH4 + 'px';
+  document.getElementById("body-final").value = typeBody + 'px';
+  document.getElementById("body-s-final").value = typeBodySmall + 'px';
+  document.getElementById("body-xs-final").value = typeBodyXSmall + 'px';
+  console.log("I'm publishing");
+}
 
 
 

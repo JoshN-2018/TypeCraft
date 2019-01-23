@@ -39,6 +39,7 @@
             </h2>
 
             <p class="h4">Our maintenance plan with remote assistance keeps your products in top shape. No nasty surprises or repair and replacement costs*.</p>
+
          </div>
 
          <div class="disclaimer">
@@ -70,7 +71,7 @@
          <h1>Control panel</h1>
          <p>Welcome to your new browser based playground. Experiment with the below variables until Lekker.
          </p><br>
-         <p class="emphasis">IMPORTANT: Do not use units in the fields (all measurements are in 'px')</p>
+         <p class="emphasis">IMPORTANT: Do not use units in the fields (all measurements are in px)</p>
 
          <div class="cp-panel">
 
@@ -108,10 +109,10 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-input-block">
-                     <input type="text" name="b-type-small" value="1.25">
-                     <input type="text" name="b-type-small" value="1.33">
-                     <input type="text" name="b-type-small" value="1.418">
-                     <input type="text" name="b-type-small" value="1.618">
+                     <input id="base-scale-s" type="text" name="b-type-small" value="1.18">
+                     <input id="base-scale-m" type="text" name="b-type-small" value="1.25">
+                     <input id="base-scale-l" type="text" name="b-type-small" value="1.333">
+                     <input id="base-scale-xl" type="text" name="b-type-small" value="1.418">
                   </div>
                </div>
             </div>
@@ -126,14 +127,14 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-input-block">
-                     <input type="text" name="b-type-small" value="12">
+                     <input id="min-type" type="text" name="b-type-small" value="12">
                   </div>
                </div>
             </div>
 
             <div class="cp-form-block">
                <hr>
-               <h4>Base type size</h4>
+               <h4>Final pixel sizes</h4>
                <div class="cp-form">
                   <!-- labels -->
                   <div>
@@ -148,14 +149,14 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-print-block">
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
-                     <p>00px</p>
+                     <output id="hero-final" name="x"></output>
+                     <output id="h1-final" name="x"></output>
+                     <output id="h2-final" name="x"></output>
+                     <output id="h3-final" name="x"></output>
+                     <output id="h4-final" name="x"></output>
+                     <output id="body-final" name="x"></output>
+                     <output id="body-s-final" name="x"></output>
+                     <output id="body-xs-final" name="x"></output>
                   </div>
                </div>
             </div>

@@ -1,12 +1,17 @@
 /* font loading */
 @font-face {
-  font-family: "GT-Sectra";
-  src: url(gt-sectra-bold.ttf);
+   font-family: "Apercu";
+   src: url("fonts/apercu-regular.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Apercu";
-  src: url(apercu-regular-pro.otf);
+   font-family: "GT-Sectra";
+   src: url("fonts/GT-Sectra-Medium.woff2") format("woff2");
 }
+@font-face {
+   font-family: "Domaine";
+   src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
+}
+
 
 /* end of: font loading */
 
@@ -74,5 +79,5 @@ body {
 }
 
 .bread-crumb {
-   margin-bottom: 3rem;
+   margin-bottom: 3.5rem;
 }

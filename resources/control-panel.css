@@ -51,9 +51,10 @@ html {
 
 /* Type */
 .control-panel h1 {
-   font-family: "GT Sectra-bold";
+   font-family: "Domaine";
    font-size: 24px;
-   margin-bottom: 1rem;
+   margin-bottom: 0.5rem;
+   line-height: 1.4;
 }
 
 .control-panel h4 {

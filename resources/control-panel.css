@@ -16,7 +16,7 @@ html {
 .cp-block {
    width: 300px;
    height: 100%;
-   background-color: #3D3D41;
+   background-color: #FFF;
    padding: 3rem 2rem;
    position: fixed;
    right: 0;
@@ -35,7 +35,7 @@ html {
    left: -20px;
    top: 48vh;
    z-index: 3;
-   background-color: #3D3D41;
+   background-color: #FFF;
    transition: all 0.3s ease;
 }
 
@@ -132,5 +132,5 @@ output {
 /* js classes */
 .cp-shift {
    transform: translateX(0px);
-   box-shadow: -12px 0px 60px #000;
+   box-shadow: -12px 0px 60px #DDD;
 }

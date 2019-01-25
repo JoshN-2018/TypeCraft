@@ -17,7 +17,7 @@ html {
    width: 300px;
    height: 100%;
    background-color: #FFF;
-   padding: 3rem 2rem;
+   padding: 2.2rem 2rem;
    position: fixed;
    right: 0;
    top: 0;
@@ -51,9 +51,9 @@ html {
 
 /* Type */
 .control-panel h1 {
-   font-family: "GT Sectra Bold";
+   font-family: "GT Sectra-bold";
    font-size: 24px;
-   margin-bottom: 0.75rem;
+   margin-bottom: 1rem;
 }
 
 .control-panel h4 {

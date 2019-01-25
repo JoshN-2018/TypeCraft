@@ -5,11 +5,6 @@
 }
 
 @font-face {
-   font-family: "GT Sectra Bold";
-   src: url("fonts/gt-sectra-bold.ttf") format("ttf"),
-}
-
-@font-face {
    font-family: "Apercu";
    src: url("fonts/apercu-regular-pro.otf") format("otf"),
 }
@@ -18,14 +13,12 @@
 
 /* Set-up */
 body {
-   background-color: #F6F6F6;
+   background-color: #F4F4F4;
    color: #222;
    font-family: "Apercu", "sans-serif";
 }
 
 /*/////////////// Type ////////////////*/
-
-
 
 
 /* font styling */

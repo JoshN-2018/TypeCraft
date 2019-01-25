@@ -1,58 +1,50 @@
-
-/* Set-up */
-body {
-   background-color: #FFF;
-   color: #8A8A8D;
-   font-family: "Relative-Book", "sans-serif";
-}
-
-/*/////////////// Type ////////////////*/
-
 /* font loading */
 @font-face {
-   font-family: "Relative-Bold";
-   src: url("fonts/Relative-Bold-Web.woff2") format("woff2"),
-   url("fonts/Relative-Bold-Web.woff") format("woff");
+   font-family: "GT Sectra";
+   src: url("fonts/gt-sectra-medium.ttf") format("ttf"),
 }
+
 @font-face {
-   font-family: "Roboto";
-   src: url("fonts/Relative-Book-Web.woff2") format("woff2"),
-   url("fonts/Relative-Book-Web.woff") format("woff");
+   font-family: "GT Sectra Bold";
+   src: url("fonts/gt-sectra-bold.ttf") format("ttf"),
 }
+
 @font-face {
-   font-family: "Relative-Faux";
-   src: url("fonts/Relative-Faux-Web.woff2") format("woff2"),
-   url("fonts/Relative-Faux-Web.woff") format("woff");
+   font-family: "Apercu";
+   src: url("fonts/apercu-regular-pro.otf") format("otf"),
 }
 /* end of: font loading */
 
 
+/* Set-up */
+body {
+   background-color: #F6F6F6;
+   color: #222;
+   font-family: "Apercu", "sans-serif";
+}
+
+/*/////////////// Type ////////////////*/
+
+
+
+
 /* font styling */
-.hero {
-   line-height: 1.2;
-   font-family: "Relative-Faux", "sans-serif";
-   color: #FFF;
-}
-
-.h1, .h2, .h3 {
+.hero,.h1, .h2, .h3 {
    line-height: 1.25;
+   font-family: "GT Sectra", "serif";
 }
 
-.h4 {
+.h3 {
+   margin-top: 1rem;
+}
+
+.h4, .body, .body-small, .body-x-small {
    line-height: 1.4;
+   font-family: "Apercu", "sans-serif";
+   margin-top: 1rem;
 }
 
-.body {
-   line-height: 1.5;
-}
 
-.body-small {
-   line-height: 1.4;
-}
-
-.body-chart {
-   line-height: 1.2;
-}
 /* end of: font styling */
 
 
@@ -82,4 +74,12 @@ body {
 
 .container-flex {
    display: flex;
+}
+
+.type-wrapper {
+   padding-top: 3rem;
+}
+
+.bread-crumb {
+   margin-bottom: 3rem;
 }

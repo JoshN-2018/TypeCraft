@@ -1,13 +1,13 @@
 /* font loading */
 @font-face {
-   font-family: "GT Sectra";
-   src: url("fonts/gt-sectra-medium.ttf") format("ttf"),
+  font-family: "GT-Sectra";
+  src: url(gt-sectra-bold.ttf);
+}
+@font-face {
+  font-family: "Apercu";
+  src: url(apercu-regular-pro.otf);
 }
 
-@font-face {
-   font-family: "Apercu";
-   src: url("fonts/apercu-regular-pro.otf") format("otf"),
-}
 /* end of: font loading */
 
 
@@ -24,7 +24,7 @@ body {
 /* font styling */
 .hero,.h1, .h2, .h3 {
    line-height: 1.25;
-   font-family: "GT Sectra", "serif";
+   font-family: "GT-Sectra", "serif";
 }
 
 .h3 {

@@ -12,10 +12,10 @@ var typeThree = 16
 var typeFour = 16
 
 // type scale ratios
-var ratioOne = 1.1 /* ratioOne = Minor third */
-var ratioTwo = 1.2 /* ratioTwo = Major third */
-var ratioThree = 1.25 /* ratioThree = Perfect fourth */
-var ratioFour = 1.3 /* ratioFour = Augmented fourth */
+var ratioOne = 1.18 /* ratioOne = Minor third */
+var ratioTwo = 1.25 /* ratioTwo = Major third */
+var ratioThree = 1.33 /* ratioThree = Perfect fourth */
+var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 // type minimum size
 var minSize = 12
@@ -33,6 +33,7 @@ var typeBase
 var screenBase
 
 // scale multipliers
+var levelMinThree
 var levelMinTwo
 var levelMinOne
 var levelOne
@@ -46,6 +47,7 @@ var levelSix
 var typeBodyXSmall
 var typeBodySmall
 var typeBody
+var typeBodyBig
 var typeH4
 var typeH3
 var typeH2
@@ -56,6 +58,7 @@ var typeHero
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
 var bodySmallClass = document.getElementsByClassName("body-small");
 var bodyClass = document.getElementsByClassName("body");
+var bodyBigClass = document.getElementsByClassName("body-big");
 var h4Class = document.getElementsByClassName("h4");
 var h3Class = document.getElementsByClassName("h3");
 var h2Class = document.getElementsByClassName("h2");
@@ -89,6 +92,7 @@ function breakHandler() {
    }
 
    // give values to scale multipliers
+   levelMinThree = ratio / ratio / ratio / ratio
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
@@ -99,9 +103,10 @@ function breakHandler() {
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
    // give values to final type sizes
-   typeBodyXSmall = typeBase * levelMinTwo
-   typeBodySmall = typeBase * levelMinOne
-   typeBody = typeBase * levelOne
+   typeBodyXSmall = typeBase * levelMinThree
+   typeBodySmall = typeBase * levelMinTwo
+   typeBody = typeBase * levelMinOne
+   typeBodyBig = typeBase * levelOne
    typeH4 = typeBase * levelTwo
    typeH3 = typeBase * levelThree
    typeH2 = typeBase * levelFour
@@ -132,6 +137,10 @@ function breakHandler() {
 
       for (var i = 0; i < bodyClass.length; i++) {
          bodyClass[i].style.fontSize = typeBody + 'px';
+      }
+
+      for (var i = 0; i < bodyBigClass.length; i++) {
+         bodyBigClass[i].style.fontSize = typeBodyBig + 'px';
       }
 
       for (var i = 0; i < h4Class.length; i++) {
@@ -213,6 +222,7 @@ function finalValuePublisher() {
   document.getElementById("h2-final").value = typeH2 + 'px';
   document.getElementById("h3-final").value = typeH3 + 'px';
   document.getElementById("h4-final").value = typeH4 + 'px';
+  document.getElementById("body-b-final").value = typeBodyBig + 'px';
   document.getElementById("body-final").value = typeBody + 'px';
   document.getElementById("body-s-final").value = typeBodySmall + 'px';
   document.getElementById("body-xs-final").value = typeBodyXSmall + 'px';
@@ -235,6 +245,7 @@ function codedvaluePublisher() {
 
    // coded min size
    document.getElementById("min-type").value = minSize;
+  console.log("Coded values published");
 }
 codedvaluePublisher();
 

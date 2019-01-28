@@ -27,21 +27,24 @@ body {
 
 
 /* font styling */
-.hero,.h1, .h2, .h3 {
-   line-height: 1.25;
+.hero,.h1, .h2, .h3, .h4 {
    font-family: "GT-Sectra", "serif";
 }
 
-.h3 {
-   margin-top: 1rem;
-}
-
 .h4, .body, .body-small, .body-x-small {
-   line-height: 1.4;
    font-family: "Apercu", "sans-serif";
-   margin-top: 1rem;
 }
 
+/* line-height */
+.hero {line-height: 1.2;}
+.h1 {line-height: 1.4;}
+.h2 {line-height: 1.55;}
+.h3 {line-height: 1.7;}
+.h4 {line-height: 1.9;}
+.body-big {line-height: 2;}
+.body {line-height: 2.1;}
+.body-small {line-height: 2.1; margin-top: 0.5rem;}
+.body-x-small {line-height: 2.1; margin-top: 0.5rem;}
 
 /* end of: font styling */
 

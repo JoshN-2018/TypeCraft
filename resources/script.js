@@ -12,10 +12,10 @@ var typeThree = 16
 var typeFour = 16
 
 // type scale ratios
-var ratioOne = 1.18 /* ratioOne = Minor third */
-var ratioTwo = 1.25 /* ratioTwo = Major third */
-var ratioThree = 1.33 /* ratioThree = Perfect fourth */
-var ratioFour = 1.418 /* ratioFour = Augmented fourth */
+var ratioOne = 1.1 /* ratioOne = Minor third */
+var ratioTwo = 1.2 /* ratioTwo = Major third */
+var ratioThree = 1.25 /* ratioThree = Perfect fourth */
+var ratioFour = 1.3 /* ratioFour = Augmented fourth */
 
 // type minimum size
 var minSize = 12

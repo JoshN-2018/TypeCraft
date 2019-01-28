@@ -17,13 +17,23 @@ html {
    width: 300px;
    height: 100%;
    background-color: #FFF;
-   padding: 2.2rem 2rem;
+   padding: 2.2rem 0 0 2rem;
    position: fixed;
    right: 0;
    top: 0;
    z-index: 2;
    transform: translateX(300px);
    transition: all 0.4s ease;
+}
+
+/* fixing cp-panel inside cp block in order to enamble scrolling */
+.cp-panel {
+   position: fixed
+   top: 0;
+   padding-right: 2rem;
+   height: 100%;
+   overflow: auto;
+   overflow-x: hidden;
 }
 
 .cp-button {
@@ -84,9 +94,9 @@ html {
    margin-top: 2rem;
 }
 
-.cp-panel .cp-form-block:first-child {
-   margin-top: 2.5rem;
-}
+/* .cp-panel .cp-form-block:first-child {
+   margin-top: 2rem;
+} */
 
 .cp-form {
    display: flex;

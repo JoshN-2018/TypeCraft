@@ -155,7 +155,7 @@ function breakHandler() {
       }
    }
    typeUpdater();
-   valuePublisher();
+   finalValuePublisher();
 }
 
 // Call function
@@ -199,18 +199,15 @@ function userInput() {
    // min size
    minSize = document.getElementById('min-type').value;
 
-
    breakHandler();
    console.log("input recieved");
 }
-// HTMLInputElementObject.addEventListener('input', (evt) => {
-//   console.log('you inputed');
-// });
 
+// detecting input events on control panel object
 cpBlock.addEventListener("input", userInput);
 
 // Publish rendered values
-function valuePublisher() {
+function finalValuePublisher() {
   document.getElementById("hero-final").value = typeHero + 'px';
   document.getElementById("h1-final").value = typeH1 + 'px';
   document.getElementById("h2-final").value = typeH2 + 'px';
@@ -222,10 +219,23 @@ function valuePublisher() {
   console.log("I'm publishing");
 }
 
+// updating values inputed in the code control panel
+function codedvaluePublisher() {
+   // coded base numbers
+   document.getElementById('base-type-s').value = typeOne
+   document.getElementById('base-type-m').value = typeTwo
+   document.getElementById('base-type-l').value = typeThree
+   document.getElementById('base-type-xl').value = typeFour
 
+   // coded type scales
+   document.getElementById('base-scale-s').value = ratioOne
+   document.getElementById('base-scale-m').value = ratioTwo
+   document.getElementById('base-scale-l').value = ratioThree
+   document.getElementById('base-scale-xl').value = ratioFour
 
-
-
-
+   // coded min size
+   document.getElementById("min-type").value = minSize;
+}
+codedvaluePublisher();
 
 //

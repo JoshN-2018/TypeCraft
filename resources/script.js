@@ -20,6 +20,8 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 // type minimum size
 var minSize = 12
 
+// dark mode
+var darkMode = false
 
 //////////// No touchy beyond this point! //////////////
 
@@ -33,6 +35,7 @@ var typeBase
 var screenBase
 
 // scale multipliers
+var levelMinThree
 var levelMinTwo
 var levelMinOne
 var levelOne
@@ -46,6 +49,7 @@ var levelSix
 var typeBodyXSmall
 var typeBodySmall
 var typeBody
+var typeBodyBig
 var typeH4
 var typeH3
 var typeH2
@@ -56,6 +60,7 @@ var typeHero
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
 var bodySmallClass = document.getElementsByClassName("body-small");
 var bodyClass = document.getElementsByClassName("body");
+var bodyBigClass = document.getElementsByClassName("body-big");
 var h4Class = document.getElementsByClassName("h4");
 var h3Class = document.getElementsByClassName("h3");
 var h2Class = document.getElementsByClassName("h2");
@@ -89,6 +94,7 @@ function breakHandler() {
    }
 
    // give values to scale multipliers
+   levelMinThree = ratio / ratio / ratio / ratio
    levelMinTwo = ratio / ratio / ratio
    levelMinOne = ratio / ratio
    levelOne = ratio
@@ -99,9 +105,10 @@ function breakHandler() {
    levelSix = ratio * ratio * ratio * ratio * ratio * ratio
 
    // give values to final type sizes
-   typeBodyXSmall = typeBase * levelMinTwo
-   typeBodySmall = typeBase * levelMinOne
-   typeBody = typeBase * levelOne
+   typeBodyXSmall = typeBase * levelMinThree
+   typeBodySmall = typeBase * levelMinTwo
+   typeBody = typeBase * levelMinOne
+   typeBodyBig = typeBase * levelOne
    typeH4 = typeBase * levelTwo
    typeH3 = typeBase * levelThree
    typeH2 = typeBase * levelFour
@@ -134,6 +141,10 @@ function breakHandler() {
          bodyClass[i].style.fontSize = typeBody + 'px';
       }
 
+      for (var i = 0; i < bodyBigClass.length; i++) {
+         bodyBigClass[i].style.fontSize = typeBodyBig + 'px';
+      }
+
       for (var i = 0; i < h4Class.length; i++) {
          h4Class[i].style.fontSize = typeH4 + 'px';
       }
@@ -155,7 +166,7 @@ function breakHandler() {
       }
    }
    typeUpdater();
-   valuePublisher();
+   finalValuePublisher();
 }
 
 // Call function
@@ -199,33 +210,69 @@ function userInput() {
    // min size
    minSize = document.getElementById('min-type').value;
 
-
    breakHandler();
    console.log("input recieved");
 }
-// HTMLInputElementObject.addEventListener('input', (evt) => {
-//   console.log('you inputed');
-// });
 
+// detecting input events on control panel object
 cpBlock.addEventListener("input", userInput);
 
 // Publish rendered values
-function valuePublisher() {
+function finalValuePublisher() {
   document.getElementById("hero-final").value = typeHero + 'px';
   document.getElementById("h1-final").value = typeH1 + 'px';
   document.getElementById("h2-final").value = typeH2 + 'px';
   document.getElementById("h3-final").value = typeH3 + 'px';
   document.getElementById("h4-final").value = typeH4 + 'px';
+  document.getElementById("body-b-final").value = typeBodyBig + 'px';
   document.getElementById("body-final").value = typeBody + 'px';
   document.getElementById("body-s-final").value = typeBodySmall + 'px';
   document.getElementById("body-xs-final").value = typeBodyXSmall + 'px';
   console.log("I'm publishing");
 }
 
+// updating values inputed in the code control panel
+function codedvaluePublisher() {
+   // coded base numbers
+   document.getElementById('base-type-s').value = typeOne
+   document.getElementById('base-type-m').value = typeTwo
+   document.getElementById('base-type-l').value = typeThree
+   document.getElementById('base-type-xl').value = typeFour
 
+   // coded type scales
+   document.getElementById('base-scale-s').value = ratioOne
+   document.getElementById('base-scale-m').value = ratioTwo
+   document.getElementById('base-scale-l').value = ratioThree
+   document.getElementById('base-scale-xl').value = ratioFour
 
+   // coded min size
+   document.getElementById("min-type").value = minSize;
+  console.log("Coded values published");
+}
+codedvaluePublisher();
 
+function darkModeApplier() {
+   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
+   document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
+   document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D";
+   cpButtonOn.style.backgroundColor = "#3D3D41";
+   cpButtonOff.style.backgroundColor = "#3D3D41";
+   var cpHr = document.getElementsByClassName('cp-hr');
+   var inputStyle = document.getElementsByTagName('input');
+   var outputStyle = document.getElementsByTagName('output');
 
-
-
-//
+   for (var i = 0; i < cpHr.length; i++) {
+      cpHr[i].style.borderColor = "#8A8A8D";
+   }
+   for (var i = 0; i < inputStyle.length; i++) {
+      inputStyle[i].style.backgroundColor = "#3D3D41";
+      inputStyle[i].style.color = "#8A8A8D";
+      // inputStyle[i].style.borderColor = "#8A8A8D";
+   }
+   for (var i = 0; i < outputStyle.length; i++) {
+      outputStyle[i].style.backgroundColor = "#3D3D41";
+      outputStyle[i].style.color = "#8A8A8D";
+   }
+   console.log("darkMode is applied");
+}
+// darkModeApplier();

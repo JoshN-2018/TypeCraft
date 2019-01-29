@@ -6,24 +6,30 @@ html {
   box-sizing: inherit;
 }
 
-
-.control-panel {
-   color: #8A8A8D;
-   font-family: 'Roboto', sans-serif;
-
-}
-
 .cp-block {
+
    width: 300px;
    height: 100%;
-   background-color: #3D3D41;
-   padding: 3rem 2rem;
+   padding: 2.2rem 0 0 2rem;
    position: fixed;
    right: 0;
    top: 0;
    z-index: 2;
+   background-color: #FFF;
+   color: #222;
+   font-family: 'Apercu', sans-serif;
    transform: translateX(300px);
    transition: all 0.4s ease;
+}
+
+/* fixing cp-panel inside cp block in order to enamble scrolling */
+.cp-panel {
+   position: fixed
+   top: 0;
+   padding-right: 2rem;
+   height: 100%;
+   overflow: auto;
+   overflow-x: hidden;
 }
 
 .cp-button {
@@ -35,7 +41,7 @@ html {
    left: -20px;
    top: 48vh;
    z-index: 3;
-   background-color: #3D3D41;
+   background-color: #FFF;
    transition: all 0.3s ease;
 }
 
@@ -51,9 +57,10 @@ html {
 
 /* Type */
 .control-panel h1 {
-   color: #CACACA;
-   font-size: 20px;
+   font-family: "Domaine";
+   font-size: 24px;
    margin-bottom: 0.5rem;
+   line-height: 1.4;
 }
 
 .control-panel h4 {
@@ -66,24 +73,20 @@ html {
    line-height: 1.4;
 }
 
-
 .emphasis {
    color: #CACACA;
    font-weight: 400;
 }
 
-hr {
+.control-panel hr {
    margin-bottom: 1rem;
-   border-color: #8A8A8D;
+   border-color: #CCC;
+   border-width: 1px;
 }
 
 
 .cp-panel .cp-form-block{
    margin-top: 2rem;
-}
-
-.cp-panel .cp-form-block:first-child {
-   margin-top: 2.5rem;
 }
 
 .cp-form {
@@ -95,13 +98,10 @@ hr {
    margin-top: 0.36rem;
 }
 
-/* .cp-print-block p {
-   color: #CACACA;
-} */
 
 .control-panel input, output {
-   color: #8A8A8D;
-   background-color: #3D3D41;
+   color: #222;
+   background-color: #FFF;
    margin-top: 0.2rem;
    height: 22px;
    width: 40px;
@@ -114,16 +114,10 @@ hr {
 }
 
 .control-panel input:focus {
-   border-color: #CACACA;
-   color: #CACACA;
+   border-color: #1432FF;
+   color: #222;
    outline: none;
 }
-/*
-output {
-   text-align: right;
-   width: 40px;
-   height: 22px;
-} */
 
 .cp-input-block input:first-child {
    margin-top: 0;
@@ -132,5 +126,5 @@ output {
 /* js classes */
 .cp-shift {
    transform: translateX(0px);
-   box-shadow: -12px 0px 60px #000;
+   box-shadow: -6px 0px 35px #EEE;
 }

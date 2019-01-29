@@ -109,12 +109,12 @@ html {
    border-left: 0;
    border-top: 0;
    border-right: 0;
-   border-color: #CCC;
+   border-color: #8A8A8D;
    text-align: right;
 }
 
 .control-panel input:focus {
-   border-color: #222;
+   border-color: #1432FF;
    color: #222;
    outline: none;
 }

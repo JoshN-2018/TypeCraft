@@ -21,7 +21,7 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 var minSize = 12
 
 // dark mode
-var darkMode = true
+var darkMode = false
 
 //////////// No touchy beyond this point! //////////////
 
@@ -260,32 +260,24 @@ function darkModeApplier() {
    var cpHr = document.getElementsByClassName('cp-hr');
    var inputStyle = document.getElementsByTagName('input');
    var outputStyle = document.getElementsByTagName('output');
-   var focusStyle = window.getComputedStyle(document.querySelector('input'), ':focus').getPropertyValue('color');
-   focusStyle.style.color = "#FFF"
-   // var focusStyle = document.querySelectorAll('input:focus');
-   // var focusStyle = document.querySelector('.control-panel input:focus');
+
    for (var i = 0; i < cpHr.length; i++) {
       cpHr[i].style.borderColor = "#8A8A8D";
    }
    for (var i = 0; i < inputStyle.length; i++) {
       inputStyle[i].style.backgroundColor = "#3D3D41";
       inputStyle[i].style.color = "#8A8A8D";
-      inputStyle[i].style.borderColor = "#8A8A8D";
+      // inputStyle[i].style.borderColor = "#8A8A8D";
    }
    for (var i = 0; i < outputStyle.length; i++) {
       outputStyle[i].style.backgroundColor = "#3D3D41";
       outputStyle[i].style.color = "#8A8A8D";
    }
-   // for (var i = 0; i < focusStyle.length; i++) {
-   //    focusStyle[i].style.color = "#FFF";
-   // }
-   // cpBlock.addEventListener("focus", function () {
-   //   this.style.color = "#FFF";
-   // });
    console.log("darkMode is applied");
 }
+// darkModeApplier();
 
-if (darkMode = true) {
-   darkModeApplier();
-}
+// if(darkMode = true) {
+   // darkModeApplier();
+
 //

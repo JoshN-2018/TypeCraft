@@ -21,7 +21,7 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 var minSize = 12
 
 // dark mode
-// var darkMode = true
+var darkMode = true
 
 //////////// No touchy beyond this point! //////////////
 
@@ -251,21 +251,41 @@ function codedvaluePublisher() {
 }
 codedvaluePublisher();
 
-// function darkModeApplier() {
-//    document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41"
-//    document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D"
-//    document.getElementsByClassName('cp-button')[0].style.backgroundColor = "#3D3D41"
-//    document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D"
-//    document.getElementsByTagName('input').style.backgroundColor = "#3D3D41"
-//    document.getElementsByClassName('cp-hr')[0].style.borderColor = "#8A8A8D"
-//    var cpHr = document.getElementsByClassName('cp-hr')
-//    for (var i = 0; i < cp-hr.length; i++) {
-//       heroClass[i].style.fontSize = typeHero + 'px';
-//    }
-//    console.log("darkMode is applied");
-// }
-//
-// if (darkMode = true) {
-//    darkModeApplier();
-// }
+function darkModeApplier() {
+   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
+   document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
+   document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D";
+   cpButtonOn.style.backgroundColor = "#3D3D41";
+   cpButtonOff.style.backgroundColor = "#3D3D41";
+   var cpHr = document.getElementsByClassName('cp-hr');
+   var inputStyle = document.getElementsByTagName('input');
+   var outputStyle = document.getElementsByTagName('output');
+   var focusStyle = window.getComputedStyle(document.querySelector('input'), ':focus').getPropertyValue('color');
+   focusStyle.style.color = "#FFF"
+   // var focusStyle = document.querySelectorAll('input:focus');
+   // var focusStyle = document.querySelector('.control-panel input:focus');
+   for (var i = 0; i < cpHr.length; i++) {
+      cpHr[i].style.borderColor = "#8A8A8D";
+   }
+   for (var i = 0; i < inputStyle.length; i++) {
+      inputStyle[i].style.backgroundColor = "#3D3D41";
+      inputStyle[i].style.color = "#8A8A8D";
+      inputStyle[i].style.borderColor = "#8A8A8D";
+   }
+   for (var i = 0; i < outputStyle.length; i++) {
+      outputStyle[i].style.backgroundColor = "#3D3D41";
+      outputStyle[i].style.color = "#8A8A8D";
+   }
+   // for (var i = 0; i < focusStyle.length; i++) {
+   //    focusStyle[i].style.color = "#FFF";
+   // }
+   // cpBlock.addEventListener("focus", function () {
+   //   this.style.color = "#FFF";
+   // });
+   console.log("darkMode is applied");
+}
+
+if (darkMode = true) {
+   darkModeApplier();
+}
 //

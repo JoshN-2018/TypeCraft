@@ -80,9 +80,10 @@ html {
 
 .control-panel hr {
    margin-bottom: 1rem;
-   border-color: red;
+   border-color: #CCC;
    border-width: 1px;
 }
+
 
 .cp-panel .cp-form-block{
    margin-top: 2rem;
@@ -96,6 +97,7 @@ html {
 .cp-form-block p {
    margin-top: 0.36rem;
 }
+
 
 .control-panel input, output {
    color: #222;

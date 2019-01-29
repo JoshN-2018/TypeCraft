@@ -20,6 +20,8 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 // type minimum size
 var minSize = 12
 
+// dark mode
+var darkMode = true
 
 //////////// No touchy beyond this point! //////////////
 
@@ -249,4 +251,14 @@ function codedvaluePublisher() {
 }
 codedvaluePublisher();
 
+function darkModeApplier() {
+   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
+   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
+   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
+   console.log("darkMode is applied");
+}
+
+if (darkMode = true) {
+   darkModeApplier();
+}
 //

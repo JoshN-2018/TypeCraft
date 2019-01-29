@@ -53,120 +53,121 @@
    </div>
 
 
-<!-- Control panel -->
+   <!-- Control panel -->
 
-   <section class="control-panel">
-      <div class="cp-block" id="cp-block">
+      <section class="control-panel">
+         <div class="cp-block" id="cp-block">
 
-         <!-- Button -->
-         <div class="cp-button" id="cp-button-on">
-            <img src="images/carot.svg" alt="button">
+            <!-- Button -->
+            <div class="cp-button" id="cp-button-on">
+               <img src="images/carot-reverse.svg" alt="button">
+            </div>
+            <div class="cp-button" id="cp-button-off">
+               <img src="images/carot.svg" alt="button">
+            </div>
+
+            <div class="cp-panel">
+
+               <!-- Intro -->
+               <h1>TypeCraft
+               <br>&#8212;</h1>
+               <p>Welcome to your new browser based playground. Experiment with the below variables until all is lekker.
+
+               <!-- Functionality -->
+               <div class="cp-form-block">
+                  <hr class="cp-hr">
+                  <h4>Base type size</h4>
+                  <div class="cp-form">
+                     <!-- labels -->
+                     <div>
+                        <p>small</p>
+                        <p>medium</p>
+                        <p>large</p>
+                        <p>x-large</p>
+                     </div>
+                     <!-- inputs -->
+                     <div class="cp-input-block">
+                        <input id="base-type-s" type="text" name="b-type-small" value="16">
+                        <input id="base-type-m" type="text" name="b-type-small" value="16">
+                        <input id="base-type-l" type="text" name="b-type-small" value="16">
+                        <input id="base-type-xl" type="text" name="b-type-small" value="16">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cp-form-block">
+                  <hr class="cp-hr">
+                  <h4>Type scale</h4>
+                  <div class="cp-form">
+                     <!-- labels -->
+                     <div>
+                        <p>small</p>
+                        <p>medium</p>
+                        <p>large</p>
+                        <p>x-large</p>
+                     </div>
+                     <!-- inputs -->
+                     <div class="cp-input-block">
+                        <input id="base-scale-s" type="text" name="b-type-small" value="1.18">
+                        <input id="base-scale-m" type="text" name="b-type-small" value="1.25">
+                        <input id="base-scale-l" type="text" name="b-type-small" value="1.333">
+                        <input id="base-scale-xl" type="text" name="b-type-small" value="1.418">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cp-form-block">
+                  <hr class="cp-hr">
+                  <h4>Minimum type size</h4>
+                  <div class="cp-form">
+                     <!-- labels -->
+                     <div>
+                        <p>limit</p>
+                     </div>
+                     <!-- inputs -->
+                     <div class="cp-input-block">
+                        <input id="min-type" type="text" name="b-type-small" value="12">
+                     </div>
+                  </div>
+               </div>
+
+               <div class="cp-form-block">
+                  <hr class="cp-hr">
+                  <h4>Final pixel sizes</h4>
+                  <div class="cp-form">
+                     <!-- labels -->
+                     <div>
+                        <p>hero</p>
+                        <p>h1</p>
+                        <p>h2</p>
+                        <p>h3</p>
+                        <p>h4</p>
+                        <p>body-big</p>
+                        <p>body</p>
+                        <p>body-small</p>
+                        <p>body-x-small</p>
+                     </div>
+                     <!-- inputs -->
+                     <div class="cp-print-block">
+                        <output id="hero-final" name="x"></output>
+                        <output id="h1-final" name="x"></output>
+                        <output id="h2-final" name="x"></output>
+                        <output id="h3-final" name="x"></output>
+                        <output id="h4-final" name="x"></output>
+                        <output id="body-b-final" name="x"></output>
+                        <output id="body-final" name="x"></output>
+                        <output id="body-s-final" name="x"></output>
+                        <output id="body-xs-final" name="x"></output>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+
          </div>
+      </section>
 
-         <div class="cp-button" id="cp-button-off">
-            <img src="images/carot-reverse.svg" alt="button">
-         </div>
-
-         <!-- Type -->
-         <h1>Control panel</h1>
-         <p>Welcome to your new browser based playground. Experiment with the below variables until Lekker.
-         </p><br>
-         <p class="emphasis">IMPORTANT: Do not use units in the fields (all measurements are in px)</p>
-
-         <div class="cp-panel">
-
-            <div class="cp-form-block">
-               <hr>
-               <h4>Base type size</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>small</p>
-                     <p>medium</p>
-                     <p>large</p>
-                     <p>x-large</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="base-type-s" type="text" name="b-type-small" value="16">
-                     <input id="base-type-m" type="text" name="b-type-small" value="16">
-                     <input id="base-type-l" type="text" name="b-type-small" value="16">
-                     <input id="base-type-xl" type="text" name="b-type-small" value="16">
-                  </div>
-               </div>
-            </div>
-
-            <div class="cp-form-block">
-               <hr>
-               <h4>Type scale</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>small</p>
-                     <p>medium</p>
-                     <p>large</p>
-                     <p>x-large</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="base-scale-s" type="text" name="b-type-small" value="1.18">
-                     <input id="base-scale-m" type="text" name="b-type-small" value="1.25">
-                     <input id="base-scale-l" type="text" name="b-type-small" value="1.333">
-                     <input id="base-scale-xl" type="text" name="b-type-small" value="1.418">
-                  </div>
-               </div>
-            </div>
-
-            <div class="cp-form-block">
-               <hr>
-               <h4>Min type size</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>limit</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="min-type" type="text" name="b-type-small" value="12">
-                  </div>
-               </div>
-            </div>
-
-            <div class="cp-form-block">
-               <hr>
-               <h4>Final pixel sizes</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>hero</p>
-                     <p>h1</p>
-                     <p>h2</p>
-                     <p>h3</p>
-                     <p>h4</p>
-                     <p>body</p>
-                     <p>body-small</p>
-                     <p>body-x-small</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-print-block">
-                     <output id="hero-final" name="x"></output>
-                     <output id="h1-final" name="x"></output>
-                     <output id="h2-final" name="x"></output>
-                     <output id="h3-final" name="x"></output>
-                     <output id="h4-final" name="x"></output>
-                     <output id="body-final" name="x"></output>
-                     <output id="body-s-final" name="x"></output>
-                     <output id="body-xs-final" name="x"></output>
-                  </div>
-               </div>
-            </div>
-
-         </div>
-
-      </div>
-   </section>
-
-   <!-- Please don't delete me I'm the reason everything works -->
-   <script src="resources/script.js"></script>
-</body>
-</html>
+      <!-- Please don't delete me I'm the reason everything works -->
+      <script src="resources/script.js"></script>
+   </body>
+   </html>

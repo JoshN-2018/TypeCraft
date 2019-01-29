@@ -98,6 +98,23 @@ html {
    margin-top: 0.36rem;
 }
 
+.cp-break-wrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.cp-break-wrapper span {
+   font-size: 14px;
+}
+
+.cp-break-wrapper img {
+   height: 1.5rem;
+}
+
+.cp-form-block .break-title {
+   margin-bottom: 1rem;
+}
 
 .control-panel input, output {
    color: #222;
@@ -109,8 +126,13 @@ html {
    border-left: 0;
    border-top: 0;
    border-right: 0;
-   border-color: #8A8A8D;
+   border-color: #CCC;
    text-align: right;
+}
+
+.cp-break-wrapper input {
+   width: 37px;
+   text-align: center;
 }
 
 .control-panel input:focus {

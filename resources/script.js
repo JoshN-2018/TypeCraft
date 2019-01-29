@@ -195,6 +195,11 @@ cpButtonOff.addEventListener("click", function(){
 
 
 function userInput() {
+   // break points
+   breakOne = document.getElementById('break-one').value;
+   breakTwo = document.getElementById('break-two').value;
+   breakThree = document.getElementById('break-three').value;
+
    // base numbers
    typeOne = document.getElementById('base-type-s').value;
    typeTwo = document.getElementById('base-type-m').value;
@@ -233,6 +238,12 @@ function finalValuePublisher() {
 
 // updating values inputed in the code control panel
 function codedvaluePublisher() {
+
+   // coded break points
+   document.getElementById('break-one').value = breakOne
+   document.getElementById('break-two').value = breakTwo
+   document.getElementById('break-three').value = breakThree
+
    // coded base numbers
    document.getElementById('base-type-s').value = typeOne
    document.getElementById('base-type-m').value = typeTwo

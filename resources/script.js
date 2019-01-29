@@ -276,8 +276,3 @@ function darkModeApplier() {
    console.log("darkMode is applied");
 }
 // darkModeApplier();
-
-// if(darkMode = true) {
-   // darkModeApplier();
-
-//

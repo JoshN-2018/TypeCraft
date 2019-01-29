@@ -275,4 +275,4 @@ function darkModeApplier() {
    }
    console.log("darkMode is applied");
 }
-// darkModeApplier();
+darkModeApplier();

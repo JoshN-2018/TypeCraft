@@ -21,7 +21,7 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 var minSize = 12
 
 // dark mode
-var darkMode = true
+// var darkMode = true
 
 //////////// No touchy beyond this point! //////////////
 
@@ -251,14 +251,21 @@ function codedvaluePublisher() {
 }
 codedvaluePublisher();
 
-function darkModeApplier() {
-   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
-   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
-   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#222"
-   console.log("darkMode is applied");
-}
-
-if (darkMode = true) {
-   darkModeApplier();
-}
+// function darkModeApplier() {
+//    document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41"
+//    document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D"
+//    document.getElementsByClassName('cp-button')[0].style.backgroundColor = "#3D3D41"
+//    document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D"
+//    document.getElementsByTagName('input').style.backgroundColor = "#3D3D41"
+//    document.getElementsByClassName('cp-hr')[0].style.borderColor = "#8A8A8D"
+//    var cpHr = document.getElementsByClassName('cp-hr')
+//    for (var i = 0; i < cp-hr.length; i++) {
+//       heroClass[i].style.fontSize = typeHero + 'px';
+//    }
+//    console.log("darkMode is applied");
+// }
+//
+// if (darkMode = true) {
+//    darkModeApplier();
+// }
 //

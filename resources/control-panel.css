@@ -6,22 +6,18 @@ html {
   box-sizing: inherit;
 }
 
-
-.control-panel {
-   color: #222;
-   font-family: 'Apercu', sans-serif;
-
-}
-
 .cp-block {
+
    width: 300px;
    height: 100%;
-   background-color: #FFF;
    padding: 2.2rem 0 0 2rem;
    position: fixed;
    right: 0;
    top: 0;
    z-index: 2;
+   background-color: #FFF;
+   color: #222;
+   font-family: 'Apercu', sans-serif;
    transform: translateX(300px);
    transition: all 0.4s ease;
 }
@@ -84,18 +80,13 @@ html {
 
 .control-panel hr {
    margin-bottom: 1rem;
-   border-color: #CCC;
+   border-color: red;
    border-width: 1px;
 }
-
 
 .cp-panel .cp-form-block{
    margin-top: 2rem;
 }
-
-/* .cp-panel .cp-form-block:first-child {
-   margin-top: 2rem;
-} */
 
 .cp-form {
    display: flex;
@@ -105,10 +96,6 @@ html {
 .cp-form-block p {
    margin-top: 0.36rem;
 }
-
-/* .cp-print-block p {
-   color: #CACACA;
-} */
 
 .control-panel input, output {
    color: #222;
@@ -129,12 +116,6 @@ html {
    color: #222;
    outline: none;
 }
-/*
-output {
-   text-align: right;
-   width: 40px;
-   height: 22px;
-} */
 
 .cp-input-block input:first-child {
    margin-top: 0;

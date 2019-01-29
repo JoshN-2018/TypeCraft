@@ -254,8 +254,7 @@ codedvaluePublisher();
 function darkModeApplier() {
    document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
    document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
-   document.getElementsByClassName('cp-block')[0].style.boxShadow = "#000 -6px 0px 35px 0px
-;";
+   document.getElementsByClassName('cp-block')[0].style.boxShadow = "#000 -6px 0px 35px 0px";
    document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D";
    cpButtonOn.style.backgroundColor = "#3D3D41";
    cpButtonOff.style.backgroundColor = "#3D3D41";

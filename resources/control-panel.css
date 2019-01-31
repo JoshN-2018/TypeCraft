@@ -150,3 +150,60 @@ html {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px #EEE;
 }
+
+.cp-break-wrapper svg path {
+   fill: red;
+}
+
+/* break sections */
+#break-bg {
+   display: flex;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   z-index: -1;
+}
+
+#break-mark-1, #break-mark-2, #break-mark-3, #break-mark-4 {
+   border-right: 1px dashed #CCC;
+   height: 100%;
+
+}
+
+#break-mark-1 {
+   min-width: 517px;
+}
+#break-mark-2 {
+   min-width: calc(835px - 517px);
+}
+#break-mark-3 {
+   min-width: calc(1355px - 835px);
+}
+#break-mark-4 {
+   min-width: calc(2193px - 1355px);
+}
+
+
+/* visibility */
+/* .break2, .break3, .break4 {
+   display: none;
+} */
+
+/* @media (min-width: 517px) {
+   .break2 {
+      display: initial;
+   }
+}
+@media (min-width: 838px) {
+   .break3 {
+      display: initial;
+   }
+}
+@media (min-width: 1355px) {
+   .break4 {
+      display: initial;
+   }
+} */

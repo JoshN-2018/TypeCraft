@@ -4,6 +4,7 @@
 var breakOne = 720
 var breakTwo = 1080
 var breakThree = 1440
+// var breakFour = 1680
 
 // type base
 var typeOne = 16
@@ -192,6 +193,15 @@ cpButtonOff.addEventListener("click", function(){
    cpButtonOn.style.display = "initial";
    cpButtonOff.style.display = "none";
 });
+
+// break mark calculations
+var breakMarkOne = document.getElementById('break-mark-1');
+var breakMarkTwo = document.getElementById('break-mark-2');
+var breakMarkThree = document.getElementById('break-mark-3');
+var breakMarkFour = document.getElementById('break-mark-4');
+
+
+
 
 
 function userInput() {

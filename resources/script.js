@@ -4,7 +4,7 @@
 var breakOne = 720
 var breakTwo = 1080
 var breakThree = 1440
-// var breakFour = 1680
+var breakFour = 1680
 
 // type base
 var typeOne = 16
@@ -27,6 +27,8 @@ var maxSizeBXS = 16
 var darkMode = false
 
 //////////// No touchy beyond this point! //////////////
+
+
 
 // base ratio
 var ratio = 1
@@ -71,7 +73,20 @@ var h1Class = document.getElementsByClassName("h1");
 var heroClass = document.getElementsByClassName("hero");
 
 
-// Run function on DOM load
+// get break lines
+var breakLineOne = document.getElementById('break-line-1');
+var breakLineTwo = document.getElementById('break-line-2');
+var breakLineThree = document.getElementById('break-line-3');
+var breakLineFour = document.getElementById('break-line-4');
+
+// final line positions
+var lineCompOne
+var lineCompTwo
+var lineCompThree
+var lineCompFour
+
+
+// main rendering function
 function breakHandler() {
 
    // determine screen breakpoints and assign base values
@@ -186,7 +201,7 @@ function breakHandler() {
       }
    }
 
-   // Break styling
+   // document styling
    var container = document.getElementsByClassName("container");
 
    if (screenBase === 1) {
@@ -210,37 +225,17 @@ function breakHandler() {
       }
    }
 
-   // Break reference
-   // var breakIcon1 = document.getElementById("break-icon-phone");
-   // var breakIcon2 = document.getElementById("break-icon-tablet");
-   // var breakIcon3 = document.getElementById("break-icon-laptop");
-   // var breakIcon4 = document.getElementById("break-icon-desktop");
-   //
-   // if (screenBase == 1) {
-   //    breakIcon1.setAttribute("fill", "#1432FF");
-   //    } else {breakIcon1.setAttribute("fill", "#222");
-   //    }
-   // }
+   // Update break line positions
+   lineCompOne = breakOne
+   lineCompTwo = breakTwo - breakOne
+   lineCompThree = breakThree - breakTwo
+   lineCompFour = breakOneFour - breakThree
 
-   // if (screenBase === 1) {
-   //    document.getElementById("break-icon-phone").setAttribute("fill", "#1432FF");
-   // } else {
-   //    document.getElementById("break-icon-phone").setAttribute("fill", "#222");
-   //
-   // if (screenBase === 2) {
-   //    document.getElementById("break-icon-tablet").setAttribute("fill", "#1432FF");
-   // } else {
-   //    document.getElementById("break-icon-tablet").setAttribute("fill", "#222");
-   //
-   // if (screenBase === 3) {
-   //    document.getElementById("break-icon-laptop").setAttribute("fill", "#1432FF");
-   // } else {
-   //    document.getElementById("break-icon-laptop").setAttribute("fill", "#222");
-   //
-   // if (screenBase === 4) {
-   //    document.getElementById("break-icon-desktop").setAttribute("fill", "#1432FF");
-   // } else {
-   //    document.getElementById("break-icon-desktop").setAttribute("fill", "#222");
+   // Update CSS based on the above
+   function breakLineUpdater() {
+      breakLineOne.style.minWidth = lineCompOne + 'px';
+   }
+
 
    typeUpdater();
    finalValuePublisher();
@@ -270,14 +265,6 @@ cpButtonOff.addEventListener("click", function(){
    cpButtonOn.style.display = "initial";
    cpButtonOff.style.display = "none";
 });
-
-// break mark calculations
-var breakMarkOne = document.getElementById('break-mark-1');
-var breakMarkTwo = document.getElementById('break-mark-2');
-var breakMarkThree = document.getElementById('break-mark-3');
-var breakMarkFour = document.getElementById('break-mark-4');
-
-
 
 
 
@@ -382,5 +369,42 @@ function darkModeApplier() {
    }
    console.log("darkMode is applied");
 }
+
+
+
+/*
+Break reference
+var breakIcon1 = document.getElementById("break-icon-phone");
+var breakIcon2 = document.getElementById("break-icon-tablet");
+var breakIcon3 = document.getElementById("break-icon-laptop");
+var breakIcon4 = document.getElementById("break-icon-desktop");
+
+if (screenBase == 1) {
+   breakIcon1.setAttribute("fill", "#1432FF");
+   } else {breakIcon1.setAttribute("fill", "#222");
+   }
+}
+
+if (screenBase === 1) {
+   document.getElementById("break-icon-phone").setAttribute("fill", "#1432FF");
+} else {
+   document.getElementById("break-icon-phone").setAttribute("fill", "#222");
+
+if (screenBase === 2) {
+   document.getElementById("break-icon-tablet").setAttribute("fill", "#1432FF");
+} else {
+   document.getElementById("break-icon-tablet").setAttribute("fill", "#222");
+
+if (screenBase === 3) {
+   document.getElementById("break-icon-laptop").setAttribute("fill", "#1432FF");
+} else {
+   document.getElementById("break-icon-laptop").setAttribute("fill", "#222");
+
+if (screenBase === 4) {
+   document.getElementById("break-icon-desktop").setAttribute("fill", "#1432FF");
+} else {
+   document.getElementById("break-icon-desktop").setAttribute("fill", "#222");
+
+*/
 
 // darkModeApplier();*/

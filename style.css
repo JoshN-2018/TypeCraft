@@ -11,8 +11,6 @@
    font-family: "Domaine";
    src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
 }
-
-
 /* end of: font loading */
 
 
@@ -50,28 +48,6 @@ body {
 
 
 /*/////////////// Layout ////////////////*/
-
-/* .container {
-   padding: 0 1rem;
-}
-
-@media (min-width: 720px) {
-   .container {
-      padding: 0 4rem;
-   }
-}
-
-@media (min-width: 1080px) {
-   .container {
-      padding: 0 6rem;
-   }
-}
-
-@media (min-width: 1440px) {
-   .container {
-      padding: 0 8rem;
-   }
-} */
 
 .container-flex {
    display: flex;

@@ -104,16 +104,16 @@ html {
    align-items: center;
 }
 
-.cp-break-wrapper span {
-   font-size: 14px;
-}
-
-.cp-break-wrapper img {
-   height: 1.5rem;
+.cp-break-wrapper svg {
+   height: 18px;
 }
 
 .cp-form-block .break-title {
    margin-bottom: 1rem;
+}
+
+.cp-break-wrapper svg path {
+   fill: #222;
 }
 
 .control-panel input, output {
@@ -149,10 +149,6 @@ html {
 .cp-shift {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px #EEE;
-}
-
-.cp-break-wrapper svg path {
-   fill: red;
 }
 
 /* break sections */

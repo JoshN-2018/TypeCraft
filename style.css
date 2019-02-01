@@ -11,6 +11,10 @@
    font-family: "Domaine";
    src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
 }
+@font-face {
+   font-family: "Wisdom";
+   src: url("fonts/Wisdom-Script.woff2") format("woff");
+}
 /* end of: font loading */
 
 
@@ -25,7 +29,7 @@ body {
 
 
 /* font styling */
-.hero,.h1, .h2, .h3, .h4 {
+.hero, .h1, .h2, .h3, .h4 {
    font-family: "GT-Sectra", "serif";
 }
 
@@ -36,7 +40,7 @@ body {
 /* line-height */
 .hero {
    line-height: 1.2;
-   margin-bottom: 2rem
+   /* margin-bottom: 2rem */
 }
 .h1 {line-height: 1.4;}
 .h2 {line-height: 1.55;}
@@ -52,9 +56,6 @@ body {
 
 /*/////////////// Layout ////////////////*/
 
-.container-flex {
-   display: flex;
-}
 
 .type-wrapper {
    padding-top: 3rem;

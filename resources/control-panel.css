@@ -180,8 +180,12 @@ html {
    justify-content: flex-end;
 }
 
-#break-line-1 p {
-   font-size: 14px;
+#break-line-1, #break-line-2, #break-line-3, #break-line-4 p {
+   font-size: 12px;
    padding: 0 1rem 1rem 0;
-   color: #888;
+   color: #999;
+}
+
+.container-flex {
+   display: flex;
 }

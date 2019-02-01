@@ -105,7 +105,7 @@ html {
 }
 
 .cp-break-wrapper svg {
-   height: 18px;
+   height: 22px;
 }
 .cp-break-wrapper input {
    margin: 0 3px;
@@ -115,10 +115,6 @@ html {
    margin-bottom: 1rem;
 }
 
-.cp-break-wrapper svg path, line {
-   stroke: #222;
-   fill: #222;
-}
    /* adjust spacing on second row */
 .cp-break-wrapper .space-left {
    margin-left: 42px;

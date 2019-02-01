@@ -51,7 +51,7 @@ body {
 
 /*/////////////// Layout ////////////////*/
 
-.container {
+/* .container {
    padding: 0 1rem;
 }
 
@@ -71,7 +71,7 @@ body {
    .container {
       padding: 0 8rem;
    }
-}
+} */
 
 .container-flex {
    display: flex;

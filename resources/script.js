@@ -129,8 +129,6 @@ function breakHandler() {
    typeH1 = Math.round(typeH1);
    typeHero = Math.round(typeHero);
 
-
-
    // Min size limiting
    if (typeBodySmall < minSize) {
       typeBodySmall = minSize;
@@ -187,9 +185,67 @@ function breakHandler() {
          heroClass[i].style.fontSize = typeHero + 'px';
       }
    }
+
+   // Break styling
+   var container = document.getElementsByClassName("container");
+
+   if (screenBase === 1) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 1rem";
+      }
+   }
+   if (screenBase === 2) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 4rem";
+      }
+   }
+   if (screenBase === 3) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 6rem";
+      }
+   }
+   if (screenBase === 4) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 8rem";
+      }
+   }
+
+   // Break reference
+   // var breakIcon1 = document.getElementById("break-icon-phone");
+   // var breakIcon2 = document.getElementById("break-icon-tablet");
+   // var breakIcon3 = document.getElementById("break-icon-laptop");
+   // var breakIcon4 = document.getElementById("break-icon-desktop");
+   //
+   // if (screenBase == 1) {
+   //    breakIcon1.setAttribute("fill", "#1432FF");
+   //    } else {breakIcon1.setAttribute("fill", "#222");
+   //    }
+   // }
+
+   // if (screenBase === 1) {
+   //    document.getElementById("break-icon-phone").setAttribute("fill", "#1432FF");
+   // } else {
+   //    document.getElementById("break-icon-phone").setAttribute("fill", "#222");
+   //
+   // if (screenBase === 2) {
+   //    document.getElementById("break-icon-tablet").setAttribute("fill", "#1432FF");
+   // } else {
+   //    document.getElementById("break-icon-tablet").setAttribute("fill", "#222");
+   //
+   // if (screenBase === 3) {
+   //    document.getElementById("break-icon-laptop").setAttribute("fill", "#1432FF");
+   // } else {
+   //    document.getElementById("break-icon-laptop").setAttribute("fill", "#222");
+   //
+   // if (screenBase === 4) {
+   //    document.getElementById("break-icon-desktop").setAttribute("fill", "#1432FF");
+   // } else {
+   //    document.getElementById("break-icon-desktop").setAttribute("fill", "#222");
+
    typeUpdater();
    finalValuePublisher();
 }
+
 
 // Call function
 breakHandler();
@@ -297,6 +353,10 @@ function codedvaluePublisher() {
   console.log("Coded values published");
 }
 codedvaluePublisher();
+
+
+
+
 /*
 function darkModeApplier() {
    document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
@@ -322,5 +382,5 @@ function darkModeApplier() {
    }
    console.log("darkMode is applied");
 }
-*/
-// darkModeApplier();
+
+// darkModeApplier();*/

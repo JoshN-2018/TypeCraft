@@ -178,7 +178,7 @@ html {
 
 }
 
-#break-line-1 {
+/* #break-line-1 {
    min-width: 517px;
 }
 #break-line-2 {
@@ -189,7 +189,7 @@ html {
 }
 #break-line-4 {
    min-width: calc(2193px - 1355px);
-}
+} */
 
 
 /* visibility */

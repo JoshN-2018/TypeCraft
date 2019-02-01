@@ -229,14 +229,17 @@ function breakHandler() {
    lineCompOne = breakOne
    lineCompTwo = breakTwo - breakOne
    lineCompThree = breakThree - breakTwo
-   lineCompFour = breakOneFour - breakThree
+   lineCompFour = breakFour - breakThree
 
    // Update CSS based on the above
    function breakLineUpdater() {
       breakLineOne.style.minWidth = lineCompOne + 'px';
+      breakLineTwo.style.minWidth = lineCompTwo + 'px';
+      breakLineThree.style.minWidth = lineCompThree + 'px';
+      breakLineFour.style.minWidth = lineCompFour + 'px';
    }
 
-
+   breakLineUpdater();
    typeUpdater();
    finalValuePublisher();
 }
@@ -273,6 +276,7 @@ function userInput() {
    breakOne = document.getElementById('break-one').value;
    breakTwo = document.getElementById('break-two').value;
    breakThree = document.getElementById('break-three').value;
+   breakFour = document.getElementById('break-four').value;
 
    // base numbers
    typeOne = document.getElementById('base-type-s').value;
@@ -319,6 +323,7 @@ function codedvaluePublisher() {
    document.getElementById('break-one').value = breakOne
    document.getElementById('break-two').value = breakTwo
    document.getElementById('break-three').value = breakThree
+   document.getElementById('break-four').value = breakFour
 
    // coded base numbers
    document.getElementById('base-type-s').value = typeOne
@@ -340,71 +345,3 @@ function codedvaluePublisher() {
   console.log("Coded values published");
 }
 codedvaluePublisher();
-
-
-
-
-/*
-function darkModeApplier() {
-   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
-   document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
-   document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D";
-   cpButtonOn.style.backgroundColor = "#3D3D41";
-   cpButtonOff.style.backgroundColor = "#3D3D41";
-   var cpHr = document.getElementsByClassName('cp-hr');
-   var inputStyle = document.getElementsByTagName('input');
-   var outputStyle = document.getElementsByTagName('output');
-
-   for (var i = 0; i < cpHr.length; i++) {
-      cpHr[i].style.borderColor = "#8A8A8D";
-   }
-   for (var i = 0; i < inputStyle.length; i++) {
-      inputStyle[i].style.backgroundColor = "#3D3D41";
-      inputStyle[i].style.color = "#8A8A8D";
-      // inputStyle[i].style.borderColor = "#8A8A8D";
-   }
-   for (var i = 0; i < outputStyle.length; i++) {
-      outputStyle[i].style.backgroundColor = "#3D3D41";
-      outputStyle[i].style.color = "#8A8A8D";
-   }
-   console.log("darkMode is applied");
-}
-
-
-
-/*
-Break reference
-var breakIcon1 = document.getElementById("break-icon-phone");
-var breakIcon2 = document.getElementById("break-icon-tablet");
-var breakIcon3 = document.getElementById("break-icon-laptop");
-var breakIcon4 = document.getElementById("break-icon-desktop");
-
-if (screenBase == 1) {
-   breakIcon1.setAttribute("fill", "#1432FF");
-   } else {breakIcon1.setAttribute("fill", "#222");
-   }
-}
-
-if (screenBase === 1) {
-   document.getElementById("break-icon-phone").setAttribute("fill", "#1432FF");
-} else {
-   document.getElementById("break-icon-phone").setAttribute("fill", "#222");
-
-if (screenBase === 2) {
-   document.getElementById("break-icon-tablet").setAttribute("fill", "#1432FF");
-} else {
-   document.getElementById("break-icon-tablet").setAttribute("fill", "#222");
-
-if (screenBase === 3) {
-   document.getElementById("break-icon-laptop").setAttribute("fill", "#1432FF");
-} else {
-   document.getElementById("break-icon-laptop").setAttribute("fill", "#222");
-
-if (screenBase === 4) {
-   document.getElementById("break-icon-desktop").setAttribute("fill", "#1432FF");
-} else {
-   document.getElementById("break-icon-desktop").setAttribute("fill", "#222");
-
-*/
-
-// darkModeApplier();*/

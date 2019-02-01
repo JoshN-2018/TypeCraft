@@ -175,40 +175,13 @@ html {
 #break-line-1, #break-line-2, #break-line-3, #break-line-4 {
    border-right: 1px dashed #CCC;
    height: 100%;
-
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
 }
 
-/* #break-line-1 {
-   min-width: 517px;
+#break-line-1 p {
+   font-size: 14px;
+   padding: 0 1rem 1rem 0;
+   color: #888;
 }
-#break-line-2 {
-   min-width: calc(835px - 517px);
-}
-#break-line-3 {
-   min-width: calc(1355px - 835px);
-}
-#break-line-4 {
-   min-width: calc(2193px - 1355px);
-} */
-
-
-/* visibility */
-/* .break2, .break3, .break4 {
-   display: none;
-} */
-
-/* @media (min-width: 517px) {
-   .break2 {
-      display: initial;
-   }
-}
-@media (min-width: 838px) {
-   .break3 {
-      display: initial;
-   }
-}
-@media (min-width: 1355px) {
-   .break4 {
-      display: initial;
-   }
-} */

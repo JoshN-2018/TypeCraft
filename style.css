@@ -34,7 +34,10 @@ body {
 }
 
 /* line-height */
-.hero {line-height: 1.2;}
+.hero {
+   line-height: 1.2;
+   /* margin-bottom: 2rem */
+}
 .h1 {line-height: 1.4;}
 .h2 {line-height: 1.55;}
 .h3 {line-height: 1.7;}

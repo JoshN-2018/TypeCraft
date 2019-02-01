@@ -20,6 +20,8 @@ var ratioFour = 1.418 /* ratioFour = Augmented fourth */
 
 // type minimum size
 var minSize = 12
+var maxSizeBS = 16
+var maxSizeBXS = 16
 
 // dark mode
 var darkMode = false
@@ -116,15 +118,34 @@ function breakHandler() {
    typeH1 = typeBase * levelFive
    typeHero = typeBase * levelSix
 
+   // round calculated values to whole pixels
+   typeBodyXSmall = Math.round(typeBodyXSmall);
+   typeBodySmall = Math.round(typeBodySmall);
+   typeBody = Math.round(typeBody);
+   typeBodyBig = Math.round(typeBodyBig);
+   typeH4 = Math.round(typeH4);
+   typeH3 = Math.round(typeH3);
+   typeH2 = Math.round(typeH2);
+   typeH1 = Math.round(typeH1);
+   typeHero = Math.round(typeHero);
+
+
 
    // Min size limiting
-   if (typeBodyXSmall < minSize) {
-      typeBodyXSmall = minSize;
-   }
    if (typeBodySmall < minSize) {
       typeBodySmall = minSize;
    }
+   if (typeBodyXSmall < minSize) {
+      typeBodyXSmall = minSize;
+   }
 
+   // Max size limiting
+   if (typeBodySmall > maxSizeBS) {
+      typeBodySmall = maxSizeBS;
+   }
+   if (typeBodyXSmall > maxSizeBXS) {
+      typeBodyXSmall = maxSizeBXS;
+   }
 
    // Update CSS based on the above
 
@@ -222,8 +243,10 @@ function userInput() {
    ratioThree = document.getElementById('base-scale-l').value;
    ratioFour = document.getElementById('base-scale-xl').value;
 
-   // min size
+   // Limits
    minSize = document.getElementById('min-type').value;
+   maxSizeBS = document.getElementById('max-type-small').value;
+   maxSizeBXS = document.getElementById('max-type-x-small').value;
 
    breakHandler();
    console.log("input recieved");
@@ -268,10 +291,13 @@ function codedvaluePublisher() {
 
    // coded min size
    document.getElementById("min-type").value = minSize;
+   document.getElementById('max-type-small').value = maxSizeBS
+   document.getElementById('max-type-x-small').value = maxSizeBXS
+
   console.log("Coded values published");
 }
 codedvaluePublisher();
-
+/*
 function darkModeApplier() {
    document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
    document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
@@ -296,4 +322,5 @@ function darkModeApplier() {
    }
    console.log("darkMode is applied");
 }
+*/
 // darkModeApplier();

@@ -104,7 +104,7 @@ html {
    align-items: center;
 }
 
-.cp-break-wrapper svg {
+.cp-break-wrapper img {
    height: 22px;
 }
 .cp-break-wrapper input {
@@ -115,9 +115,12 @@ html {
    margin-bottom: 1rem;
 }
 
-   /* adjust spacing on second row */
-.cp-break-wrapper .space-left {
-   margin-left: 42px;
+.cp-break-wrapper .cp-icon-spacer {
+   opacity: 0;
+}
+
+.cp-break-wrapper .cp-icon-fill {
+   display: none;
 }
 
 .cp-break-wrapper {

@@ -2,7 +2,7 @@
 
 // screen break points
 var breakOne = 720
-var breakTwo = 1080
+var breakTwo = 1024
 var breakThree = 1440
 var breakFour = 1680
 
@@ -13,7 +13,7 @@ var typeThree = 16
 var typeFour = 16
 
 // type scale ratios
-var ratioOne = 1.18 /* ratioOne = Minor third */
+var ratioOne = 1.2 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.33 /* ratioThree = Perfect fourth */
 var ratioFour = 1.418 /* ratioFour = Augmented fourth */
@@ -238,6 +238,8 @@ function breakHandler() {
       breakLineThree.style.minWidth = lineCompThree + 'px';
       breakLineFour.style.minWidth = lineCompFour + 'px';
    }
+
+   
 
    breakLineUpdater();
    typeUpdater();

@@ -72,7 +72,6 @@ var h2Class = document.getElementsByClassName("h2");
 var h1Class = document.getElementsByClassName("h1");
 var heroClass = document.getElementsByClassName("hero");
 
-
 // get break lines
 var breakLineOne = document.getElementById('break-line-1');
 var breakLineTwo = document.getElementById('break-line-2');
@@ -160,8 +159,7 @@ function breakHandler() {
       typeBodyXSmall = maxSizeBXS;
    }
 
-   // Update CSS based on the above
-
+   // Update type CSS based on the above
    function typeUpdater() {
 
       for (var i = 0; i < bodyXSmallClass.length; i++) {
@@ -231,7 +229,7 @@ function breakHandler() {
    lineCompThree = breakThree - breakTwo
    lineCompFour = breakFour - breakThree
 
-   // Update CSS based on the above
+   // Update break line CSS based on the above
    function breakLineUpdater() {
       breakLineOne.style.minWidth = lineCompOne + 'px';
       breakLineTwo.style.minWidth = lineCompTwo + 'px';
@@ -239,7 +237,46 @@ function breakHandler() {
       breakLineFour.style.minWidth = lineCompFour + 'px';
    }
 
-   
+   // Highlight current breakpoint
+   if (screenBase === 1) {
+      document.getElementById("break-icon-phone").style.display = "none";
+      document.getElementById("break-icon-phone-fill").style.display = "initial";
+   } else {
+      document.getElementById("break-icon-phone").style.display = "initial";
+      document.getElementById("break-icon-phone-fill").style.display = "none";
+   }
+
+   if (screenBase === 2) {
+      document.getElementById("break-icon-tablet").style.display = "none";
+      document.getElementById("break-icon-tablet-fill").style.display = "initial";
+   } else {
+      document.getElementById("break-icon-tablet").style.display = "initial";
+      document.getElementById("break-icon-tablet-fill").style.display = "none";
+   }
+
+   if (screenBase === 3) {
+      document.getElementById("break-icon-laptop").style.display = "none";
+      document.getElementById("break-icon-laptop-fill").style.display = "initial";
+   } else {
+      document.getElementById("break-icon-laptop").style.display = "initial";
+      document.getElementById("break-icon-laptop-fill").style.display = "none";
+   }
+
+   if (screenBase === 4) {
+      document.getElementById("break-icon-desktop").style.display = "none";
+      document.getElementById("break-icon-desktop-fill").style.display = "initial";
+   } else {
+      document.getElementById("break-icon-desktop").style.display = "initial";
+      document.getElementById("break-icon-desktop-fill").style.display = "none";
+   }
+
+   if (screenBase === 5) {
+      document.getElementById("break-icon-tv").style.display = "none";
+      document.getElementById("break-icon-tv-fill").style.display = "initial";
+   } else {
+      document.getElementById("break-icon-tv").style.display = "initial";
+      document.getElementById("break-icon-tv-fill").style.display = "none";
+   }
 
    breakLineUpdater();
    typeUpdater();

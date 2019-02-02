@@ -40,8 +40,8 @@ body {
 /* line-height */
 .hero {
    line-height: 1.2;
-   font-family: "Wisdom";
-   margin-bottom: 1rem;
+   /* font-family: "Wisdom"; */
+   /* margin-bottom: 1rem; */
 }
 .h1 {line-height: 1.4;}
 .h2 {line-height: 1.55;}

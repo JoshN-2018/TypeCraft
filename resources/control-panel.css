@@ -104,6 +104,10 @@ html {
    align-items: center;
 }
 
+.cp-break-wrapper:last-child {
+   margin-top: 1rem;
+}
+
 .cp-break-wrapper img {
    height: 22px;
 }
@@ -115,7 +119,7 @@ html {
    margin-bottom: 1rem;
 }
 
-.cp-break-wrapper .cp-icon-spacer {
+.cp-break-wrapper .cp-icon-spacer, .cp-input-spacer {
    opacity: 0;
 }
 
@@ -123,9 +127,6 @@ html {
    display: none;
 }
 
-.cp-break-wrapper {
-   margin-bottom: 0.25rem;
-}
 
 
 .control-panel input, output {

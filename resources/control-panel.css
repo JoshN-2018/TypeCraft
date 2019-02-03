@@ -10,7 +10,7 @@ html {
 
    width: 300px;
    height: 100%;
-   padding: 2.2rem 0 0 2rem;
+   padding: 0 0 0 2rem;
    position: fixed;
    right: 0;
    top: 0;
@@ -26,7 +26,9 @@ html {
 .cp-panel {
    position: fixed
    top: 0;
+   padding-top: 2.2rem;
    padding-right: 2rem;
+   padding-bottom: 2rem;
    height: 100%;
    overflow: auto;
    overflow-x: hidden;

@@ -1,8 +1,4 @@
-/* font loading */
-@font-face {
-   font-family: "Domaine";
-   src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
-}
+
 @font-face {
    font-family: "Wisdom";
    src: url("fonts/Wisdom-Script.woff2") format("woff");

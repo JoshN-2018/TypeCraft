@@ -25,6 +25,11 @@ html {
    font-family: "Apercu";
    src: url("cp-fonts/apercu-regular.woff2") format("woff2");
 }
+/* font loading */
+@font-face {
+   font-family: "Domaine";
+   src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
+}
 
 /* Set-up */
 body {
@@ -116,6 +121,7 @@ body {
 
 /* Type */
 .control-panel .logo {
+   margin-bottom: 0.8rem;
    height: 24px;
    margin-bottom: 0.8rem;
 }

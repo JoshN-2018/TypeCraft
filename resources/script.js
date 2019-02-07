@@ -4,7 +4,7 @@
 var breakOne = 720
 var breakTwo = 1024
 var breakThree = 1440
-var breakFour = 1680
+var breakFour = 1950
 
 // type base
 var typeOne = 16

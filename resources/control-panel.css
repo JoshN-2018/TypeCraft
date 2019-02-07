@@ -28,7 +28,7 @@ html {
 /* font loading */
 @font-face {
    font-family: "Domaine";
-   src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
+   src: url("cp-fonts/DomaineDisplayTest-Medium.woff") format("woff");
 }
 
 /* Set-up */

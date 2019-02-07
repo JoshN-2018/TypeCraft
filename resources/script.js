@@ -11,12 +11,14 @@ var typeOne = 16
 var typeTwo = 16
 var typeThree = 16
 var typeFour = 16
+var typeFive = 16
 
 // type scale ratios
 var ratioOne = 1.2 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.33 /* ratioThree = Perfect fourth */
-var ratioFour = 1.418 /* ratioFour = Augmented fourth */
+var ratioFour = 1.414 /* ratioFour = Augmented fourth */
+var ratioFive = 1.500 /* ratioFour = Augmented fourth */
 
 // type minimum size
 var minSize = 12
@@ -107,10 +109,15 @@ function breakHandler() {
       ratio = ratioThree
       typeBase = typeThree
    }
-   if(window.innerWidth > breakThree) {
+   if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
+   }
+   if(window.innerWidth > breakFour) {
+      screenBase = 5
+      ratio = ratioFive
+      typeBase = typeFive
    }
    if(window.innerWidth < breakOne) {
       screenBase = 1
@@ -226,6 +233,11 @@ function breakHandler() {
       }
    }
    if (screenBase === 4) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 8rem";
+      }
+   }
+   if (screenBase === 5) {
       for (var i = 0; i < container.length; i++) {
          container[i].style.padding = "0 8rem";
       }
@@ -360,12 +372,14 @@ function userInput() {
    typeTwo = document.getElementById('base-type-m').value;
    typeThree = document.getElementById('base-type-l').value;
    typeFour = document.getElementById('base-type-xl').value;
+   typeFive = document.getElementById('base-type-xxl').value;
 
    // type scales
    ratioOne = document.getElementById('base-scale-s').value;
    ratioTwo = document.getElementById('base-scale-m').value;
    ratioThree = document.getElementById('base-scale-l').value;
    ratioFour = document.getElementById('base-scale-xl').value;
+   ratioFive = document.getElementById('base-scale-xxl').value;
 
    // Limits
    minSize = document.getElementById('min-type').value;
@@ -407,12 +421,14 @@ function codedvaluePublisher() {
    document.getElementById('base-type-m').value = typeTwo
    document.getElementById('base-type-l').value = typeThree
    document.getElementById('base-type-xl').value = typeFour
+   document.getElementById('base-type-xxl').value = typeFive
 
    // coded type scales
    document.getElementById('base-scale-s').value = ratioOne
    document.getElementById('base-scale-m').value = ratioTwo
    document.getElementById('base-scale-l').value = ratioThree
    document.getElementById('base-scale-xl').value = ratioFour
+   document.getElementById('base-scale-xxl').value = ratioFive
 
    // coded min size
    document.getElementById("min-type").value = minSize;

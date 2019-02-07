@@ -7,7 +7,6 @@ html {
 }
 
 .cp-block {
-
    width: 300px;
    height: 100%;
    padding: 0 0 0 2rem;
@@ -65,6 +64,16 @@ html {
    line-height: 1.4;
 }
 
+/* set type color */
+.control-panel h1, .intro, h4 {
+   color: #222;
+}
+
+/* setting opacity to be over-ridden by 'active' class */
+.control-panel .label {
+   opacity: 0.3;
+}
+
 .control-panel h4 {
    margin-bottom: 0.5rem;
    font-size: 16px;
@@ -73,11 +82,6 @@ html {
 .control-panel p, input, output {
    font-size: 14px;
    line-height: 1.4;
-}
-
-.emphasis {
-   color: #CACACA;
-   font-weight: 400;
 }
 
 .control-panel hr {
@@ -129,10 +133,7 @@ html {
    display: none;
 }
 
-
-
 .control-panel input, output {
-   color: #222;
    background-color: #FFF;
    margin-top: 0.2rem;
    height: 22px;
@@ -141,8 +142,13 @@ html {
    border-left: 0;
    border-top: 0;
    border-right: 0;
-   border-color: #CCC;
+   border-color: #999;
    text-align: right;
+   opacity: 0.3;
+}
+
+output, input.alwaysOn {
+   opacity: 1;
 }
 
 .cp-break-wrapper input {
@@ -154,6 +160,7 @@ html {
    border-color: #1432FF;
    color: #222;
    outline: none;
+   opacity: 1;
 }
 
 .cp-input-block input:first-child {
@@ -165,6 +172,13 @@ html {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px #EEE;
 }
+
+.active {
+   opacity: 1 !important;
+}
+
+/* end of: js classes */
+
 
 /* break sections */
 #break-bg {

@@ -1,13 +1,5 @@
 /* font loading */
 @font-face {
-   font-family: "Apercu";
-   src: url("fonts/apercu-regular.woff2") format("woff2");
-}
-@font-face {
-   font-family: "GT-Sectra";
-   src: url("fonts/GT-Sectra-Medium.woff2") format("woff2");
-}
-@font-face {
    font-family: "Domaine";
    src: url("fonts/DomaineDisplayTest-Medium.woff") format("woff");
 }
@@ -16,46 +8,6 @@
    src: url("fonts/Wisdom-Script.woff2") format("woff");
 }
 /* end of: font loading */
-
-
-/* Set-up */
-body {
-   background-color: #F4F4F4;
-   color: #222;
-   font-family: "Apercu", "sans-serif";
-}
-
-/*/////////////// Type ////////////////*/
-
-
-/* font styling */
-.hero, .h1, .h2, .h3, .h4 {
-   font-family: "GT-Sectra", "serif";
-}
-
-.body-big, .body, .body-small, .body-x-small {
-   font-family: "Apercu", "sans-serif";
-}
-
-/* line-height */
-.hero {
-   line-height: 1.2;
-   /* font-family: "Wisdom";
-   margin-bottom: 1rem; */
-}
-.h1 {line-height: 1.4;}
-.h2 {line-height: 1.55;}
-.h3 {line-height: 1.7;}
-.h4 {line-height: 1.9;}
-.body-big {line-height: 2;}
-.body {line-height: 2.1;}
-.body-small {line-height: 2.1; margin-top: 0.5rem;}
-.body-x-small {line-height: 2.1; margin-top: 0.5rem;}
-
-/* end of: font styling */
-
-
-/*/////////////// Layout ////////////////*/
 
 
 .type-wrapper {

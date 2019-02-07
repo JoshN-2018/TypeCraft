@@ -1,3 +1,5 @@
+/* ///////////////////////// Set-up ////////////////////////////// */
+
 html {
    box-sizing: border-box;
 }
@@ -6,6 +8,54 @@ html {
   box-sizing: inherit;
 }
 
+/* default fonts */
+@font-face {
+   font-family: "Adele";
+   src: url("cp-fonts/Adelle-Regular.woff2") format("woff2");
+}
+@font-face {
+   font-family: "Apercu";
+   src: url("cp-fonts/apercu-regular.woff2") format("woff2");
+}
+
+/* Set-up */
+body {
+   background-color: #F4F4F4;
+   color: #222;
+   font-family: "Apercu", "sans-serif";
+}
+
+/* font styling */
+.hero, .h1, .h2, .h3, .h4 {
+   font-family: "Adele", "serif";
+}
+
+.body-big, .body, .body-small, .body-x-small {
+   font-family: "Apercu", "sans-serif";
+}
+
+/* line-height */
+.hero {
+   line-height: 1.2;
+   /* font-family: "Wisdom";
+   margin-bottom: 1rem; */
+}
+.h1 {line-height: 1.4;}
+.h2 {line-height: 1.55;}
+.h3 {line-height: 1.7;}
+.h4 {line-height: 1.9;}
+.body-big {line-height: 2;}
+.body {line-height: 2.1;}
+.body-small {line-height: 2.1; margin-top: 0.5rem;}
+.body-x-small {line-height: 2.1; margin-top: 0.5rem;}
+
+/* end of: font styling */
+
+
+/* ///////////////////////// end of: Set-up ////////////////////////////// */
+
+
+/* Panel */
 .cp-block {
    width: 300px;
    height: 100%;
@@ -111,15 +161,24 @@ html {
 }
 
 .cp-break-wrapper:last-child {
-   margin-top: 1rem;
+   margin-top: 0rem;
+   padding: 0 1.1rem;
 }
 
 .cp-break-wrapper img {
-   height: 22px;
+   height: 28px;
 }
+
 .cp-break-wrapper input {
    margin: 0 3px;
 }
+.cp-break-wrapper .divider {
+   height: 12px;
+   width: 2px;
+   background-color: #222;
+   opacity: 0.5;
+}
+
 
 .cp-form-block .break-title {
    margin-bottom: 1rem;

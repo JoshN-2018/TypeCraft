@@ -8,12 +8,3 @@
    src: url("fonts/Wisdom-Script.woff2") format("woff");
 }
 /* end of: font loading */
-
-
-.type-wrapper {
-   padding-top: 3rem;
-}
-
-.bread-crumb {
-   margin-bottom: 3.5rem;
-}

@@ -8,6 +8,14 @@ html {
   box-sizing: inherit;
 }
 
+.type-wrapper {
+   padding-top: 3rem;
+}
+
+.bread-crumb {
+   margin-bottom: 3.5rem;
+}
+
 /* default fonts */
 @font-face {
    font-family: "Adele";
@@ -107,11 +115,16 @@ body {
 }
 
 /* Type */
-.control-panel h1 {
-   font-family: "Domaine";
-   font-size: 24px;
-   margin-bottom: 0.5rem;
-   line-height: 1.4;
+.control-panel .logo {
+   height: 24px;
+   margin-bottom: 0.8rem;
+}
+
+.control-panel .em-dash {
+   width: 25px;
+   background-color: #222;
+   height: 2px;
+   margin-bottom: 0.8rem;
 }
 
 /* set type color */

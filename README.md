@@ -79,6 +79,7 @@ In 'style.css' you will see some boilerplate code for the @font-face rule (no ne
 <li>body = .body</li>
 <li>body-small = .body-small</li>
 <li>body-x-small = .body-x-small</li>
+</ul>
 
 <h3>Classic scales</h3>
 <ul>

@@ -28,6 +28,10 @@ body {
    font-family: "Open Sans", "sans-serif";
 }
 
+a {
+   color: #222;
+}
+
 /* line-height */
 .hero {line-height: 1.2;}
 .h1 {line-height: 1.4;}
@@ -111,9 +115,19 @@ body {
    margin-bottom: 1.2rem;
 }
 
+.bread-crumb {
+   text-transform: uppercase;
+   font-size: 15px;
+   letter-spacing: 2px;
+}
+
 /* set type color */
 .control-panel h1, .intro, h4 {
    color: #222;
+}
+
+.control-panel .intro {
+   margin-bottom: 0.5rem;
 }
 
 /* setting opacity to be over-ridden by 'active' class */

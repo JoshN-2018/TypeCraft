@@ -98,11 +98,17 @@ body {
 }
 
 /* Type */
-.control-panel h1 {
-   font-family: "Domaine";
-   font-size: 24px;
-   margin-bottom: 0.5rem;
-   line-height: 1.4;
+.control-panel .logo {
+   margin-top: 0.8rem;
+   margin-bottom: 1.2rem;
+   height: 26px;
+}
+
+.control-panel .em-dash {
+   width: 20px;
+   background-color: #222;
+   height: 1px;
+   margin-bottom: 1.2rem;
 }
 
 /* set type color */
@@ -130,7 +136,6 @@ body {
    border-color: #CCC;
    border-width: 1px;
 }
-
 
 .cp-panel .cp-form-block{
    margin-top: 2rem;

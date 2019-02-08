@@ -28,6 +28,10 @@ body {
    font-family: "Open Sans", "sans-serif";
 }
 
+a {
+   color: #222;
+}
+
 /* line-height */
 .hero {line-height: 1.2;}
 .h1 {line-height: 1.4;}
@@ -98,16 +102,26 @@ body {
 }
 
 /* Type */
-.control-panel h1 {
-   font-family: "Domaine";
-   font-size: 24px;
-   margin-bottom: 0.5rem;
-   line-height: 1.4;
+.control-panel .logo {
+   margin-top: 0.8rem;
+   margin-bottom: 1.2rem;
+   height: 30px;
+}
+
+.control-panel .em-dash {
+   width: 20px;
+   background-color: #222;
+   height: 1px;
+   margin-bottom: 1.2rem;
 }
 
 /* set type color */
 .control-panel h1, .intro, h4 {
    color: #222;
+}
+
+.control-panel .intro {
+   margin-bottom: 0.5rem;
 }
 
 /* setting opacity to be over-ridden by 'active' class */
@@ -130,7 +144,6 @@ body {
    border-color: #CCC;
    border-width: 1px;
 }
-
 
 .cp-panel .cp-form-block{
    margin-top: 2rem;

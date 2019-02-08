@@ -16,11 +16,6 @@ html {
    margin-bottom: 3.5rem;
 }
 
-@font-face {
-   font-family: "Domaine";
-   src: url("cp-fonts/DomaineDisplayTest-Medium.woff") format("woff");
-}
-
 /* Set-up */
 body {
    background-color: #F4F4F4;

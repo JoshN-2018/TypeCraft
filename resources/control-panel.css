@@ -115,12 +115,6 @@ a {
    margin-bottom: 1.2rem;
 }
 
-.bread-crumb {
-   text-transform: uppercase;
-   font-size: 15px;
-   letter-spacing: 2px;
-}
-
 /* set type color */
 .control-panel h1, .intro, h4 {
    color: #222;

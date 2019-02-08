@@ -1,0 +1,8 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <title>type-craft-icons</title>
+  <circle cx="25" cy="25" r="25" fill="none"/>
+  <g>
+    <path d="M39.759,17.409V32.34H10.241V17.409H39.759m1.286-2.925H8.955a1.639,1.639,0,0,0-1.639,1.638v17.5a1.638,1.638,0,0,0,1.639,1.638h32.09a1.638,1.638,0,0,0,1.639-1.638v-17.5a1.639,1.639,0,0,0-1.639-1.638Z" fill="#222"/>
+    <line x1="20.702" y1="37.299" x2="29.299" y2="37.299" fill="none" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.828"/>
+  </g>
+</svg>

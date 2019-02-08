@@ -2,28 +2,35 @@
 
 // screen break points
 var breakOne = 720
-var breakTwo = 1080
+var breakTwo = 1024
 var breakThree = 1440
+var breakFour = 1920
 
 // type base
 var typeOne = 16
 var typeTwo = 16
 var typeThree = 16
-var typeFour = 9
+var typeFour = 16
+var typeFive = 16
 
 // type scale ratios
-var ratioOne = 1.18 /* ratioOne = Minor third */
+var ratioOne = 1.2 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.33 /* ratioThree = Perfect fourth */
-var ratioFour = 1.618 /* ratioFour = Augmented fourth */
+var ratioFour = 1.414 /* ratioFour = Augmented fourth */
+var ratioFive = 1.500 /* ratioFour = Augmented fourth */
 
 // type minimum size
 var minSize = 12
+var maxSizeBS = 16
+var maxSizeBXS = 16
 
 // dark mode
 var darkMode = false
 
 //////////// No touchy beyond this point! //////////////
+
+
 
 // base ratio
 var ratio = 1
@@ -67,8 +74,28 @@ var h2Class = document.getElementsByClassName("h2");
 var h1Class = document.getElementsByClassName("h1");
 var heroClass = document.getElementsByClassName("hero");
 
+// get break lines
+var breakLineOne = document.getElementById('break-line-1');
+var breakLineTwo = document.getElementById('break-line-2');
+var breakLineThree = document.getElementById('break-line-3');
+var breakLineFour = document.getElementById('break-line-4');
 
-// Run function on DOM load
+// final line positions
+var lineCompOne
+var lineCompTwo
+var lineCompThree
+var lineCompFour
+
+// get inputs for highlighting
+var breakHighlight1 = document.getElementsByClassName("break-highlight-1");
+var breakHighlight2 = document.getElementsByClassName("break-highlight-2");
+var breakHighlight3 = document.getElementsByClassName("break-highlight-3");
+var breakHighlight4 = document.getElementsByClassName("break-highlight-4");
+var breakHighlight5 = document.getElementsByClassName("break-highlight-5");
+
+
+
+// main rendering function
 function breakHandler() {
 
    // determine screen breakpoints and assign base values
@@ -82,10 +109,15 @@ function breakHandler() {
       ratio = ratioThree
       typeBase = typeThree
    }
-   if(window.innerWidth > breakThree) {
+   if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
+   }
+   if(window.innerWidth > breakFour) {
+      screenBase = 5
+      ratio = ratioFive
+      typeBase = typeFive
    }
    if(window.innerWidth < breakOne) {
       screenBase = 1
@@ -115,18 +147,34 @@ function breakHandler() {
    typeH1 = typeBase * levelFive
    typeHero = typeBase * levelSix
 
+   // round calculated values to whole pixels
+   typeBodyXSmall = Math.round(typeBodyXSmall);
+   typeBodySmall = Math.round(typeBodySmall);
+   typeBody = Math.round(typeBody);
+   typeBodyBig = Math.round(typeBodyBig);
+   typeH4 = Math.round(typeH4);
+   typeH3 = Math.round(typeH3);
+   typeH2 = Math.round(typeH2);
+   typeH1 = Math.round(typeH1);
+   typeHero = Math.round(typeHero);
 
    // Min size limiting
-   if (typeBodyXSmall < minSize) {
-      typeBodyXSmall = minSize;
-   }
    if (typeBodySmall < minSize) {
       typeBodySmall = minSize;
    }
+   if (typeBodyXSmall < minSize) {
+      typeBodyXSmall = minSize;
+   }
 
+   // Max size limiting
+   if (typeBodySmall > maxSizeBS) {
+      typeBodySmall = maxSizeBS;
+   }
+   if (typeBodyXSmall > maxSizeBXS) {
+      typeBodyXSmall = maxSizeBXS;
+   }
 
-   // Update CSS based on the above
-
+   // Update type CSS based on the above
    function typeUpdater() {
 
       for (var i = 0; i < bodyXSmallClass.length; i++) {
@@ -165,9 +213,126 @@ function breakHandler() {
          heroClass[i].style.fontSize = typeHero + 'px';
       }
    }
+
+   // document styling
+   var container = document.getElementsByClassName("container");
+
+   if (screenBase === 1) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 1rem";
+      }
+   }
+   if (screenBase === 2) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 4rem";
+      }
+   }
+   if (screenBase === 3) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 6rem";
+      }
+   }
+   if (screenBase === 4) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 8rem";
+      }
+   }
+   if (screenBase === 5) {
+      for (var i = 0; i < container.length; i++) {
+         container[i].style.padding = "0 8rem";
+      }
+   }
+
+   // Update break line positions
+   lineCompOne = breakOne
+   lineCompTwo = breakTwo - breakOne
+   lineCompThree = breakThree - breakTwo
+   lineCompFour = breakFour - breakThree
+
+   // Update break line CSS based on the above
+   function breakLineUpdater() {
+      breakLineOne.style.minWidth = lineCompOne + 'px';
+      breakLineTwo.style.minWidth = lineCompTwo + 'px';
+      breakLineThree.style.minWidth = lineCompThree + 'px';
+      breakLineFour.style.minWidth = lineCompFour + 'px';
+   }
+
+   // Highlight current breakpoint
+   if (screenBase === 1) {
+      document.getElementById("break-icon-phone").style.display = "none";
+      document.getElementById("break-icon-phone-fill").style.display = "initial";
+      for (var i = 0; i < breakHighlight1.length; i++) {
+         breakHighlight1[i].classList.add("active");
+      }
+   } else {
+      document.getElementById("break-icon-phone").style.display = "initial";
+      document.getElementById("break-icon-phone-fill").style.display = "none";
+      for (var i = 0; i < breakHighlight1.length; i++) {
+         breakHighlight1[i].classList.remove("active");
+      }
+   }
+
+   if (screenBase === 2) {
+      document.getElementById("break-icon-tablet").style.display = "none";
+      document.getElementById("break-icon-tablet-fill").style.display = "initial";
+      for (var i = 0; i < breakHighlight2.length; i++) {
+         breakHighlight2[i].classList.add("active");
+      }
+   } else {
+      document.getElementById("break-icon-tablet").style.display = "initial";
+      document.getElementById("break-icon-tablet-fill").style.display = "none";
+      for (var i = 0; i < breakHighlight2.length; i++) {
+         breakHighlight2[i].classList.remove("active");
+      }
+   }
+
+   if (screenBase === 3) {
+      document.getElementById("break-icon-laptop").style.display = "none";
+      document.getElementById("break-icon-laptop-fill").style.display = "initial";
+      for (var i = 0; i < breakHighlight3.length; i++) {
+         breakHighlight3[i].classList.add("active");
+      }
+   } else {
+      document.getElementById("break-icon-laptop").style.display = "initial";
+      document.getElementById("break-icon-laptop-fill").style.display = "none";
+      for (var i = 0; i < breakHighlight3.length; i++) {
+         breakHighlight3[i].classList.remove("active");
+      }
+   }
+
+   if (screenBase === 4) {
+      document.getElementById("break-icon-desktop").style.display = "none";
+      document.getElementById("break-icon-desktop-fill").style.display = "initial";
+      for (var i = 0; i < breakHighlight4.length; i++) {
+         breakHighlight4[i].classList.add("active");
+      }
+   } else {
+      document.getElementById("break-icon-desktop").style.display = "initial";
+      document.getElementById("break-icon-desktop-fill").style.display = "none";
+      for (var i = 0; i < breakHighlight4.length; i++) {
+         breakHighlight4[i].classList.remove("active");
+      }
+   }
+
+   if (screenBase === 5) {
+      document.getElementById("break-icon-tv").style.display = "none";
+      document.getElementById("break-icon-tv-fill").style.display = "initial";
+      for (var i = 0; i < breakHighlight5.length; i++) {
+         breakHighlight5[i].classList.add("active");
+      }
+   } else {
+      document.getElementById("break-icon-tv").style.display = "initial";
+      document.getElementById("break-icon-tv-fill").style.display = "none";
+      for (var i = 0; i < breakHighlight5.length; i++) {
+         breakHighlight5[i].classList.remove("active");
+      }
+   }
+
+   breakLineUpdater();
    typeUpdater();
    finalValuePublisher();
 }
+
 
 // Call function
 breakHandler();
@@ -194,21 +359,32 @@ cpButtonOff.addEventListener("click", function(){
 });
 
 
+
 function userInput() {
+   // break points
+   breakOne = document.getElementById('break-one').value;
+   breakTwo = document.getElementById('break-two').value;
+   breakThree = document.getElementById('break-three').value;
+   breakFour = document.getElementById('break-four').value;
+
    // base numbers
    typeOne = document.getElementById('base-type-s').value;
    typeTwo = document.getElementById('base-type-m').value;
    typeThree = document.getElementById('base-type-l').value;
    typeFour = document.getElementById('base-type-xl').value;
+   typeFive = document.getElementById('base-type-xxl').value;
 
    // type scales
    ratioOne = document.getElementById('base-scale-s').value;
    ratioTwo = document.getElementById('base-scale-m').value;
    ratioThree = document.getElementById('base-scale-l').value;
    ratioFour = document.getElementById('base-scale-xl').value;
+   ratioFive = document.getElementById('base-scale-xxl').value;
 
-   // min size
+   // Limits
    minSize = document.getElementById('min-type').value;
+   maxSizeBS = document.getElementById('max-type-small').value;
+   maxSizeBXS = document.getElementById('max-type-x-small').value;
 
    breakHandler();
    console.log("input recieved");
@@ -233,47 +409,32 @@ function finalValuePublisher() {
 
 // updating values inputed in the code control panel
 function codedvaluePublisher() {
+
+   // coded break points
+   document.getElementById('break-one').value = breakOne
+   document.getElementById('break-two').value = breakTwo
+   document.getElementById('break-three').value = breakThree
+   document.getElementById('break-four').value = breakFour
+
    // coded base numbers
    document.getElementById('base-type-s').value = typeOne
    document.getElementById('base-type-m').value = typeTwo
    document.getElementById('base-type-l').value = typeThree
    document.getElementById('base-type-xl').value = typeFour
+   document.getElementById('base-type-xxl').value = typeFive
 
    // coded type scales
    document.getElementById('base-scale-s').value = ratioOne
    document.getElementById('base-scale-m').value = ratioTwo
    document.getElementById('base-scale-l').value = ratioThree
    document.getElementById('base-scale-xl').value = ratioFour
+   document.getElementById('base-scale-xxl').value = ratioFive
 
    // coded min size
    document.getElementById("min-type").value = minSize;
+   document.getElementById('max-type-small').value = maxSizeBS
+   document.getElementById('max-type-x-small').value = maxSizeBXS
+
   console.log("Coded values published");
 }
 codedvaluePublisher();
-
-function darkModeApplier() {
-   document.getElementsByClassName('cp-block')[0].style.backgroundColor = "#3D3D41";
-   document.getElementsByClassName('cp-block')[0].style.color = "#8A8A8D";
-   document.getElementsByClassName('cp-block')[0].style.boxShadow = "#000 -6px 0px 35px 0px";
-   document.getElementsByClassName('control-panel')[0].style.Color = "#8A8A8D";
-   cpButtonOn.style.backgroundColor = "#3D3D41";
-   cpButtonOff.style.backgroundColor = "#3D3D41";
-   var cpHr = document.getElementsByClassName('cp-hr');
-   var inputStyle = document.getElementsByTagName('input');
-   var outputStyle = document.getElementsByTagName('output');
-
-   for (var i = 0; i < cpHr.length; i++) {
-      cpHr[i].style.borderColor = "#8A8A8D";
-   }
-   for (var i = 0; i < inputStyle.length; i++) {
-      inputStyle[i].style.backgroundColor = "#3D3D41";
-      inputStyle[i].style.color = "#8A8A8D";
-      // inputStyle[i].style.borderColor = "#8A8A8D";
-   }
-   for (var i = 0; i < outputStyle.length; i++) {
-      outputStyle[i].style.backgroundColor = "#3D3D41";
-      outputStyle[i].style.color = "#8A8A8D";
-   }
-   console.log("darkMode is applied");
-}
-darkModeApplier();

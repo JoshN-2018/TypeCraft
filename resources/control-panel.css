@@ -1,3 +1,5 @@
+/* ///////////////////////// Set-up ////////////////////////////// */
+
 html {
    box-sizing: border-box;
 }
@@ -6,11 +8,72 @@ html {
   box-sizing: inherit;
 }
 
+.type-wrapper {
+   padding-top: 3rem;
+}
+
+.bread-crumb {
+   margin-bottom: 3.5rem;
+}
+
+/* default fonts */
+@font-face {
+   font-family: "Adele";
+   src: url("cp-fonts/Adelle-Regular.woff2") format("woff2");
+}
+@font-face {
+   font-family: "Apercu";
+   src: url("cp-fonts/apercu-regular.woff2") format("woff2");
+}
+/* font loading */
+@font-face {
+   font-family: "Domaine";
+   src: url("cp-fonts/DomaineDisplayTest-Medium.woff") format("woff");
+}
+
+/* Set-up */
+body {
+   background-color: #F4F4F4;
+   color: #222;
+   font-family: "Apercu", "sans-serif";
+}
+
+/* font styling */
+.hero, .h1, .h2, .h3, .h4 {
+   font-family: "Adele", "serif";
+}
+
+.body-big, .body, .body-small, .body-x-small {
+   font-family: "Apercu", "sans-serif";
+}
+
+/* line-height */
+.hero {
+   line-height: 1.2;
+   /* font-family: "Wisdom";
+   margin-bottom: 1rem; */
+}
+.h1 {line-height: 1.4;}
+.h2 {line-height: 1.55;}
+.h3 {line-height: 1.7;}
+.h4 {line-height: 1.9;}
+.body-big {line-height: 2;}
+.body {line-height: 2.1;}
+.body-small {line-height: 2.1; margin-top: 0.5rem;}
+.body-x-small {line-height: 2.1; margin-top: 0.5rem;}
+
+/* end of: font styling */
+
+
+/* ///////////////////////// end of: Set-up ////////////////////////////// */
+
+
+/* Panel */
 .cp-block {
 
    width: 300px;
    height: 100%;
-   padding: 2.2rem 0 0 2rem;
+   padding: 0 0 0 2rem;
    position: fixed;
    right: 0;
    top: 0;
@@ -26,7 +89,9 @@ html {
 .cp-panel {
    position: fixed
    top: 0;
+   padding-top: 2.2rem;
    padding-right: 2rem;
+   padding-bottom: 2rem;
    height: 100%;
    overflow: auto;
    overflow-x: hidden;
@@ -63,6 +128,16 @@ html {
    line-height: 1.4;
 }
 
+/* set type color */
+.control-panel h1, .intro, h4 {
+   color: #222;
+}
+
+/* setting opacity to be over-ridden by 'active' class */
+.control-panel .label {
+   opacity: 0.3;
+}
+
 .control-panel h4 {
    margin-bottom: 0.5rem;
    font-size: 16px;
@@ -71,11 +146,6 @@ html {
 .control-panel p, input, output {
    font-size: 14px;
    line-height: 1.4;
-}
-
-.emphasis {
-   color: #CACACA;
-   font-weight: 400;
 }
 
 .control-panel hr {
@@ -98,9 +168,45 @@ html {
    margin-top: 0.36rem;
 }
 
+.cp-break-wrapper {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.cp-break-wrapper:last-child {
+   margin-top: 0rem;
+   padding: 0 1.1rem;
+}
+
+.cp-break-wrapper img {
+   height: 28px;
+}
+
+.cp-break-wrapper input {
+   margin: 0 3px;
+}
+.cp-break-wrapper .divider {
+   height: 12px;
+   width: 2px;
+   background-color: #222;
+   opacity: 0.5;
+}
+
+
+.cp-form-block .break-title {
+   margin-bottom: 1rem;
+}
+
+.cp-break-wrapper .cp-icon-spacer, .cp-input-spacer {
+   opacity: 0;
+}
+
+.cp-break-wrapper .cp-icon-fill {
+   display: none;
+}
 
 .control-panel input, output {
-   color: #222;
    background-color: #FFF;
    margin-top: 0.2rem;
    height: 22px;
@@ -109,14 +215,25 @@ html {
    border-left: 0;
    border-top: 0;
    border-right: 0;
-   border-color: #8A8A8D;
+   border-color: #999;
    text-align: right;
+   opacity: 0.3;
+}
+
+output, input.alwaysOn {
+   opacity: 1;
+}
+
+.cp-break-wrapper input {
+   width: 37px;
+   text-align: center;
 }
 
 .control-panel input:focus {
    border-color: #1432FF;
    color: #222;
    outline: none;
+   opacity: 1;
 }
 
 .cp-input-block input:first-child {
@@ -127,4 +244,41 @@ html {
 .cp-shift {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px #EEE;
+}
+
+.active {
+   opacity: 1 !important;
+}
+
+/* end of: js classes */
+
+
+/* break sections */
+#break-bg {
+   display: flex;
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   height: 100%;
+   z-index: -1;
+}
+
+#break-line-1, #break-line-2, #break-line-3, #break-line-4 {
+   border-right: 1px dashed #CCC;
+   height: 100%;
+   display: flex;
+   align-items: flex-end;
+   justify-content: flex-end;
+}
+
+#break-line-1, #break-line-2, #break-line-3, #break-line-4 p {
+   font-size: 12px;
+   padding: 0 1rem 1rem 0;
+   color: #999;
+}
+
+.container-flex {
+   display: flex;
 }

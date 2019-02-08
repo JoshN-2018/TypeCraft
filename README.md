@@ -6,7 +6,7 @@
 TypeCraft allows you to easily test your typography in the browser. Meaning you can see the scaling and rendering of your type using the technology that will ultimately implement it. This is for reals!
 <br>
 <br>
-![alt text](https://raw.githubusercontent.com/JoshN-2018/TypeCraft/master/resources/cp-images/readme.png)
+![preview](resources/cp-images/readme.png)
 <br>
 <br>
 <h2><strong>How it works</strong><br></h2>

@@ -36,7 +36,7 @@ Many browser based tools allow you to render typographic scales. But none can dy
 
 <h4>For a google font:</h4>
 <h4>For a desktop font:</h4>
-<strong>Step 1 &#8212; convert</strong><br>
+<strong>Step 1 &#8212; Convert</strong><br>
 As desktop fonts don't play particularly nice in the browser we need to convert the font to a webfont.<br>
 
 For a .ttf font go <a href="https://everythingfonts.com/ttf-to-woff2" target="_blank">here</a><br>

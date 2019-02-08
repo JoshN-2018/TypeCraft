@@ -80,6 +80,18 @@ In 'style.css' you will see some boilerplate code for the @font-face rule (no ne
 <li>body-small = .body-small</li>
 <li>body-x-small = .body-x-small</li>
 
+<h3>Classic scales</h3>
+<ul>
+<li>1.067 &#8212; Major Second</li>
+<li>1.125 &#8212; Major Second</li>
+<li>1.200 &#8212; Minor Third</li>
+<li>1.250 &#8212; Major Third</li>
+<li>1.333 &#8212; Perfect Fourth</li>
+<li>1.414 &#8212; Augmented Fourth</li>
+<li>1.500 &#8212; Perfect Fifth</li>
+<li>1.618 &#8212; Golden Ratio</li>
+
+
 
 
 

@@ -16,16 +16,6 @@ html {
    margin-bottom: 3.5rem;
 }
 
-/* default fonts */
-@font-face {
-   font-family: "Adele";
-   src: url("cp-fonts/Adelle-Regular.woff2") format("woff2");
-}
-@font-face {
-   font-family: "Apercu";
-   src: url("cp-fonts/apercu-regular.woff2") format("woff2");
-}
-/* font loading */
 @font-face {
    font-family: "Domaine";
    src: url("cp-fonts/DomaineDisplayTest-Medium.woff") format("woff");
@@ -35,24 +25,11 @@ html {
 body {
    background-color: #F4F4F4;
    color: #222;
-   font-family: "Apercu", "sans-serif";
-}
-
-/* font styling */
-.hero, .h1, .h2, .h3, .h4 {
-   font-family: "Adele", "serif";
-}
-
-.body-big, .body, .body-small, .body-x-small {
-   font-family: "Apercu", "sans-serif";
+   font-family: "Open Sans", "sans-serif";
 }
 
 /* line-height */
-.hero {
-   line-height: 1.2;
-   /* font-family: "Wisdom";
-   margin-bottom: 1rem; */
-}
+.hero {line-height: 1.2;}
 .h1 {line-height: 1.4;}
 .h2 {line-height: 1.55;}
 .h3 {line-height: 1.7;}
@@ -80,7 +57,7 @@ body {
    z-index: 2;
    background-color: #FFF;
    color: #222;
-   font-family: 'Apercu', sans-serif;
+   font-family: 'Open Sans', sans-serif;
    transform: translateX(300px);
    transition: all 0.4s ease;
 }
@@ -140,12 +117,12 @@ body {
 
 .control-panel h4 {
    margin-bottom: 0.5rem;
-   font-size: 16px;
+   font-size: 15px;
 }
 
 .control-panel p, input, output {
-   font-size: 14px;
-   line-height: 1.4;
+   font-size: 13.5px;
+   line-height: 1.5;
 }
 
 .control-panel hr {

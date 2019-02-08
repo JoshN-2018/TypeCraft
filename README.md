@@ -90,7 +90,7 @@ In 'style.css' you will see some boilerplate code for the @font-face rule (no ne
 <li>1.414 &#8212; Augmented Fourth</li>
 <li>1.500 &#8212; Perfect Fifth</li>
 <li>1.618 &#8212; Golden Ratio</li>
-
+</ul>
 
 
 

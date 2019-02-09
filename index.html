@@ -82,6 +82,16 @@
    <div id="break-line-4"><p>Break 4 &#8212;</p></div>
 </div>
 
+      <section class="alert-panel">
+         <div class="cp-alert" id="cp-alert">
+            <h3>Hey there!</h3>
+            <p>Resize the browser to change breakpoints</p>
+            <div class="button">
+               <span>Ok</span>
+            </div>
+         </div>
+      </section>
+
       <section class="control-panel">
          <div class="cp-block" id="cp-block">
 
@@ -108,8 +118,8 @@
 
                <div class="cp-break-wrapper">
 
-                  <img class="cp-icon-outline" id="break-icon-phone" src="resources/cp-images/icon-phone.svg" alt="phone-icon">
-                  <img class="cp-icon-fill" id="break-icon-phone-fill" src="resources/cp-images/icon-phone-fill.svg" alt="phone-icon">
+                  <img class="cp-icon-outline break-icon-phone" id="break-icon-phone" src="resources/cp-images/icon-phone.svg" alt="phone-icon">
+                  <img class="cp-icon-fill break-icon-phone" id="break-icon-phone-fill" src="resources/cp-images/icon-phone-fill.svg" alt="phone-icon">
                   <div class="divider"></div>
                   <img class="cp-icon-outline" id="break-icon-tablet" src="resources/cp-images/icon-tablet.svg" alt="tablet-icon">
                   <img class="cp-icon-fill" id="break-icon-tablet-fill" src="resources/cp-images/icon-tablet-fill.svg" alt="tablet-icon">
@@ -125,13 +135,14 @@
                </div>
 
                <div class="cp-break-wrapper">
-                  <input id="break-one" class="break-highlight-1" type="text" value="x">
-                  <input id="break-two" class="break-highlight-2" type="text" value="x">
-                  <input id="break-three" class="break-highlight-3" type="text" value="x">
-                  <input id="break-four" class="break-highlight-4" type="text" value="x">
+                  <input id="break-one" class="break-highlight-1" type="number" value="x">
+                  <input id="break-two" class="break-highlight-2" type="number" value="x">
+                  <input id="break-three" class="break-highlight-3" type="number" value="x">
+                  <input id="break-four" class="break-highlight-4" type="number" value="x">
                </div>
 
             </div>
+            <p>* means the value is for the current breakpoint </p>
 
             <!-- Functionality -->
             <div class="cp-form-block">
@@ -148,11 +159,11 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-input-block">
-                     <input id="base-type-s" class="break-highlight-1" type="text" value="x">
-                     <input id="base-type-m" class="break-highlight-2" type="text" value="x">
-                     <input id="base-type-l" class="break-highlight-3" type="text" value="x">
-                     <input id="base-type-xl" class="break-highlight-4" type="text" value="x">
-                     <input id="base-type-xxl" class="break-highlight-5" type="text" value="x">
+                     <input id="base-type-s" class="break-highlight-1" type="number" value="x">
+                     <input id="base-type-m" class="break-highlight-2" type="number" value="x">
+                     <input id="base-type-l" class="break-highlight-3" type="number" value="x">
+                     <input id="base-type-xl" class="break-highlight-4" type="number" value="x">
+                     <input id="base-type-xxl" class="break-highlight-5" type="number" value="x">
                   </div>
                </div>
 
@@ -170,11 +181,11 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-input-block">
-                     <input id="base-scale-s" class="break-highlight-1" type="text" value="x">
-                     <input id="base-scale-m" class="break-highlight-2" type="text" value="x">
-                     <input id="base-scale-l" class="break-highlight-3" type="text" value="x">
-                     <input id="base-scale-xl" class="break-highlight-4" type="text" value="x">
-                     <input id="base-scale-xxl" class="break-highlight-5" type="text" value="x">
+                     <input id="base-scale-s" class="break-highlight-1" type="number" step="0.01" value="x">
+                     <input id="base-scale-m" class="break-highlight-2" type="number" step="0.01" value="x">
+                     <input id="base-scale-l" class="break-highlight-3" type="number" step="0.01" value="x">
+                     <input id="base-scale-xl" class="break-highlight-4" type="number" step="0.01" value="x">
+                     <input id="base-scale-xxl" class="break-highlight-5" type="number" step="0.01" value="x">
                   </div>
                </div>
 
@@ -190,9 +201,9 @@
                   </div>
                   <!-- inputs -->
                   <div class="cp-input-block">
-                     <input id="min-type" class="alwaysOn" type="text" value="x">
-                     <input id="max-type-small" type="text" class="alwaysOn" value="x">
-                     <input id="max-type-x-small" type="text" class="alwaysOn" value="x">
+                     <input id="min-type" class="alwaysOn" type="number" value="x">
+                     <input id="max-type-small" type="number" class="alwaysOn" value="x">
+                     <input id="max-type-x-small" type="number" class="alwaysOn" value="x">
                   </div>
                </div>
 

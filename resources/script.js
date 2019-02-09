@@ -335,7 +335,9 @@ function breakHandler() {
 
 
 // Call function
+document.addEventListener("DOMContentLoaded", function(event) {
 breakHandler();
+});
 window.addEventListener('resize', breakHandler);
 
 
@@ -438,3 +440,21 @@ function codedvaluePublisher() {
   console.log("Coded values published");
 }
 codedvaluePublisher();
+
+
+// Alert slide in/out
+var alertPanel = document.getElementById("cp-alert");
+var cpAlertTrigger = document.getElementsByClassName("alert");
+
+
+function cpAlert() {
+   alertPanel.classList.add("cp-shift-alert");
+}
+
+function cpAlertDismiss() {
+   alertPanel.classList.remove("cp-shift-alert");
+}
+
+// cpAlertTrigger.addEventListener("click", alertPanel);
+setTimeout(function(){cpAlert(); }, 400);
+setTimeout(function(){cpAlertDismiss(); }, 2500);

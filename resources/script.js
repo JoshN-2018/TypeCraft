@@ -456,5 +456,5 @@ function cpAlertDismiss() {
 }
 
 // cpAlertTrigger.addEventListener("click", alertPanel);
-setTimeout(function(){cpAlert(); }, 400);
-setTimeout(function(){cpAlertDismiss(); }, 2500);
+// setTimeout(function(){cpAlert(); }, 400);
+// setTimeout(function(){cpAlertDismiss(); }, 2500);

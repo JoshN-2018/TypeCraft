@@ -6,7 +6,7 @@
 TypeCraft allows you to easily test your typography in the browser. Meaning you can see the scaling and rendering of your type using the technology that will ultimately implement it. This is for reals!
 <br>
 <br>
-![preview](resources/cp-images/readme.png)
+<img src="resources/cp-images/readme.png">
 <br>
 <br>
 <h2><strong>How it works</strong><br></h2>
@@ -26,7 +26,8 @@ Many browser based tools allow you to render typographic scales. But none can dy
 <h2><strong>Getting started</strong><br></h2>
 
 <h3>Launching</h3>
-<h4><a href="link" target="_blank">Download the latest version<a></h4>
+
+<h4><a href="https://www.dropbox.com/s/kbup5xicdasxkb3/TypeCraft%201.0.zip?dl=0" target="_blank">Download the latest version<a></h4>
 <ul>
 <li>Unzip the file and drag 'index.html' on to your browser: chrome, firefox, or safari.</li>
 <li> Play &#8212; change the values, set breakpoints, stretch/shrink the browser to see your changes take effect. 
@@ -36,7 +37,7 @@ Many browser based tools allow you to render typographic scales. But none can dy
 
 <h4>For a google font:</h4>
 <h4>For a desktop font:</h4>
-<strong>Step 1 &#8212; convert</strong><br>
+<strong>Step 1 &#8212; Convert</strong><br>
 As desktop fonts don't play particularly nice in the browser we need to convert the font to a webfont.<br>
 
 For a .ttf font go <a href="https://everythingfonts.com/ttf-to-woff2" target="_blank">here</a><br>
@@ -78,6 +79,19 @@ In 'style.css' you will see some boilerplate code for the @font-face rule (no ne
 <li>body = .body</li>
 <li>body-small = .body-small</li>
 <li>body-x-small = .body-x-small</li>
+</ul>
+
+<h3>Classic scales</h3>
+<ul>
+<li>1.067 &#8212; Major Second</li>
+<li>1.125 &#8212; Major Second</li>
+<li>1.200 &#8212; Minor Third</li>
+<li>1.250 &#8212; Major Third</li>
+<li>1.333 &#8212; Perfect Fourth</li>
+<li>1.414 &#8212; Augmented Fourth</li>
+<li>1.500 &#8212; Perfect Fifth</li>
+<li>1.618 &#8212; Golden Ratio</li>
+</ul>
 
 
 

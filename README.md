@@ -27,7 +27,7 @@ Many browser based tools allow you to render typographic scales. But none can dy
 
 <h3>Launching</h3>
 
-<h4><a href="https://www.dropbox.com/s/kbup5xicdasxkb3/TypeCraft%201.0.zip?dl=0" target="_blank">Download the latest version<a></h4>
+<h4><a href="https://www.dropbox.com/s/8wqtyrhjvuns6bq/TypeCraft%201.0.zip?dl=0" target="_blank">Download the latest version<a></h4>
 <ul>
 <li>Unzip the file and drag 'index.html' on to your browser: chrome, firefox, or safari.</li>
 <li> Play &#8212; change the values, set breakpoints, stretch/shrink the browser to see your changes take effect. 

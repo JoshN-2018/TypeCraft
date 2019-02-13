@@ -26,6 +26,15 @@ html {
    margin-bottom: 3.5rem;
 }
 
+strong {
+   font-weight: 600;
+}
+
+b {
+   color: var(--color-blue);
+   font-weight: 600; 
+}
+
 /* Set-up */
 body {
    background-color: var(--color-canvas);

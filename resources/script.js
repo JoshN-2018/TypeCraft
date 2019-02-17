@@ -338,6 +338,9 @@ function breakHandler() {
 document.addEventListener("DOMContentLoaded", function(event) {
 breakHandler();
 });
+// window.addEventListener("load", function(event) {
+//  breakHandler();
+// });
 window.addEventListener('resize', breakHandler);
 
 

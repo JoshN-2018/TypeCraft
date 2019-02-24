@@ -443,18 +443,68 @@ codedvaluePublisher();
 
 
 // Alert slide in/out
-var alertPanel = document.getElementById("cp-alert");
-var cpAlertTrigger = document.getElementsByClassName("alert");
-
-
-function cpAlert() {
-   alertPanel.classList.add("cp-shift-alert");
-}
-
-function cpAlertDismiss() {
-   alertPanel.classList.remove("cp-shift-alert");
-}
+// var alertPanel = document.getElementById("cp-alert");
+// var cpAlertTrigger = document.getElementsByClassName("alert");
+//
+//
+// function cpAlert() {
+//    alertPanel.classList.add("cp-shift-alert");
+// }
+//
+// function cpAlertDismiss() {
+//    alertPanel.classList.remove("cp-shift-alert");
+// }
 
 // cpAlertTrigger.addEventListener("click", alertPanel);
 // setTimeout(function(){cpAlert(); }, 400);
 // setTimeout(function(){cpAlertDismiss(); }, 2500);
+
+
+// tips!
+
+// get elements
+var infoTS = document.getElementById("info-typescale");
+var tipBoxTS = document.getElementById("tip-boxTS");
+var tipClose = document.getElementsByClassName("tip-close");
+var tipBox = document.getElementsByClassName("tip-box");
+
+// apply listeners
+infoTS.addEventListener("click", infoOpenTS);
+
+for (var i = 0; i < tipClose.length; i++) {
+   tipClose[i].addEventListener("click", closeTipWindows);
+}
+
+// functions
+function infoOpenTS() {
+   tipBoxTS.classList.add("tip-show");
+}
+
+function closeTipWindows() {
+   for (var i = 0; i < tipBox.length; i++) {
+      tipBox[i].classList.remove("tip-show");
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//

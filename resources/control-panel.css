@@ -362,7 +362,9 @@ transition: all 0.3s ease;
    border-radius: 3px;
    margin-top: 0.25rem;
    margin-bottom: 0.75rem;
-   background-color:
+   transform-origin: top;
+   display: none;
+   transition: height 1s ease;
 }
 
 .tip-box img {
@@ -380,6 +382,21 @@ transition: all 0.3s ease;
    margin-top: 0;
 }
 
+/* js classes */
+.tip-show {
+   display: flex !important;
+}
+
+.tip-draw {
+   height: auto !important;
+}
+
+.tip-message-show {
+   opacity: 1 !important;
+}
+
+
+/* end of: tips */
 
 
 

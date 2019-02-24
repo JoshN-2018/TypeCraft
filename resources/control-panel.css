@@ -344,18 +344,16 @@ transition: all 0.3s ease;
 
 /* tips */
 
-.tip-link {
-   font-size: 11px;
-   text-decoration: underline;
-   color: var(--color-dark-grey);
+.sect-title svg {
    cursor: pointer;
-   padding-top: 0.15rem;
-   padding-left: 1rem;
-   transition: all 0.5s ease;
+   padding-left: 0.75rem;
+   transition: all 0.3s ease;
+   height: 16px;
+   fill: var(--color-light-grey);
 }
 
-.tip-link:hover {
-   color: var(--color-blue);
+.sect-title svg:hover {
+   fill: var(--color-blue);
 }
 
 .tip-box {
@@ -364,6 +362,7 @@ transition: all 0.3s ease;
    border-radius: 3px;
    margin-top: 0.25rem;
    margin-bottom: 0.75rem;
+   background-color:
 }
 
 .tip-box img {

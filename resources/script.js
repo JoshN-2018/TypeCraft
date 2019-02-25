@@ -467,6 +467,8 @@ var infoTS = document.getElementById("info-typescale");
 var tipBoxTS = document.getElementById("tip-boxTS");
 var tipClose = document.getElementsByClassName("tip-close");
 var tipBox = document.getElementsByClassName("tip-box");
+var tipMessage = document.getElementsByClassName("tip-message");
+
 
 // apply listeners
 infoTS.addEventListener("click", infoOpenTS);
@@ -478,18 +480,34 @@ for (var i = 0; i < tipClose.length; i++) {
 // functions
 function infoOpenTS() {
    tipBoxTS.classList.add("tip-show");
+   tipBoxTS.classList.add("tip-draw");
+   setTimeout(function(){tipDraw(); }, 100);
+   setTimeout(function(){tipMessageShow(); }, 100);
 }
 
 function closeTipWindows() {
    for (var i = 0; i < tipBox.length; i++) {
       tipBox[i].classList.remove("tip-show");
    }
+   for (var i = 0; i < tipMessage.length; i++) {
+      tipMessage[i].classList.remove("tip-message-show");
+   }
 }
 
+// time delayed functions
+function tipMessageShow() {
+   for (var i = 0; i < tipMessage.length; i++) {
+      tipMessage[i].classList.add("tip-message-show");
+   }
+}
+   // currently not working (animating)
+function tipDraw() {
+   for (var i = 0; i < tipBoxTS.length; i++) {
+      tipBoxTS[i].classList.add("tip-draw");
+   }
+}
 
-
-
-
+/* Note add a second info button using two loops ensure that a second click closes the tip window */
 
 
 

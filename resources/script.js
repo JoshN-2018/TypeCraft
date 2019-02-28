@@ -63,6 +63,20 @@ var typeH2
 var typeH1
 var typeHero
 
+// default type spacing
+var spaceTypeBodyXSmall
+var spaceTypeBodySmall
+var spaceTypeBody
+var spaceTypeBodyBig
+var spaceTypeH4
+var spaceTypeH3
+var spaceTypeH2
+var spaceTypeH1
+var spaceTypeHero
+   // percentage of type height to use for margin space
+var typeSpaceRatio
+var typeSpaceModifier
+
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
 var bodySmallClass = document.getElementsByClassName("body-small");
@@ -158,6 +172,36 @@ function breakHandler() {
    typeH1 = Math.round(typeH1);
    typeHero = Math.round(typeHero);
 
+   // give values to spacing between type levels
+   typeSpaceRatio = 1.33
+   typeSpaceModifier = 0.15 // this is the percentage of the ratio calculated amount
+
+   spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+    * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeBodySmall = typeBodySmall * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeBody = typeBody * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeBodyBig = typeBodyBig * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeH4 = typeH4 * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeH3 = typeH3 * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeH2 = typeH2 * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeH1 = typeH1 * typeSpaceRatio * typeSpaceRatio * typeSpaceModifier
+
+   spaceTypeHero = typeHero * typeSpaceRatio * typeSpaceModifier
+
    // Min size limiting
    if (typeBodySmall < minSize) {
       typeBodySmall = minSize;
@@ -179,38 +223,47 @@ function breakHandler() {
 
       for (var i = 0; i < bodyXSmallClass.length; i++) {
          bodyXSmallClass[i].style.fontSize = typeBodyXSmall + 'px';
+         bodyXSmallClass[i].style.marginBottom = spaceTypeBodyXSmall + 'px';
       }
 
       for (var i = 0; i < bodySmallClass.length; i++) {
          bodySmallClass[i].style.fontSize = typeBodySmall + 'px';
+         bodySmallClass[i].style.marginBottom = spaceTypeBodySmall + 'px';
       }
 
       for (var i = 0; i < bodyClass.length; i++) {
          bodyClass[i].style.fontSize = typeBody + 'px';
+         bodyClass[i].style.marginBottom = spaceTypeBody + 'px';
       }
 
       for (var i = 0; i < bodyBigClass.length; i++) {
          bodyBigClass[i].style.fontSize = typeBodyBig + 'px';
+         bodyBigClass[i].style.marginBottom = spaceTypeBodyBig + 'px';
       }
 
       for (var i = 0; i < h4Class.length; i++) {
          h4Class[i].style.fontSize = typeH4 + 'px';
+         h4Class[i].style.marginBottom = spaceTypeH4 + 'px';
       }
 
       for (var i = 0; i < h3Class.length; i++) {
          h3Class[i].style.fontSize = typeH3 + 'px';
+         h3Class[i].style.marginBottom = spaceTypeH3 + 'px';
       }
 
       for (var i = 0; i < h2Class.length; i++) {
          h2Class[i].style.fontSize = typeH2 + 'px';
+         h2Class[i].style.marginBottom = spaceTypeH2 + 'px';
       }
 
       for (var i = 0; i < h1Class.length; i++) {
          h1Class[i].style.fontSize = typeH1 + 'px';
+         h1Class[i].style.marginBottom = spaceTypeH1 + 'px';
       }
 
       for (var i = 0; i < heroClass.length; i++) {
          heroClass[i].style.fontSize = typeHero + 'px';
+         heroClass[i].style.marginBottom = spaceTypeHero + 'px';
       }
    }
 

@@ -51,20 +51,6 @@ a {
    color: var(--color-black);
 }
 
-/* line-height */
-.hero {line-height: 1.2;}
-.h1 {line-height: 1.4;}
-.h2 {line-height: 1.55;}
-.h3 {line-height: 1.7;}
-.h4 {line-height: 1.9;}
-.body-big {line-height: 2;}
-.body {line-height: 2.1;}
-.body-small {line-height: 2.1; margin-top: 0.5rem;}
-.body-x-small {line-height: 2.1; margin-top: 0.5rem;}
-
-/* end of: font styling */
-
-
 /* ///////////////////////// end of: Set-up ////////////////////////////// */
 
 

@@ -18,7 +18,7 @@ var ratioOne = 1.2 /* ratioOne = Minor third */
 var ratioTwo = 1.25 /* ratioTwo = Major third */
 var ratioThree = 1.33 /* ratioThree = Perfect fourth */
 var ratioFour = 1.414 /* ratioFour = Augmented fourth */
-var ratioFive = 1.500 /* ratioFour = Augmented fourth */
+var ratioFive = 1.500 /* ratioFour = Perfect fifth */
 
 // type minimum size
 var minSize = 0
@@ -73,12 +73,9 @@ var spaceTypeH3
 var spaceTypeH2
 var spaceTypeH1
 var spaceTypeHero
-// percentage of type height to use for margin space
 
-var tSS = 1.1 // typespace scaler
-var typeSpaceBase = 7 //base is one third
-var typeSpaceModifier = tSS / typeSpaceBase
-typeSpaceModifier = 0.15
+/* this number can loosely be interpreted as equivalent to line height it defines how big gaps are */
+typeSpaceModifier = 0.120 // Minor third
 
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
@@ -120,31 +117,26 @@ function breakHandler() {
       screenBase = 1
       ratio = ratioOne
       typeBase = typeOne
-      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
       typeBase = typeTwo
-      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
       screenBase = 3
       ratio = ratioThree
       typeBase = typeThree
-      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
-      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakFour) {
       screenBase = 5
       ratio = ratioFive
       typeBase = typeFive
-      // typeSpaceModifier = tSS / typeSpaceBase
    }
 
 
@@ -181,11 +173,9 @@ function breakHandler() {
    typeH1 = Math.round(typeH1);
    typeHero = Math.round(typeHero);
 
-   // give values to spacing between type levels
-   // typeSpaceModifier = ratio / 5 // this is the percentage of the ratio calculated amount
+   // Calculate and assign values to spacing between type levels
 
    spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio
-
 
    spaceTypeBodySmall = typeBodySmall * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio
 

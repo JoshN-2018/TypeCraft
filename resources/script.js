@@ -76,6 +76,7 @@ var spaceTypeHero
    // percentage of type height to use for margin space
 var typeSpaceRatio
 var typeSpaceModifier
+var tSS = 1.333 //type space scaler
 
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
@@ -113,31 +114,37 @@ var breakHighlight5 = document.getElementsByClassName("break-highlight-5");
 function breakHandler() {
 
    // determine screen breakpoints and assign base values
+   if(window.innerWidth < breakOne) {
+      screenBase = 1
+      ratio = ratioOne
+      typeBase = typeOne
+      typeSpaceModifier = ratio / 4.16
+   }
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
       typeBase = typeTwo
+      typeSpaceModifier = ratio / (4.16 * tSS)
    }
    if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
       screenBase = 3
       ratio = ratioThree
       typeBase = typeThree
+      typeSpaceModifier = ratio / (4.16 * tSS * tSS)
    }
    if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
+      typeSpaceModifier = ratio / (4.16 * tSS * tSS * tSS)
    }
    if(window.innerWidth > breakFour) {
       screenBase = 5
       ratio = ratioFive
       typeBase = typeFive
+      typeSpaceModifier = ratio / (4.16 * tSS * tSS * tSS * tSS)
    }
-   if(window.innerWidth < breakOne) {
-      screenBase = 1
-      ratio = ratioOne
-      typeBase = typeOne
-   }
+
 
    // give values to scale multipliers
    levelMinThree = ratio / ratio / ratio / ratio
@@ -174,7 +181,7 @@ function breakHandler() {
 
    // give values to spacing between type levels
    typeSpaceRatio = ratio
-   typeSpaceModifier = 0.25// this is the percentage of the ratio calculated amount
+   // typeSpaceModifier = ratio / 5 // this is the percentage of the ratio calculated amount
 
    spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
 

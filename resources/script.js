@@ -75,10 +75,10 @@ var spaceTypeH1
 var spaceTypeHero
 // percentage of type height to use for margin space
 
-var typeSpaceModifier
-var tSS = 1.2 //type space scaler
-var typeSpaceBase = 1 * tSS * tSS * tSS * tSS * tSS * tSS
-var typeSpaceBase = 3.333
+var tSS = 1.1 // typespace scaler
+var typeSpaceBase = 7 //base is one third
+var typeSpaceModifier = tSS / typeSpaceBase
+typeSpaceModifier = 0.15
 
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
@@ -120,31 +120,31 @@ function breakHandler() {
       screenBase = 1
       ratio = ratioOne
       typeBase = typeOne
-      typeSpaceModifier = ratio / typeSpaceBase
+      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
       typeBase = typeTwo
-      typeSpaceModifier = ratio / (typeSpaceBase * ratio)
+      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
       screenBase = 3
       ratio = ratioThree
       typeBase = typeThree
-      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio)
+      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
-      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio * ratio)
+      // typeSpaceModifier = tSS / typeSpaceBase
    }
    if(window.innerWidth > breakFour) {
       screenBase = 5
       ratio = ratioFive
       typeBase = typeFive
-      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio * ratio)
+      // typeSpaceModifier = tSS / typeSpaceBase
    }
 
 

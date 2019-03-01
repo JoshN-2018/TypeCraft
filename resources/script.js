@@ -21,7 +21,7 @@ var ratioFour = 1.414 /* ratioFour = Augmented fourth */
 var ratioFive = 1.500 /* ratioFour = Augmented fourth */
 
 // type minimum size
-var minSize = 12
+var minSize = 0
 var maxSizeBS = 16
 var maxSizeBXS = 16
 
@@ -33,7 +33,7 @@ var darkMode = false
 
 
 // base ratio
-var ratio = 1
+var ratio
 
 // base type
 var typeBase
@@ -73,10 +73,12 @@ var spaceTypeH3
 var spaceTypeH2
 var spaceTypeH1
 var spaceTypeHero
-   // percentage of type height to use for margin space
-var typeSpaceRatio
+// percentage of type height to use for margin space
+
 var typeSpaceModifier
-var tSS = 1.333 //type space scaler
+var tSS = 1.2 //type space scaler
+var typeSpaceBase = 1 * tSS * tSS * tSS * tSS * tSS * tSS
+var typeSpaceBase = 3.333
 
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
@@ -118,31 +120,31 @@ function breakHandler() {
       screenBase = 1
       ratio = ratioOne
       typeBase = typeOne
-      typeSpaceModifier = ratio / 4.16
+      typeSpaceModifier = ratio / typeSpaceBase
    }
    if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
       screenBase = 2
       ratio = ratioTwo
       typeBase = typeTwo
-      typeSpaceModifier = ratio / (4.16 * tSS)
+      typeSpaceModifier = ratio / (typeSpaceBase * ratio)
    }
    if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
       screenBase = 3
       ratio = ratioThree
       typeBase = typeThree
-      typeSpaceModifier = ratio / (4.16 * tSS * tSS)
+      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio)
    }
    if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
-      typeSpaceModifier = ratio / (4.16 * tSS * tSS * tSS)
+      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio * ratio)
    }
    if(window.innerWidth > breakFour) {
       screenBase = 5
       ratio = ratioFive
       typeBase = typeFive
-      typeSpaceModifier = ratio / (4.16 * tSS * tSS * tSS * tSS)
+      typeSpaceModifier = ratio / (typeSpaceBase * ratio * ratio * ratio)
    }
 
 
@@ -180,27 +182,26 @@ function breakHandler() {
    typeHero = Math.round(typeHero);
 
    // give values to spacing between type levels
-   typeSpaceRatio = ratio
    // typeSpaceModifier = ratio / 5 // this is the percentage of the ratio calculated amount
 
-   spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio
 
 
-   spaceTypeBodySmall = typeBodySmall * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeBodySmall = typeBodySmall * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio
 
-   spaceTypeBody = typeBody * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeBody = typeBody * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio
 
-   spaceTypeBodyBig = typeBodyBig * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeBodyBig = typeBodyBig * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio
 
-   spaceTypeH4 = typeH4 * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio  * typeSpaceRatio * typeSpaceRatio
+   spaceTypeH4 = typeH4 * typeSpaceModifier * ratio * ratio * ratio  * ratio * ratio
 
-   spaceTypeH3 = typeH3 * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeH3 = typeH3 * typeSpaceModifier * ratio * ratio * ratio * ratio
 
-   spaceTypeH2 = typeH2 * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio * typeSpaceRatio
+   spaceTypeH2 = typeH2 * typeSpaceModifier * ratio * ratio * ratio
 
-   spaceTypeH1 = typeH1 * typeSpaceModifier * typeSpaceRatio * typeSpaceRatio
+   spaceTypeH1 = typeH1 * typeSpaceModifier * ratio * ratio
 
-   spaceTypeHero = typeHero * typeSpaceModifier * typeSpaceRatio
+   spaceTypeHero = typeHero * typeSpaceModifier * ratio
 
    // Min size limiting
    if (typeBodySmall < minSize) {

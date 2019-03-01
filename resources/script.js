@@ -73,9 +73,8 @@ var spaceTypeH3
 var spaceTypeH2
 var spaceTypeH1
 var spaceTypeHero
-
 /* this number can loosely be interpreted as equivalent to line height it defines how big gaps are */
-typeSpaceModifier = 0.120 // Minor third
+var typeSpaceModifier
 
 // classes to be updated
 var bodyXSmallClass = document.getElementsByClassName("body-x-small");
@@ -174,6 +173,16 @@ function breakHandler() {
    typeHero = Math.round(typeHero);
 
    // Calculate and assign values to spacing between type levels
+   typeSpaceModifier = 0.25 // exaggerated spacing for very tight scales
+   if (ratio > 1.25) {
+      typeSpaceModifier = 0.1618 // Golden ratio
+   }
+   if (ratio > 1.33) {
+      typeSpaceModifier = 0.1414  // Augmented 4th
+   }
+   if (ratio > 1.414) {
+      typeSpaceModifier = 0.1125 // Major 2nd
+   }
 
    spaceTypeBodyXSmall = typeBodyXSmall * typeSpaceModifier * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio * ratio
 

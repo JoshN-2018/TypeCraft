@@ -112,27 +112,27 @@ var breakHighlight5 = document.getElementsByClassName("break-highlight-5");
 function breakHandler() {
 
    // determine screen breakpoints and assign base values
-   if(window.innerWidth < breakOne) {
+   if(window.innerWidth <= breakOne) {
       screenBase = 1
       ratio = ratioOne
       typeBase = typeOne
    }
-   if(window.innerWidth > breakOne && window.innerWidth < breakTwo) {
+   if(window.innerWidth >= breakOne && window.innerWidth <= breakTwo) {
       screenBase = 2
       ratio = ratioTwo
       typeBase = typeTwo
    }
-   if(window.innerWidth > breakTwo && window.innerWidth < breakThree) {
+   if(window.innerWidth >= breakTwo && window.innerWidth <= breakThree) {
       screenBase = 3
       ratio = ratioThree
       typeBase = typeThree
    }
-   if(window.innerWidth > breakThree && window.innerWidth < breakFour) {
+   if(window.innerWidth >= breakThree && window.innerWidth <= breakFour) {
       screenBase = 4
       ratio = ratioFour
       typeBase = typeFour
    }
-   if(window.innerWidth > breakFour) {
+   if(window.innerWidth >= breakFour) {
       screenBase = 5
       ratio = ratioFive
       typeBase = typeFive

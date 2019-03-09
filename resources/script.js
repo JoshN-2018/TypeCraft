@@ -381,6 +381,7 @@ function breakHandler() {
       }
    }
 
+
    breakLineUpdater();
    typeUpdater();
    finalValuePublisher();
@@ -460,6 +461,9 @@ function finalValuePublisher() {
   document.getElementById("body-s-final").value = typeBodySmall + 'px';
   document.getElementById("body-xs-final").value = typeBodyXSmall + 'px';
   console.log("I'm publishing");
+
+  window.getComputedStyle(document.getElementById('render-text'), ':after').value = typeHero + 'px';
+
 }
 
 // updating values inputed in the code control panel
@@ -495,7 +499,7 @@ function codedvaluePublisher() {
 codedvaluePublisher();
 
 
-// Alert slide in/out
+// // Alert slide in/out
 // var alertPanel = document.getElementById("cp-alert");
 // var cpAlertTrigger = document.getElementsByClassName("alert");
 //
@@ -507,8 +511,8 @@ codedvaluePublisher();
 // function cpAlertDismiss() {
 //    alertPanel.classList.remove("cp-shift-alert");
 // }
-
-// cpAlertTrigger.addEventListener("click", alertPanel);
+//
+// // cpAlertTrigger.addEventListener("click", alertPanel);
 // setTimeout(function(){cpAlert(); }, 400);
 // setTimeout(function(){cpAlertDismiss(); }, 2500);
 

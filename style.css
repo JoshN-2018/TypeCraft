@@ -1,17 +1,17 @@
 /* Font loading */
 @font-face {
-   font-family: "typeface bold";
-   src: url("fonts/typeface-bold.woff2") format("woff2");
+   font-family: '';
+   src: url('') format("woff2");
 }
 
 /* Header styling */
 .hero, .h1, .h2, .h3, .h4 {
-   font-family: "Roboto", serif;
+   font-family: 'Bitter', serif;
 }
 
 /* Body styling */
 .body-big, .body, .body-small, .body-x-small {
-   font-family: "Roboto", sans-serif;
+   font-family: 'Open Sans', sans-serif;
 }
 
 /* add your own layout rules here */

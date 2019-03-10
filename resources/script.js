@@ -551,48 +551,40 @@ codedvaluePublisher();
 // tips!
 
 // get elements
-var infoTS = document.getElementById("info-typescale");
-var tipBoxTS = document.getElementById("tip-boxTS");
-var tipClose = document.getElementsByClassName("tip-close");
+var infoButton = document.getElementsByClassName("info-button");
 var tipBox = document.getElementsByClassName("tip-box");
 var tipMessage = document.getElementsByClassName("tip-message");
 
 
 // apply listeners
-infoTS.addEventListener("click", infoOpenTS);
 
-for (var i = 0; i < tipClose.length; i++) {
-   tipClose[i].addEventListener("click", closeTipWindows);
+for (var i = 0; i < infoButton.length; i++) {
+   infoButton[i].addEventListener("click", tipBoxOpen);
 }
 
+var tipBox[0] = event.target
 // functions
-function infoOpenTS() {
-   tipBoxTS.classList.add("tip-show");
-   tipBoxTS.classList.add("tip-draw");
+function tipBoxOpen(event) {
+   event.target.classList.add("tip-show");
+   event.target.classList.add("tip-draw");
    setTimeout(function(){tipDraw(); }, 100);
    setTimeout(function(){tipMessageShow(); }, 100);
 }
 
-function closeTipWindows() {
-   for (var i = 0; i < tipBox.length; i++) {
-      tipBox[i].classList.remove("tip-show");
-   }
-   for (var i = 0; i < tipMessage.length; i++) {
-      tipMessage[i].classList.remove("tip-message-show");
-   }
+function tipBoxClose(event) {
+   event.target.classList.remove("tip-show");
+   event.target.classList.remove("tip-draw");
+   setTimeout(function(){tipDrawRevert(); }, 100);
+   setTimeout(function(){tipMessageHide(); }, 100);
 }
+
 
 // time delayed functions
 function tipMessageShow() {
-   for (var i = 0; i < tipMessage.length; i++) {
-      tipMessage[i].classList.add("tip-message-show");
-   }
+   event.target.classList.add("tip-message-show");
 }
-   // currently not working (animating)
 function tipDraw() {
-   for (var i = 0; i < tipBoxTS.length; i++) {
-      tipBoxTS[i].classList.add("tip-draw");
-   }
+   event.target.classList.add("tip-draw");
 }
 
 /* Note add a second info button using two loops ensure that a second click closes the tip window */

@@ -551,16 +551,16 @@ codedvaluePublisher();
 // tips!
 
 // get elements
-var infoButton = document.getElementsByClassName("info-button");
+var infoButtons = document.getElementsByClassName("info-button");
 var tipBox = document.getElementsByClassName("tip-box");
 var tipMessage = document.getElementsByClassName("tip-message");
 
 
 // apply listeners
 
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
-}
+// for (var i = 0; i < infoButtons.length; i++) {
+//    infoButtons[i].addEventListener("click", tipBoxOpen);
+// }
 
 // var tipBox[0] = event.target
 // functions
@@ -587,38 +587,27 @@ for (var i = 0; i < infoButton.length; i++) {
 /* this works but relying on a specific order of items (children in the array) is dodgy*/
 
  // apply event listeners
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
+for (var i = 0; i < infoButtons.length; i++) {
+   infoButtons[i].addEventListener("click", tipBoxToggle);
 }
 
  // action to be triggered
-function tipBoxOpen(event) {
-   var tipSection = document.getElementById('tip-section');
+function tipBoxToggle(event) {
+   
+   // Get the clicked info button
+   const infoButton = event.target;
+   
+   // Get the parent element of the button: #tip-section
+   // This will be our scope
+   const parentElement = infoButton.parentElement; 
 
-   for (let i = 0; i < tipSection.children.length; i++) {
-     tipSection.children[2].classList.add("tip-show");
-  }
+   // The tipbox inside of the parent element.
+   const tipBox = parentElement.querySelector('.tip-box');
+
+   // Toggle the class on the tipbox, by toggeling you don't need a seperate closing function
+   tipBox.classList.toggle('tip-show')
 }
 
-
-
-/* I'm hoping for something like this but I dont know how to capture the array instance */
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
-}
-
- // action to be triggered
-function tipBoxOpen(event) {
-   var tipSection = document.getElementById('tip-section');
-
-   for (let i = 0; i < tipSection.children.length; i++) {
-     if (tipSection.children[i].className === ("tip-box")) {
-       this.arrayInstance.classList.add("tip-show");
-     }
-  }
-}
-
-/* lastly I want the event to be contained within the section (the one that contains the button that was hit.) */
 
 
 

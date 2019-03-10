@@ -419,7 +419,16 @@ transition: all 0.3s ease;
 
 
 
+.info-button {
+   background-color: transparent;
+   padding: 0;
+   border: none;
+   line-height: inherit;
+   height: 15px; /* matched to the sibling h4, we should fix this later */
+}
 
-
+.info-button * {
+   pointer-events: none;
+}
 
 /*  */

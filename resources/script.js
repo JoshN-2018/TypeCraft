@@ -558,9 +558,9 @@ var tipMessage = document.getElementsByClassName("tip-message");
 
 // apply listeners
 
-for (var i = 0; i < infoButtons.length; i++) {
-   infoButtons[i].addEventListener("click", tipBoxOpen);
-}
+// for (var i = 0; i < infoButtons.length; i++) {
+//    infoButtons[i].addEventListener("click", tipBoxOpen);
+// }
 
 // var tipBox[0] = event.target
 // functions

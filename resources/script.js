@@ -593,11 +593,19 @@ for (var i = 0; i < infoButtons.length; i++) {
 
  // action to be triggered
 function tipBoxOpen(event) {
-   var tipSection = document.getElementById('tip-section');
+   
+   // Get the clicked info button
+   const infoButton = event.target;
+   
+   // Get the parent element of the button: #tip-section
+   // This will be our scope
+   const parentElement = infoButton.parentElement; 
 
-   for (let i = 0; i < tipSection.children.length; i++) {
-     tipSection.children[2].classList.add("tip-show");
-  }
+   // The tipbox inside of the parent element.
+   const tipBox = parentElement.querySelector('.tip-box');
+
+   // Toggle the class on the tipbox, by toggeling you don't need a seperate closing function
+   tipBox.classList.toggle('tip-show')
 }
 
 

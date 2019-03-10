@@ -588,11 +588,11 @@ for (var i = 0; i < infoButtons.length; i++) {
 
  // apply event listeners
 for (var i = 0; i < infoButtons.length; i++) {
-   infoButtons[i].addEventListener("click", tipBoxOpen);
+   infoButtons[i].addEventListener("click", tipBoxToggle);
 }
 
  // action to be triggered
-function tipBoxOpen(event) {
+function tipBoxToggle(event) {
    
    // Get the clicked info button
    const infoButton = event.target;

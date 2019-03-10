@@ -25,6 +25,9 @@ html {
 
 .type-wrapper {
    padding-top: 3rem;
+   /* resize: both;
+   border: 2px solid; */
+   /* overflow: auto; */
 }
 
 .bread-crumb {
@@ -241,7 +244,7 @@ output, input.alwaysOn {
 }
 
 .control-panel input:focus {
-   border-color: var(--color-blue);
+   border-color: var(--color-black);
    color: var(--color-black);
    outline: none;
    opacity: 1;
@@ -266,10 +269,16 @@ output, input.alwaysOn {
 
 .active {
    opacity: 1 !important;
+   color: var(--color-blue) !important;
 }
+/* .active::before {
+   content: "* ";
+   font-size: 1.3rem;
+   vertical-align: -20%;
+   color: var(--color-black);
+} */
 
 /* end of: js classes */
-
 
 /* break sections */
 #break-bg {
@@ -387,13 +396,20 @@ transition: all 0.3s ease;
 .tip-message-show {
    opacity: 1;
 }
-
-
 /* end of: tips */
 
+/* text tags */
 
-
-
+.value-readout::after {
+   margin-left: 1rem;
+   padding: 0 0.5rem;
+   vertical-align: top;
+   content: attr(data-content);
+   background-color: var(--color-v-light-grey);
+   font-size: 12px;
+   font-family: "Open Sans";
+   color: var(--color-dark-grey);
+}
 
 
 

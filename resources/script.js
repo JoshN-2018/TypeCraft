@@ -584,21 +584,51 @@ for (var i = 0; i < infoButton.length; i++) {
 //   }
 // }
 
+/* this works but relying on a specific order of items (children in the array) is dodgy*/
 
+ // apply event listeners
 for (var i = 0; i < infoButton.length; i++) {
    infoButton[i].addEventListener("click", tipBoxOpen);
 }
 
+ // action to be triggered
 function tipBoxOpen(event) {
    var tipSection = document.getElementById('tip-section');
+
    for (let i = 0; i < tipSection.children.length; i++) {
      tipSection.children[2].classList.add("tip-show");
   }
 }
 
-if (tipSection.children[i].className === ("tip-box")) {
-  this.array-instance.classList.add("tip-show");
+
+
+/* I'm hoping for something like this but I dont know how to capture the array instance */
+for (var i = 0; i < infoButton.length; i++) {
+   infoButton[i].addEventListener("click", tipBoxOpen);
 }
+
+ // action to be triggered
+function tipBoxOpen(event) {
+   var tipSection = document.getElementById('tip-section');
+
+   for (let i = 0; i < tipSection.children.length; i++) {
+     if (tipSection.children[i].className === ("tip-box")) {
+       this.arrayInstance.classList.add("tip-show");
+     }
+  }
+}
+
+/* lastly I want the event to be contained within the section (the one that contains the button that was hit.) */
+
+
+
+
+
+
+
+
+
+
 // function tipBoxClose(event) {
 //    event.target.classList.remove("tip-show");
 //    event.target.classList.remove("tip-draw");

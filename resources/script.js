@@ -551,15 +551,15 @@ codedvaluePublisher();
 // tips!
 
 // get elements
-var infoButton = document.getElementsByClassName("info-button");
+var infoButtons = document.getElementsByClassName("info-button");
 var tipBox = document.getElementsByClassName("tip-box");
 var tipMessage = document.getElementsByClassName("tip-message");
 
 
 // apply listeners
 
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
+for (var i = 0; i < infoButtons.length; i++) {
+   infoButtons[i].addEventListener("click", tipBoxOpen);
 }
 
 // var tipBox[0] = event.target
@@ -587,8 +587,8 @@ for (var i = 0; i < infoButton.length; i++) {
 /* this works but relying on a specific order of items (children in the array) is dodgy*/
 
  // apply event listeners
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
+for (var i = 0; i < infoButtons.length; i++) {
+   infoButtons[i].addEventListener("click", tipBoxOpen);
 }
 
  // action to be triggered
@@ -603,8 +603,8 @@ function tipBoxOpen(event) {
 
 
 /* I'm hoping for something like this but I dont know how to capture the array instance */
-for (var i = 0; i < infoButton.length; i++) {
-   infoButton[i].addEventListener("click", tipBoxOpen);
+for (var i = 0; i < infoButtons.length; i++) {
+   infoButtons[i].addEventListener("click", tipBoxOpen);
 }
 
  // action to be triggered

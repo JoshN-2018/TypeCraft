@@ -602,25 +602,6 @@ function tipBoxOpen(event) {
 
 
 
-/* I'm hoping for something like this but I dont know how to capture the array instance */
-for (var i = 0; i < infoButtons.length; i++) {
-   infoButtons[i].addEventListener("click", tipBoxOpen);
-}
-
- // action to be triggered
-function tipBoxOpen(event) {
-   var tipSection = document.getElementById('tip-section');
-
-   for (let i = 0; i < tipSection.children.length; i++) {
-     if (tipSection.children[i].className === ("tip-box")) {
-       this.arrayInstance.classList.add("tip-show");
-     }
-  }
-}
-
-/* lastly I want the event to be contained within the section (the one that contains the button that was hit.) */
-
-
 
 
 

@@ -562,30 +562,58 @@ for (var i = 0; i < infoButton.length; i++) {
    infoButton[i].addEventListener("click", tipBoxOpen);
 }
 
-var tipBox[0] = event.target
+// var tipBox[0] = event.target
 // functions
-function tipBoxOpen(event) {
-   event.target.classList.add("tip-show");
-   event.target.classList.add("tip-draw");
-   setTimeout(function(){tipDraw(); }, 100);
-   setTimeout(function(){tipMessageShow(); }, 100);
+// function tipBoxOpen(event) {
+//    event.target.classList.add("tip-show");
+//    event.target.classList.add("tip-draw");
+//    setTimeout(function(){tipDraw(); }, 100);
+//    setTimeout(function(){tipMessageShow(); }, 100);
+// }
+
+
+// function tipBoxOpen(event) {
+//    const tipSection = document.getElementById('tip-section');
+//    for (let i = 0; i < tipSection.children.length; i++) {
+//       console.log(tipSection.children[i].className);
+//
+//      tipSection.children[2].classList.add("tip-show");
+//      if (tipSection.children[i].className === ("tip-box")) {
+//         this.array-instance.classList.add("tip-show");
+//      }
+//   }
+// }
+
+
+for (var i = 0; i < infoButton.length; i++) {
+   infoButton[i].addEventListener("click", tipBoxOpen);
 }
 
-function tipBoxClose(event) {
-   event.target.classList.remove("tip-show");
-   event.target.classList.remove("tip-draw");
-   setTimeout(function(){tipDrawRevert(); }, 100);
-   setTimeout(function(){tipMessageHide(); }, 100);
+function tipBoxOpen(event) {
+   var tipSection = document.getElementById('tip-section');
+   for (let i = 0; i < tipSection.children.length; i++) {
+     tipSection.children[2].classList.add("tip-show");
+  }
 }
+
+if (tipSection.children[i].className === ("tip-box")) {
+  this.array-instance.classList.add("tip-show");
+}
+// function tipBoxClose(event) {
+//    event.target.classList.remove("tip-show");
+//    event.target.classList.remove("tip-draw");
+//    setTimeout(function(){tipDrawRevert(); }, 100);
+//    setTimeout(function(){tipMessageHide(); }, 100);
+// }
 
 
 // time delayed functions
-function tipMessageShow() {
-   event.target.classList.add("tip-message-show");
-}
-function tipDraw() {
-   event.target.classList.add("tip-draw");
-}
+// function tipMessageShow() {
+//    event.target.classList.add("tip-message-show");
+// }
+// function tipDraw() {
+//    event.target.classList.add("tip-draw");
+// }
 
 /* Note add a second info button using two loops ensure that a second click closes the tip window */
 

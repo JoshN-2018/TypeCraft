@@ -381,6 +381,7 @@ function breakHandler() {
       }
    }
 
+
    breakLineUpdater();
    typeUpdater();
    finalValuePublisher();
@@ -453,6 +454,7 @@ cpBlock.addEventListener("input", userInput);
 
 // Publish rendered values
 function finalValuePublisher() {
+   // publishing to panel
   document.getElementById("hero-final").value = typeHero + 'px';
   document.getElementById("h1-final").value = typeH1 + 'px';
   document.getElementById("h2-final").value = typeH2 + 'px';
@@ -463,6 +465,39 @@ function finalValuePublisher() {
   document.getElementById("body-s-final").value = typeBodySmall + 'px';
   document.getElementById("body-xs-final").value = typeBodyXSmall + 'px';
   console.log("I'm publishing");
+
+  // publishing to tags
+  for (var i = 0; i < heroClass.length; i++) {
+     heroClass[i].dataset.content = 'hero:' + ' ' + typeHero + 'px';
+  }
+  for (var i = 0; i < h1Class.length; i++) {
+     h1Class[i].dataset.content = 'h1:' + ' ' + typeH1 + 'px';
+  }
+  for (var i = 0; i < h2Class.length; i++) {
+     h2Class[i].dataset.content = 'h2:' + ' ' + typeH2 + 'px';
+  }
+  for (var i = 0; i < h3Class.length; i++) {
+     h3Class[i].dataset.content = 'h3:' + ' ' + typeH3 + 'px';
+  }
+  for (var i = 0; i < h4Class.length; i++) {
+     h4Class[i].dataset.content = 'h4:' + ' ' + typeH4 + 'px';
+  }
+  for (var i = 0; i < bodyBigClass.length; i++) {
+     bodyBigClass[i].dataset.content = 'body+:' + ' ' + typeBodyBig + 'px';
+  }
+  for (var i = 0; i < bodyClass.length; i++) {
+     bodyClass[i].dataset.content = 'body:' + ' ' + typeBody + 'px';
+  }
+  for (var i = 0; i < bodySmallClass.length; i++) {
+     bodySmallClass[i].dataset.content = 'body-:' + ' ' + typeBodySmall + 'px';
+  }
+  for (var i = 0; i < bodyXSmallClass.length; i++) {
+     bodyXSmallClass[i].dataset.content = 'body--:' + ' ' + typeBodyXSmall + 'px';
+  }
+
+
+
+  // renderText.setAttribute('data-content', 'Ou posso usar o .setAttribute também');
 }
 
 // updating values inputed in the code control panel
@@ -498,7 +533,7 @@ function codedvaluePublisher() {
 codedvaluePublisher();
 
 
-// Alert slide in/out
+// // Alert slide in/out
 // var alertPanel = document.getElementById("cp-alert");
 // var cpAlertTrigger = document.getElementsByClassName("alert");
 //
@@ -510,8 +545,8 @@ codedvaluePublisher();
 // function cpAlertDismiss() {
 //    alertPanel.classList.remove("cp-shift-alert");
 // }
-
-// cpAlertTrigger.addEventListener("click", alertPanel);
+//
+// // cpAlertTrigger.addEventListener("click", alertPanel);
 // setTimeout(function(){cpAlert(); }, 400);
 // setTimeout(function(){cpAlertDismiss(); }, 2500);
 

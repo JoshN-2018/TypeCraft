@@ -25,9 +25,9 @@ html {
 
 .type-wrapper {
    padding-top: 3rem;
-   resize: both;
-   border: 2px solid;
-   overflow: auto;
+   /* resize: both;
+   border: 2px solid; */
+   /* overflow: auto; */
 }
 
 .bread-crumb {
@@ -396,31 +396,20 @@ transition: all 0.3s ease;
 .tip-message-show {
    opacity: 1;
 }
-
-
 /* end of: tips */
 
 /* text tags */
 
-.render-text::after {
+.value-readout::after {
    margin-left: 1rem;
+   padding: 0 0.5rem;
    vertical-align: top;
-   content: "\2002h1 170px\2002";
+   content: attr(data-content);
    background-color: var(--color-v-light-grey);
    font-size: 12px;
    font-family: "Open Sans";
    color: var(--color-dark-grey);
 }
-#render-text::after {
-   margin-left: 1rem;
-   vertical-align: top;
-   content: "\2002h1 170px\2002";
-   background-color: var(--color-v-light-grey);
-   font-size: 12px;
-   font-family: "Open Sans";
-   color: var(--color-dark-grey);
-}
-
 
 
 

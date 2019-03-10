@@ -480,16 +480,16 @@ function finalValuePublisher() {
      h4Class[i].dataset.content = 'h4:' + ' ' + typeH4 + 'px';
   }
   for (var i = 0; i < bodyBigClass.length; i++) {
-     bodyBigClass[i].dataset.content = 'body-big:' + ' ' + typeBodyBig + 'px';
+     bodyBigClass[i].dataset.content = 'body(+):' + ' ' + typeBodyBig + 'px';
   }
   for (var i = 0; i < bodyClass.length; i++) {
      bodyClass[i].dataset.content = 'body:' + ' ' + typeBody + 'px';
   }
   for (var i = 0; i < bodySmallClass.length; i++) {
-     bodySmallClass[i].dataset.content = 'body-small:' + ' ' + typeBodySmall + 'px';
+     bodySmallClass[i].dataset.content = 'body(-):' + ' ' + typeBodySmall + 'px';
   }
   for (var i = 0; i < bodyXSmallClass.length; i++) {
-     bodyXSmallClass[i].dataset.content = 'body-x-small:' + ' ' + typeBodyXSmall + 'px';
+     bodyXSmallClass[i].dataset.content = 'body(--):' + ' ' + typeBodyXSmall + 'px';
   }
 
 

@@ -1,1 +1,49 @@
 @import 'typography.css';
+
+:root {
+  /* Colours */
+ --color-black: #222;
+ --color-white: #FFF;
+ --color-canvas: #F4F4F4;
+ --color-v-light-grey: #EEE;
+ --color-light-grey: #CCC;
+ --color-mid-grey: #999;
+ --color-dark-grey: #666;
+ --color-blue: #1432FF;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+b {
+  color: var(--color-blue);
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-black);
+}
+
+a {
+  color: var(--color-black);
+}
+
+.container-flex {
+  display: flex
+}
+
+.type-wrapper {
+  padding-top: 2.5rem;
+  /* resize: both;
+  border: 2px solid; */
+  /* overflow: auto; */
+}
+
+.bread-crumb {
+  margin-bottom: 3.5rem;
+}

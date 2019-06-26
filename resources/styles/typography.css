@@ -3,12 +3,12 @@
   src: url('') format("woff2");
 }
 
-/* Header styling */
+/* Headings */
 .hero, .h1, .h2, .h3, .h4 {
   font-family: 'Bitter', serif;
 }
 
-/* Body styling */
+/* Body */
 .body-big, .body, .body-small, .body-x-small {
   font-family: 'Open Sans', sans-serif;
 }

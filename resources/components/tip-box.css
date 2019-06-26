@@ -1,0 +1,45 @@
+.tip-box {
+  padding: 0.8rem 0 0.8rem 1rem;
+  /* border: 1px solid var(--color-v-light-grey); */
+  border-radius: 3px;
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  transform-origin: top;
+  display: none;
+  max-height: 0;
+  background-color: var(--color-canvas);
+  transition: max-height 1s ease-in;
+}
+
+.tip-message {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.tip-box img {
+  height: 16px;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.tip-box img:hover {
+  transform: scale(1.15);
+}
+
+.tip-box p {
+  margin-top: 0;
+}
+
+/* js classes */
+.tip-show {
+  display: flex !important;
+}
+
+.tip-draw {
+  max-height: 500px;
+}
+
+.tip-message-show {
+  opacity: 1;
+}

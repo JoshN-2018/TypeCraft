@@ -1,3 +1,8 @@
+/*
+ *  All GLOBAL typographic styles should be grouped together. Place them here in
+ * the order of least specific to more specific
+ */
+
 body {
   font-family: "Open Sans", "sans-serif";
 }

@@ -33,7 +33,7 @@
 
 /* fixing cp-panel inside cp block in order to enamble scrolling */
 .cp-panel {
-   position: fixed
+   position: fixed;
    top: 0;
    padding-top: 2.2rem;
    padding-right: 2rem;

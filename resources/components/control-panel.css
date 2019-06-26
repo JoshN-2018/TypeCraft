@@ -233,16 +233,6 @@ input.alwaysOn {
    display: flex;
 }
 
-/* turn off borwser spin buttons */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-    -moz-appearance:textfield;
-}
-
 /* button styling */
 .button {
 display: block;

@@ -244,28 +244,3 @@ input.alwaysOn {
 .sect-title svg:hover {
    fill: var(--color-blue);
 }
-
-/* text tags */
-
-.value-readout::after {
-   margin-left: 1rem;
-   padding: 0 0.5rem;
-   vertical-align: top;
-   content: attr(data-content);
-   white-space: nowrap;
-   background-color: var(--color-v-light-grey);
-   font-size: 12px;
-   font-family: "Open Sans";
-   color: var(--color-dark-grey);
-}
-
-
-
-
-
-
-
-
-
-
-/*  */

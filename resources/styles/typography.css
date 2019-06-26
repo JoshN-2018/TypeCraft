@@ -4,11 +4,18 @@
 }
 
 /* Headings */
-.hero, .h1, .h2, .h3, .h4 {
+.hero,
+.h1,
+.h2,
+.h3,
+.h4 {
   font-family: 'Bitter', serif;
 }
 
 /* Body */
-.body-big, .body, .body-small, .body-x-small {
+.body-big,
+.body,
+.body-small,
+.body-x-small {
   font-family: 'Open Sans', sans-serif;
 }

@@ -1,0 +1,15 @@
+.button {
+  display: block;
+  padding: 15px 25px;
+  background-color: var(--color-blue);
+  color: var(--color-white);
+  width: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+-webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+        transform: scale(1.03);
+}

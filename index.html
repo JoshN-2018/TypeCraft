@@ -5,10 +5,14 @@
    <meta name="viewport" content="width=device-width,initial-scale=1">
    <title>TypeCraft</title>
    <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans:400,600" rel="stylesheet">
-   <link rel="stylesheet" href="resources/reset.css">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="resources/control-panel.css">
-   <link rel="icon" href="resources/cp-images/favicon.png" type="image/png">
+   <link rel="stylesheet" href="resources/styles/_reset.css">
+   <link rel="stylesheet" href="resources/styles/main.css">
+   <link rel="stylesheet" href="resources/components/button.css">
+   <link rel="stylesheet" href="resources/components/control-panel.css">
+   <link rel="stylesheet" href="resources/components/break-sections.css">
+   <link rel="stylesheet" href="resources/components/tip-box.css">
+   <link rel="stylesheet" href="resources/components/value-readout.css">
+   <link rel="icon" href="resources/images/favicon.png" type="image/png">
 
 </head>
 <body>
@@ -68,16 +72,16 @@
 
          <!-- Button -->
          <div class="cp-button" id="cp-button-on">
-            <img src="resources/cp-images/carot-reverse.svg" alt="button">
+            <img src="resources/images/carot-reverse.svg" alt="button">
          </div>
          <div class="cp-button" id="cp-button-off">
-            <img src="resources/cp-images/carot.svg" alt="button">
+            <img src="resources/images/carot.svg" alt="button">
          </div>
 
          <div class="cp-panel">
 
             <!-- Intro -->
-            <img class="logo" src="resources/cp-images/logo.png" alt="logo">
+            <img class="logo" src="resources/images/logo.png" alt="logo">
             <div class="em-dash"></div>
             <p class="intro"><strong>Resize the browser window</strong> to craft your typography for every break-point. Inputs that are <span style="color: #1432FF;">blue</span> are active in <strong>this</strong> breakpoint.</p>
             <!-- <p><a href="https://github.com/JoshN-2018/TypeCraft" target="_blank">Want to change the font?</a></p> -->
@@ -89,20 +93,20 @@
 
                <div class="cp-break-wrapper">
 
-                  <img class="cp-icon-outline break-icon-phone" id="break-icon-phone" src="resources/cp-images/icon-phone.svg" alt="phone-icon">
-                  <img class="cp-icon-fill break-icon-phone" id="break-icon-phone-fill" src="resources/cp-images/icon-phone-fill.svg" alt="phone-icon">
+                  <img class="cp-icon-outline break-icon-phone" id="break-icon-phone" src="resources/images/icon-phone.svg" alt="phone-icon">
+                  <img class="cp-icon-fill break-icon-phone" id="break-icon-phone-fill" src="resources/images/icon-phone-fill.svg" alt="phone-icon">
                   <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-tablet" src="resources/cp-images/icon-tablet.svg" alt="tablet-icon">
-                  <img class="cp-icon-fill" id="break-icon-tablet-fill" src="resources/cp-images/icon-tablet-fill.svg" alt="tablet-icon">
+                  <img class="cp-icon-outline" id="break-icon-tablet" src="resources/images/icon-tablet.svg" alt="tablet-icon">
+                  <img class="cp-icon-fill" id="break-icon-tablet-fill" src="resources/images/icon-tablet-fill.svg" alt="tablet-icon">
                   <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-laptop" src="resources/cp-images/icon-laptop.svg" alt="laptop-icon">
-                  <img class="cp-icon-fill" id="break-icon-laptop-fill" src="resources/cp-images/icon-laptop-fill.svg" alt="laptop-icon">
+                  <img class="cp-icon-outline" id="break-icon-laptop" src="resources/images/icon-laptop.svg" alt="laptop-icon">
+                  <img class="cp-icon-fill" id="break-icon-laptop-fill" src="resources/images/icon-laptop-fill.svg" alt="laptop-icon">
                   <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-desktop" src="resources/cp-images/icon-desktop.svg" alt="desktop-icon">
-                  <img class="cp-icon-fill" id="break-icon-desktop-fill" src="resources/cp-images/icon-desktop-fill.svg" alt="desktop-icon">
+                  <img class="cp-icon-outline" id="break-icon-desktop" src="resources/images/icon-desktop.svg" alt="desktop-icon">
+                  <img class="cp-icon-fill" id="break-icon-desktop-fill" src="resources/images/icon-desktop-fill.svg" alt="desktop-icon">
                   <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-tv" src="resources/cp-images/icon-tv.svg" alt="tv-icon">
-                  <img class="cp-icon-fill" id="break-icon-tv-fill" src="resources/cp-images/icon-tv-fill.svg" alt="tv-icon">
+                  <img class="cp-icon-outline" id="break-icon-tv" src="resources/images/icon-tv.svg" alt="tv-icon">
+                  <img class="cp-icon-fill" id="break-icon-tv-fill" src="resources/images/icon-tv-fill.svg" alt="tv-icon">
                </div>
 
                <div class="cp-break-wrapper cp-break-inputs">
@@ -153,7 +157,7 @@
                      The Type Scale allows you to control the contrast between the levels in your hierarchy. Larger numbers mean bigger more exaggerated steps.
                   </p>
                   <div class="tip-close">
-                     <img src="resources/cp-images/icon-cross.svg" alt="cross">
+                     <img src="resources/images/icon-cross.svg" alt="cross">
                   </div>
                </div>
 

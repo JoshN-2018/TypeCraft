@@ -1,62 +1,3 @@
-/* ///////////////////////// Set-up ////////////////////////////// */
-:root {
-   /* Colours */
-  --color-black: #222;
-  --color-white: #FFF;
-  --color-canvas: #F4F4F4;
-  --color-v-light-grey: #EEE;
-  --color-light-grey: #CCC;
-  --color-mid-grey: #999;
-  --color-dark-grey: #666;
-  --color-blue: #1432FF;
-}
-
-html {
-   box-sizing: border-box;
-}
-
-.container-flex {
-   display: flex
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-.type-wrapper {
-   padding-top: 2.5rem;
-   /* resize: both;
-   border: 2px solid; */
-   /* overflow: auto; */
-}
-
-.bread-crumb {
-   margin-bottom: 3.5rem;
-}
-
-strong {
-   font-weight: 600;
-}
-
-b {
-   color: var(--color-blue);
-   font-weight: 600;
-}
-
-/* Set-up */
-body {
-   background-color: var(--color-canvas);
-   color: var(--color-black);
-   font-family: "Open Sans", "sans-serif";
-}
-
-a {
-   color: var(--color-black);
-}
-
-/* ///////////////////////// end of: Set-up ////////////////////////////// */
-
-
 /* Panel */
 .cp-block {
 
@@ -92,7 +33,7 @@ a {
 
 /* fixing cp-panel inside cp block in order to enamble scrolling */
 .cp-panel {
-   position: fixed
+   position: fixed;
    top: 0;
    padding-top: 2.2rem;
    padding-right: 2rem;
@@ -139,7 +80,8 @@ a {
 }
 
 /* set type color */
-.control-panel h1, .intro, h4 {
+.control-panel h1,
+.intro, h4 {
    color: var(--color-black);
 }
 
@@ -157,7 +99,9 @@ a {
    font-size: 15px;
 }
 
-.control-panel p, input, output {
+.control-panel p,
+input,
+output {
    font-size: 13.5px;
    line-height: 1.5;
 }
@@ -210,7 +154,8 @@ a {
    margin-bottom: 1rem;
 }
 
-.cp-break-wrapper .cp-icon-spacer, .cp-input-spacer {
+.cp-break-wrapper .cp-icon-spacer,
+.cp-input-spacer {
    opacity: 0;
 }
 
@@ -222,7 +167,8 @@ a {
    margin-top: 0.3rem !important;
 }
 
-.control-panel input, output {
+.control-panel input,
+output {
    background-color: var(--color-white);
    margin-bottom: 0.3rem;
    height: 22px;
@@ -236,7 +182,8 @@ a {
    opacity: 0.3;
 }
 
-output, input.alwaysOn {
+output,
+input.alwaysOn {
    opacity: 1;
 }
 
@@ -282,64 +229,9 @@ output, input.alwaysOn {
 
 /* end of: js classes */
 
-/* break sections */
-#break-bg {
-   display: flex;
-   position: fixed;
-   top: 0;
-   left: 0;
-   right: 0;
-   bottom: 0;
-   height: 100%;
-   z-index: -1;
-}
-
-#break-line-1, #break-line-2, #break-line-3, #break-line-4 {
-   border-right: 1px dashed var(--color-light-grey);
-   height: 100%;
-   display: flex;
-   align-items: flex-end;
-   justify-content: flex-end;
-}
-
-#break-line-1, #break-line-2, #break-line-3, #break-line-4 p {
-   font-size: 12px;
-   padding: 0 1rem 1rem 0;
-   color: var(--color-mid-grey);
-}
-
 .container-flex {
    display: flex;
 }
-
-/* turn off borwser spin buttons */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-input[type=number] {
-    -moz-appearance:textfield;
-}
-
-/* button styling */
-.button {
-display: block;
-padding: 15px 25px;
-background-color: var(--color-blue);
-color: var(--color-white);
-width: 180px;
-text-align: center;
-transition: all 0.3s ease;
-}
-
-.button:hover {
--webkit-transform: scale(1.03);
-    -ms-transform: scale(1.03);
-        transform: scale(1.03);
-}
-
-/* tips */
 
 .sect-title svg {
    cursor: pointer;
@@ -352,75 +244,3 @@ transition: all 0.3s ease;
 .sect-title svg:hover {
    fill: var(--color-blue);
 }
-
-.tip-box {
-   padding: 0.8rem 0 0.8rem 1rem;
-   /* border: 1px solid var(--color-v-light-grey); */
-   border-radius: 3px;
-   margin-top: 0.25rem;
-   margin-bottom: 0.75rem;
-   transform-origin: top;
-   display: none;
-   max-height: 0;
-   background-color: var(--color-canvas);
-   transition: max-height 1s ease-in;
-}
-
-.tip-message {
-   opacity: 0;
-   transition: opacity 1s ease;
-}
-
-.tip-box img {
-   height: 16px;
-   margin-right: 0.5rem;
-   transition: transform 0.3s ease;
-   cursor: pointer;
-}
-
-.tip-box img:hover {
-   transform: scale(1.15);
-}
-
-.tip-box p {
-   margin-top: 0;
-}
-
-/* js classes */
-.tip-show {
-   display: flex !important;
-}
-
-.tip-draw {
-   max-height: 500px;
-}
-
-.tip-message-show {
-   opacity: 1;
-}
-/* end of: tips */
-
-/* text tags */
-
-.value-readout::after {
-   margin-left: 1rem;
-   padding: 0 0.5rem;
-   vertical-align: top;
-   content: attr(data-content);
-   white-space: nowrap;
-   background-color: var(--color-v-light-grey);
-   font-size: 12px;
-   font-family: "Open Sans";
-   color: var(--color-dark-grey);
-}
-
-
-
-
-
-
-
-
-
-
-/*  */

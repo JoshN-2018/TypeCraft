@@ -1,0 +1,33 @@
+/*
+ *  All GLOBAL typographic styles should be grouped together. Place them here in
+ * the order of least specific to more specific
+ */
+
+body {
+  font-family: "Open Sans", "sans-serif";
+}
+
+strong {
+  font-weight: 600;
+}
+
+b {
+  font-weight: 600;
+}
+
+/* Headings */
+.hero,
+.h1,
+.h2,
+.h3,
+.h4 {
+  font-family: 'Bitter', serif;
+}
+
+/* Body */
+.body-big,
+.body,
+.body-small,
+.body-x-small {
+  font-family: 'Open Sans', sans-serif;
+}

@@ -1,228 +1,256 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width,initial-scale=1">
-   <title>TypeCraft</title>
-   <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans:400,600" rel="stylesheet">
-   <link rel="stylesheet" href="resources/styles/_reset.css">
-   <link rel="stylesheet" href="resources/styles/main.css">
-   <link rel="stylesheet" href="resources/components/button.css">
-   <link rel="stylesheet" href="resources/components/control-panel.css">
-   <link rel="stylesheet" href="resources/components/break-sections.css">
-   <link rel="stylesheet" href="resources/components/tip-box.css">
-   <link rel="stylesheet" href="resources/components/value-readout.css">
-   <link rel="icon" href="resources/images/favicon.png" type="image/png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TypeCraft</title>
+  <link href="https://fonts.googleapis.com/css?family=Bitter|Open+Sans:400,600" rel="stylesheet">
+  <link rel="stylesheet" href="resources/styles/_reset.css">
+  <link rel="stylesheet" href="resources/styles/main.css">
+  <link rel="stylesheet" href="resources/components/button.css">
+  <link rel="stylesheet" href="resources/components/control-panel.css">
+  <link rel="stylesheet" href="resources/components/break-sections.css">
+  <link rel="stylesheet" href="resources/components/tip-box.css">
+  <link rel="stylesheet" href="resources/components/value-readout.css">
+  <link rel="icon" href="resources/images/favicon.png" type="image/png">
 
 </head>
+
 <body>
 
 
-<!-- Designer Content  -->
+  <!-- Designer Content  -->
+  <div class="container">
 
-   <div class="container">
-
-      <div class="type-wrapper">
-         <div class="bread-crumb">
-            <span>/ TypeCraft 1.0</span>
-         </div>
-
-         <div class="content" data-content>
-         </div>
-
+    <div class="type-wrapper">
+      <div class="bread-crumb">
+        <span>/ TypeCraft 1.0</span>
       </div>
 
-   </div>
+      <div class="content" data-content>
+      </div>
 
-<!-- End of: Designer Content -->
+    </div>
+
+  </div>
+  <!-- End of: Designer Content -->
 
 
-<!-- Break points -->
+  <!-- Break points -->
+  <div id="break-bg">
+    <div id="break-line-1">
+      <p>Break 1 &#8212;</p>
+    </div>
+    <div id="break-line-2">
+      <p>Break 2 &#8212;</p>
+    </div>
+    <div id="break-line-3">
+      <p>Break 3 &#8212;</p>
+    </div>
+    <div id="break-line-4">
+      <p>Break 4 &#8212;</p>
+    </div>
+  </div>
 
-<div id="break-bg">
-   <div id="break-line-1"><p>Break 1 &#8212;</p></div>
-   <div id="break-line-2"><p>Break 2 &#8212;</p></div>
-   <div id="break-line-3"><p>Break 3 &#8212;</p></div>
-   <div id="break-line-4"><p>Break 4 &#8212;</p></div>
-</div>
+  <!-- Control panel -->
+  <section class="alert-panel">
+    <div class="cp-alert" id="cp-alert">
+      <h3>Hey there!</h3>
+      <p>Resize the browser to change breakpoints</p>
+      <div class="button">
+        <span>Ok</span>
+      </div>
+    </div>
+  </section>
 
-<!-- Control panel -->
+  <section class="control-panel">
+    <div class="cp-block" id="cp-block" data-control-panel="open">
 
-      <section class="alert-panel">
-         <div class="cp-alert" id="cp-alert">
-            <h3>Hey there!</h3>
-            <p>Resize the browser to change breakpoints</p>
-            <div class="button">
-               <span>Ok</span>
+      <button class="cp-button" id="cp-button-off" data-toggle>
+        <img class="cp-button__img cp-button__img--open" src="resources/images/carot.svg" alt="">
+        <img class="cp-button__img cp-button__img--close" src="resources/images/carot-reverse.svg" alt="">
+      </button>
+
+      <div class="cp-panel">
+
+        <!-- Intro -->
+        <img class="logo" src="resources/images/logo.png" alt="logo">
+        <div class="em-dash"></div>
+        
+        <p class="intro"><strong>Resize the browser window</strong> to craft your typography for every break-point.
+          Inputs that are <span style="color: #1432FF;">blue</span> are active in <strong>this</strong> breakpoint.</p>
+        <!-- <p><a href="https://github.com/JoshN-2018/TypeCraft" target="_blank">Want to change the font?</a></p> -->
+
+        <!-- Breakpoints -->
+        <div class="cp-form-block">
+          <hr class="cp-hr">
+          <h4 class="break-title">Break points</h4>
+
+          <div class="cp-break-wrapper">
+
+            <img class="cp-icon-outline break-icon-phone" id="break-icon-phone" src="resources/images/icon-phone.svg"
+              alt="phone-icon">
+            <img class="cp-icon-fill break-icon-phone" id="break-icon-phone-fill"
+              src="resources/images/icon-phone-fill.svg" alt="phone-icon">
+            <div class="divider"></div>
+            <img class="cp-icon-outline" id="break-icon-tablet" src="resources/images/icon-tablet.svg"
+              alt="tablet-icon">
+            <img class="cp-icon-fill" id="break-icon-tablet-fill" src="resources/images/icon-tablet-fill.svg"
+              alt="tablet-icon">
+            <div class="divider"></div>
+            <img class="cp-icon-outline" id="break-icon-laptop" src="resources/images/icon-laptop.svg"
+              alt="laptop-icon">
+            <img class="cp-icon-fill" id="break-icon-laptop-fill" src="resources/images/icon-laptop-fill.svg"
+              alt="laptop-icon">
+            <div class="divider"></div>
+            <img class="cp-icon-outline" id="break-icon-desktop" src="resources/images/icon-desktop.svg"
+              alt="desktop-icon">
+            <img class="cp-icon-fill" id="break-icon-desktop-fill" src="resources/images/icon-desktop-fill.svg"
+              alt="desktop-icon">
+            <div class="divider"></div>
+            <img class="cp-icon-outline" id="break-icon-tv" src="resources/images/icon-tv.svg" alt="tv-icon">
+            <img class="cp-icon-fill" id="break-icon-tv-fill" src="resources/images/icon-tv-fill.svg" alt="tv-icon">
+          </div>
+
+          <div class="cp-break-wrapper cp-break-inputs">
+            <input id="break-one" class="break-highlight-1" type="number" value="0">
+            <input id="break-two" class="break-highlight-2" type="number" value="0">
+            <input id="break-three" class="break-highlight-3" type="number" value="0">
+            <input id="break-four" class="break-highlight-4" type="number" value="0">
+          </div>
+
+        </div>
+        <!-- <p>* means the value is for the current breakpoint </p> -->
+
+        <!-- Functionality -->
+        <!-- Base type size -->
+        <div class="cp-form-block">
+          <hr class="cp-hr">
+          <h4>Base type size</h4>
+          <div class="cp-form">
+            <!-- labels -->
+            <div>
+              <p class="break-highlight-1 label">small</p>
+              <p class="break-highlight-2 label">medium</p>
+              <p class="break-highlight-3 label">large</p>
+              <p class="break-highlight-4 label">x-large</p>
+              <p class="break-highlight-5 label">xx-large</p>
             </div>
-         </div>
-      </section>
-
-      <section class="control-panel">
-         <div class="cp-block" id="cp-block" data-control-panel="open">
-
-          <button class="cp-button" id="cp-button-off" data-toggle>
-            <img class="cp-button__img cp-button__img--open" src="resources/images/carot.svg" alt="">
-            <img class="cp-button__img cp-button__img--close" src="resources/images/carot-reverse.svg" alt="">
-          </button>
-
-         <div class="cp-panel">
-
-            <!-- Intro -->
-            <img class="logo" src="resources/images/logo.png" alt="logo">
-            <div class="em-dash"></div>
-            <p class="intro"><strong>Resize the browser window</strong> to craft your typography for every break-point. Inputs that are <span style="color: #1432FF;">blue</span> are active in <strong>this</strong> breakpoint.</p>
-            <!-- <p><a href="https://github.com/JoshN-2018/TypeCraft" target="_blank">Want to change the font?</a></p> -->
-
-            <!-- Breakpoints -->
-            <div class="cp-form-block">
-               <hr class="cp-hr">
-               <h4 class="break-title">Break points</h4>
-
-               <div class="cp-break-wrapper">
-
-                  <img class="cp-icon-outline break-icon-phone" id="break-icon-phone" src="resources/images/icon-phone.svg" alt="phone-icon">
-                  <img class="cp-icon-fill break-icon-phone" id="break-icon-phone-fill" src="resources/images/icon-phone-fill.svg" alt="phone-icon">
-                  <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-tablet" src="resources/images/icon-tablet.svg" alt="tablet-icon">
-                  <img class="cp-icon-fill" id="break-icon-tablet-fill" src="resources/images/icon-tablet-fill.svg" alt="tablet-icon">
-                  <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-laptop" src="resources/images/icon-laptop.svg" alt="laptop-icon">
-                  <img class="cp-icon-fill" id="break-icon-laptop-fill" src="resources/images/icon-laptop-fill.svg" alt="laptop-icon">
-                  <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-desktop" src="resources/images/icon-desktop.svg" alt="desktop-icon">
-                  <img class="cp-icon-fill" id="break-icon-desktop-fill" src="resources/images/icon-desktop-fill.svg" alt="desktop-icon">
-                  <div class="divider"></div>
-                  <img class="cp-icon-outline" id="break-icon-tv" src="resources/images/icon-tv.svg" alt="tv-icon">
-                  <img class="cp-icon-fill" id="break-icon-tv-fill" src="resources/images/icon-tv-fill.svg" alt="tv-icon">
-               </div>
-
-               <div class="cp-break-wrapper cp-break-inputs">
-                  <input id="break-one" class="break-highlight-1" type="number" value="0">
-                  <input id="break-two" class="break-highlight-2" type="number" value="0">
-                  <input id="break-three" class="break-highlight-3" type="number" value="0">
-                  <input id="break-four" class="break-highlight-4" type="number" value="0">
-               </div>
-
+            <!-- inputs -->
+            <div class="cp-input-block">
+              <input id="base-type-s" class="break-highlight-1" type="number" value="0">
+              <input id="base-type-m" class="break-highlight-2" type="number" value="0">
+              <input id="base-type-l" class="break-highlight-3" type="number" value="0">
+              <input id="base-type-xl" class="break-highlight-4" type="number" value="0">
+              <input id="base-type-xxl" class="break-highlight-5" type="number" value="0">
             </div>
-            <!-- <p>* means the value is for the current breakpoint </p> -->
+          </div>
+        </div>
 
-            <!-- Functionality -->
-            <div class="cp-form-block">
-               <hr class="cp-hr">
-               <h4>Base type size</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p class="break-highlight-1 label">small</p>
-                     <p class="break-highlight-2 label">medium</p>
-                     <p class="break-highlight-3 label">large</p>
-                     <p class="break-highlight-4 label">x-large</p>
-                     <p class="break-highlight-5 label">xx-large</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="base-type-s" class="break-highlight-1" type="number" value="0">
-                     <input id="base-type-m" class="break-highlight-2" type="number" value="0">
-                     <input id="base-type-l" class="break-highlight-3" type="number" value="0">
-                     <input id="base-type-xl" class="break-highlight-4" type="number" value="0">
-                     <input id="base-type-xxl" class="break-highlight-5" type="number" value="0">
-                  </div>
-               </div>
+        <!-- Type scale -->
+        <div class="cp-form-block">
+          <hr class="cp-hr">
+          <div class="sect-title container-flex">
+            <h4>Type scale</h4>
+            <svg id="info-typescale" class="info" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16">
+              <title>info-icon</title>
+              <path
+                d="M7.907,1a7,7,0,1,0,7,7A7,7,0,0,0,7.907,1ZM8.994,13H7.016V8H8.994ZM8,7.1A1.5,1.5,0,1,1,9.5,5.6,1.5,1.5,0,0,1,8,7.1Z" />
+            </svg>
+          </div>
 
-            <div class="cp-form-block">
-               <hr class="cp-hr">
-               <div class="sect-title container-flex">
-                  <h4>Type scale</h4>
-                  <svg id="info-typescale" class="info" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-                    <title>info-icon</title>
-                    <path d="M7.907,1a7,7,0,1,0,7,7A7,7,0,0,0,7.907,1ZM8.994,13H7.016V8H8.994ZM8,7.1A1.5,1.5,0,1,1,9.5,5.6,1.5,1.5,0,0,1,8,7.1Z"/>
-                  </svg>
-
-               </div>
-               <div id="tip-boxTS" class="tip-box container-flex">
-                  <p class="tip-message">
-                     The Type Scale allows you to control the contrast between the levels in your hierarchy. Larger numbers mean bigger more exaggerated steps.
-                  </p>
-                  <div class="tip-close">
-                     <img src="resources/images/icon-cross.svg" alt="cross">
-                  </div>
-               </div>
-
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p class="break-highlight-1 label">small</p>
-                     <p class="break-highlight-2 label">medium</p>
-                     <p class="break-highlight-3 label">large</p>
-                     <p class="break-highlight-4 label">x-large</p>
-                     <p class="break-highlight-5 label">xx-large</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="base-scale-s" class="break-highlight-1" type="number" step="0.01" value="0">
-                     <input id="base-scale-m" class="break-highlight-2" type="number" step="0.01" value="0">
-                     <input id="base-scale-l" class="break-highlight-3" type="number" step="0.01" value="0">
-                     <input id="base-scale-xl" class="break-highlight-4" type="number" step="0.01" value="0">
-                     <input id="base-scale-xxl" class="break-highlight-5" type="number" step="0.01" value="0">
-                  </div>
-               </div>
-
-            <div class="cp-form-block">
-               <hr class="cp-hr">
-               <h4>Limits</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>minimum size</p>
-                     <p>body-small max</p>
-                     <p>body-x-small max</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-input-block">
-                     <input id="min-type" class="alwaysOn" type="number" value="0">
-                     <input id="max-type-small" type="number" class="alwaysOn" value="0">
-                     <input id="max-type-x-small" type="number" class="alwaysOn" value="0">
-                  </div>
-               </div>
-
-            <div class="cp-form-block">
-               <hr class="cp-hr">
-               <h4>Final pixel sizes</h4>
-               <div class="cp-form">
-                  <!-- labels -->
-                  <div>
-                     <p>hero</p>
-                     <p>h1</p>
-                     <p>h2</p>
-                     <p>h3</p>
-                     <p>h4</p>
-                     <p>body-big</p>
-                     <p>body</p>
-                     <p>body-small</p>
-                     <p>body-x-small</p>
-                  </div>
-                  <!-- inputs -->
-                  <div class="cp-print-block">
-                     <output id="hero-final" name="x"></output>
-                     <output id="h1-final" name="x"></output>
-                     <output id="h2-final" name="x"></output>
-                     <output id="h3-final" name="x"></output>
-                     <output id="h4-final" name="x"></output>
-                     <output id="body-b-final" name="x"></output>
-                     <output id="body-final" name="x"></output>
-                     <output id="body-s-final" name="x"></output>
-                     <output id="body-xs-final" name="x"></output>
-                  </div>
-               </div>
-
+          <div id="tip-boxTS" class="tip-box container-flex">
+            <p class="tip-message">
+              The Type Scale allows you to control the contrast between the levels in your hierarchy. Larger numbers
+              mean bigger more exaggerated steps.
+            </p>
+            <div class="tip-close">
+              <img src="resources/images/icon-cross.svg" alt="cross">
             </div>
+          </div>
 
-         </div>
-      </section>
+          <div class="cp-form">
+            <!-- labels -->
+            <div>
+              <p class="break-highlight-1 label">small</p>
+              <p class="break-highlight-2 label">medium</p>
+              <p class="break-highlight-3 label">large</p>
+              <p class="break-highlight-4 label">x-large</p>
+              <p class="break-highlight-5 label">xx-large</p>
+            </div>
+            <!-- inputs -->
+            <div class="cp-input-block">
+              <input id="base-scale-s" class="break-highlight-1" type="number" step="0.01" value="0">
+              <input id="base-scale-m" class="break-highlight-2" type="number" step="0.01" value="0">
+              <input id="base-scale-l" class="break-highlight-3" type="number" step="0.01" value="0">
+              <input id="base-scale-xl" class="break-highlight-4" type="number" step="0.01" value="0">
+              <input id="base-scale-xxl" class="break-highlight-5" type="number" step="0.01" value="0">
+            </div>
+          </div>
+        </div>
 
-      <!-- Please don't delete me I'm the reason everything works -->
-      <!-- <script src="resources/script.js"></script> -->
-      <script src="resources/script-new.js" type="module"></script>
-   </body>
-   </html>
+        <!-- Limits -->
+        <div class="cp-form-block">
+          <hr class="cp-hr">
+          <h4>Limits</h4>
+          <div class="cp-form">
+            <!-- labels -->
+            <div>
+              <p>minimum size</p>
+              <p>body-small max</p>
+              <p>body-x-small max</p>
+            </div>
+            <!-- inputs -->
+            <div class="cp-input-block">
+              <input id="min-type" class="alwaysOn" type="number" value="0">
+              <input id="max-type-small" type="number" class="alwaysOn" value="0">
+              <input id="max-type-x-small" type="number" class="alwaysOn" value="0">
+            </div>
+          </div>
+        </div>
+
+        <!-- Final pixel sizes -->
+        <div class="cp-form-block">
+          <hr class="cp-hr">
+          <h4>Final pixel sizes</h4>
+          <div class="cp-form">
+            <!-- labels -->
+            <div>
+              <p>hero</p>
+              <p>h1</p>
+              <p>h2</p>
+              <p>h3</p>
+              <p>h4</p>
+              <p>body-big</p>
+              <p>body</p>
+              <p>body-small</p>
+              <p>body-x-small</p>
+            </div>
+            <!-- inputs -->
+            <div class="cp-print-block">
+              <output id="hero-final" name="x"></output>
+              <output id="h1-final" name="x"></output>
+              <output id="h2-final" name="x"></output>
+              <output id="h3-final" name="x"></output>
+              <output id="h4-final" name="x"></output>
+              <output id="body-b-final" name="x"></output>
+              <output id="body-final" name="x"></output>
+              <output id="body-s-final" name="x"></output>
+              <output id="body-xs-final" name="x"></output>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Please don't delete me I'm the reason everything works -->
+  <!-- <script src="resources/script.js"></script> -->
+  <script src="resources/script-new.js" type="module"></script>
+</body>
+
+</html>

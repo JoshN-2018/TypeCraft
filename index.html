@@ -59,15 +59,12 @@
       </section>
 
       <section class="control-panel">
-         <div class="cp-block" id="cp-block">
+         <div class="cp-block" id="cp-block" data-control-panel="open">
 
-         <!-- Button -->
-         <div class="cp-button" id="cp-button-on">
-            <img src="resources/images/carot-reverse.svg" alt="button">
-         </div>
-         <div class="cp-button" id="cp-button-off">
-            <img src="resources/images/carot.svg" alt="button">
-         </div>
+          <button class="cp-button" id="cp-button-off" data-toggle>
+            <img class="cp-button__img cp-button__img--open" src="resources/images/carot.svg" alt="">
+            <img class="cp-button__img cp-button__img--close" src="resources/images/carot-reverse.svg" alt="">
+          </button>
 
          <div class="cp-panel">
 
@@ -225,6 +222,7 @@
       </section>
 
       <!-- Please don't delete me I'm the reason everything works -->
-      <script src="resources/script.js"></script>
+      <!-- <script src="resources/script.js"></script> -->
+      <script src="resources/script-new.js" type="module"></script>
    </body>
    </html>

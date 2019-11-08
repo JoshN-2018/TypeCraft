@@ -54,12 +54,24 @@
    z-index: 3;
    background-color: var(--color-white);
    transition: all 0.3s ease;
+   border: none;
+   cursor: pointer;
 }
 
-.cp-button img {
+.cp-button:focus {
+  outline: none; /* TODO: add proper focus state */
+}
+
+[data-control-panel] .cp-button__img {
    padding-top: 1.3rem;
    padding-left: 0.25rem;
-   transform: rotate(-45deg);
+   transform: rotate(-45deg) translate(-6px, -5px);
+   display: none;
+}
+
+[data-control-panel="open"] .cp-button__img--open,
+[data-control-panel="close"] .cp-button__img--close {
+  display: block;
 }
 
 .cp-button:hover {
@@ -203,8 +215,8 @@ input.alwaysOn {
    margin-top: 0;
 }
 
-/* js classes */
-.cp-shift {
+/* js attributes */
+[data-control-panel="open"] {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px var(--color-v-light-grey);
 }

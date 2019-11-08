@@ -191,7 +191,6 @@ output {
    border-right: 0;
    border-color: var(--color-mid-grey);
    text-align: right;
-   opacity: 0.3;
 }
 
 output,
@@ -255,4 +254,26 @@ input.alwaysOn {
 
 .sect-title svg:hover {
    fill: var(--color-blue);
+}
+
+.cp-sizes-control {
+  --text-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.cp-sizes-control[data-active="true"] {
+  --text-color: var(--color-blue);
+  opacity: 1;
+}
+
+.cp-sizes-label {
+  color: var(--text-color);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.cp-sizes-input {
+  color: var(--text-color);
 }

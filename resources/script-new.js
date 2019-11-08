@@ -1,3 +1,4 @@
+import ControlPanel from  './components/control-panel.js'
 import Content from './components/content.js'
 
 let activeBreakPoint = 720
@@ -16,10 +17,13 @@ const classes = ['hero', 'h1', 'h2', 'h3', 'h4', 'body-big', 'body', 'body-small
 // The text to be displayed
 const exampleText = 'It\'s a state of mind'
 
-// Get a reference to the content object
+// Get a reference to the control panel object
+const controlPanel = ControlPanel()
 const content = Content(exampleText)
 
 function setup() {
+  controlPanel.updateSizes(sizes)
+  controlPanel.setActiveBreakpoint(activeBreakPoint)
   content.updateClasses(classes)
   content.updateExampleText(exampleText)
 }
@@ -27,3 +31,4 @@ function setup() {
 setup()
 
 window.content = content
+window.controlPanel = controlPanel

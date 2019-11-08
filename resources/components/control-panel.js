@@ -1,5 +1,5 @@
 const controlPanelRoot = document.querySelector('[data-control-panel]')
-const toggleButton = document.querySelector('[data-control-panel]')
+const toggleButton = document.querySelector('[data-toggle]')
 
 toggleButton.addEventListener('click', toggleControlPanel)
 

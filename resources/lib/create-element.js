@@ -1,5 +1,5 @@
 // Helper function to create an control element
-export function createControlElement({name, value: size, breakpoint}) {
+export function createControlElement({name, value: size, breakpoint, key, eventHandler}) {
   const control = document.createElement('label')
   const label = document.createElement('span')
   const input = document.createElement('input')
@@ -11,8 +11,12 @@ export function createControlElement({name, value: size, breakpoint}) {
   input.type = "number"
   input.step = "0.01"
   input.value = size
+  input.name = name
+  input.dataset.key = key
 
   label.innerText = name
+
+  input.addEventListener('change', eventHandler)
 
   if (breakpoint) {
     control.dataset.breakpoint = breakpoint

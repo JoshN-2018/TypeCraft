@@ -1,14 +1,50 @@
 import { createControlElement, createOutputElement } from '../lib/create-element.js'
 
+// This function is the event handler creator. The execute function insode of it 
+// is the actual event handler. The event handler takes info from the target
+// element and creates a new event. This is needed because the new event is
+// dispatched on the window object. Because all input elements are replaced when
+// the user adds/removes breakpoints, we can not listen for the change events
+// directly on the input elements itself. Instead the event is redispatched from
+// the window object. script-new.js is listening for changes on the window
+// object because that is guaranteed to exist. But since we are doing that, we
+// need to pass along all info like the name (form block name), key and value
+function createChangeEventHandler(eventName) {
+  return function execute(event) {
+    const name = event.target.name
+    const key = event.target.dataset.key
+    const value = Number(event.target.value)
+    const customEvent = new CustomEvent(
+      `change:${eventName}`,
+      { detail: { name, key, value } }
+      )
+    window.dispatchEvent(customEvent)
+  }
+}
+
+// Here we create event handlers for each form block. We need to have a
+// reference to these handlers because we need to remove them if an input
+// element is going to be destroyed.
+const dispatchChangeBreakpoint = createChangeEventHandler('breakpoints')
+const dispatchChangeBaseType = createChangeEventHandler('base-type')
+const dispatchChangeTypeScale = createChangeEventHandler('type-scale')
+const dispatchChangeLimits = createChangeEventHandler('limits')
+
 // This function accepts two elements, the wrapper elements for the 
 // breakpoint-icons and the breakpoint-inputs, and the sizes array. It loops 
 // over the sizes array and creates new elements to be displayed
 function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
+
+  // cleanup all existing event handler before the wrapper element is cleared
+  breakpointInputs
+    .querySelectorAll('input')
+    .forEach(input => input.removeEventListener('change', dispatchChangeBreakpoint))
+
   breakpointIcons.innerHTML = ''
   breakpointInputs.innerHTML = ''
 
   sizes.forEach(sizeObj => {
-    const { breakpoint, icon } = sizeObj
+    const { breakpoint, icon, name } = sizeObj
 
     const imgElement = document.createElement('img')
     imgElement.src = `resources/images/${icon}.svg`
@@ -31,7 +67,10 @@ function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
       const inputElement = document.createElement('input')
       inputElement.type = 'number'
       inputElement.value = breakpoint
+      inputElement.name = name
       inputElement.dataset.breakpoint = breakpoint
+      inputElement.dataset.key = 'breakpoint'
+      inputElement.addEventListener('change', dispatchChangeBreakpoint)
       breakpointInputs.appendChild(inputElement)
     }
   })
@@ -43,10 +82,15 @@ function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
 // It selects the group root (the article element), loops over the sizes and for
 // each size, it creates an input element which is adds to the controlGroup 
 // element
-function displayFormElements(formBlockElement, key, createElementFunction) {
+function displayFormElements(formBlockElement, key, createElementFunction, eventHandler) {
   return function (dataList) {
     const controlGroupSelector = '[data-control-group]'
     const controlGroup = formBlockElement.querySelector(controlGroupSelector)
+
+    // cleanup all existing event handler before the wrapper element is cleared
+    controlGroup
+      .querySelectorAll('input')
+      .forEach(input => input.removeEventListener('change', eventHandler))
 
     controlGroup.innerHTML = ''
 
@@ -54,7 +98,7 @@ function displayFormElements(formBlockElement, key, createElementFunction) {
       const value = dataObject[key]
       const name = dataObject.name
       const breakpoint = dataObject.breakpoint
-      const controlElement = createElementFunction({name, value, breakpoint})
+      const controlElement = createElementFunction({name, value, breakpoint, key, eventHandler})
       controlGroup.appendChild(controlElement)
     })
   }
@@ -95,10 +139,10 @@ export default function() {
     }
   })
 
-  // Create an update controls function specific for the Type Scale formBlockElement
-  const updateBaseTypeControls = displayFormElements(formBlockBaseTypeSize, 'baseType', createControlElement)
-  const updateTypeScaleControls = displayFormElements(formBlockTypeScale, 'typeScale', createControlElement)
-  const updateLimitsControls = displayFormElements(formBlockLimits, 'value', createControlElement)
+  // Create an update controls functions for each formBlockElement
+  const updateBaseTypeControls = displayFormElements(formBlockBaseTypeSize, 'baseType', createControlElement, dispatchChangeBaseType)
+  const updateTypeScaleControls = displayFormElements(formBlockTypeScale, 'typeScale', createControlElement, dispatchChangeTypeScale)
+  const updateLimitsControls = displayFormElements(formBlockLimits, 'value', createControlElement, dispatchChangeLimits)
   const updateOutputValues = displayFormElements(outputBlock, 'typeSize', createOutputElement)
 
   return {

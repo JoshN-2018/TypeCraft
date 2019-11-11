@@ -94,9 +94,49 @@ function setActiveBreakpoint() {
   }
 }
 
+function setSizes(event) {
+  const controlGroup = event.type.replace('change:', '')
+  const {name, key, value} = event.detail
+  const sizeObj = sizes.find(sizeObj => sizeObj.name === name)
+  if (sizeObj) {
+    sizeObj[key] = value
+  }
+  setClassesWithCurrentSizes()
+  setCSS()
+  updateSizes()
+  updateClasses()
+  setActiveBreakpoint()
+  updateActiveBreakpoint()
+  reselectElement(controlGroup, name)
+}
+
+function setLimits(event) {
+  const controlGroup = event.type.replace('change:', '')
+  const {name, key, value} = event.detail
+  const limitObj = limits.find(limitObj => limitObj.name === name)
+  if (limitObj) {
+    limitObj[key] = value
+  }
+  updateLimits()
+  setClassesWithCurrentSizes()
+  setCSS()
+  updateSizes()
+  updateClasses() 
+  setActiveBreakpoint()
+  updateActiveBreakpoint()
+  reselectElement(controlGroup, name)
+}
+
 function setCSS() {
   css = generateCss(sizes, classes, limits)
   updateCss()
+}
+
+function reselectElement(formBlockName, name) {
+  const input = document.querySelector(`[data-form-block="${formBlockName}"] input[name="${name}"]`)
+  if (input) {
+    input.select()
+  }
 }
 
 function setup() {
@@ -106,6 +146,10 @@ function setup() {
   setActiveBreakpoint()
 
   window.addEventListener('resize', setActiveBreakpoint)
+  window.addEventListener('change:base-type', setSizes)
+  window.addEventListener('change:type-scale', setSizes)
+  window.addEventListener('change:breakpoints', setSizes)
+  window.addEventListener('change:limits', setLimits)
   setCSS()
 }
 

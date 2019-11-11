@@ -276,20 +276,25 @@ input.alwaysOn {
   align-items: center;
 }
 
-.cp-control[data-breakpoint] {
-  opacity: 0.3;
-}
-
 .cp-control[data-active="true"] {
   --text-color: var(--color-blue);
-  opacity: 1;
 }
 
 .cp-label {
   color: var(--text-color);
   font-size: 13.5px;
   line-height: 1.5;
+  opacity: 0.3;
 }
 .cp-input {
   color: var(--text-color);
+  opacity: 0.3;
+}
+.cp-control[data-active="true"] .cp-label,
+.cp-control[data-active="true"] .cp-input {
+  opacity: 1;
+}
+
+.cp-input:focus {
+  color: var(--color-black);
 }

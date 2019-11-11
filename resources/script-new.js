@@ -35,14 +35,34 @@ function calculateCurrentSizeForClasses(classes) {
   })
 }
 
-function setup() {
+function updateSizes() {
   controlPanel.updateSizes(sizes)
-  controlPanel.updateLimits(limits)
-  controlPanel.updateClasses(calculateCurrentSizeForClasses(classes))
-  controlPanel.setActiveBreakpoint(activeBreakPoint)
   breakBg.updateBreakpoints(sizes)
+}
+
+function updateClasses() {
+  controlPanel.updateClasses(calculateCurrentSizeForClasses(classes))
   content.updateClasses(classes)
+}
+
+function updateLimits() {
+  controlPanel.updateLimits(limits)
+}
+
+function updateActiveBreakpoint() {
+  controlPanel.setActiveBreakpoint(activeBreakPoint)
+}
+
+function updateExampleText() {
   content.updateExampleText(exampleText)
+}
+
+function setup() {
+  updateSizes()
+  updateClasses()
+  updateLimits()
+  updateActiveBreakpoint()
+  updateExampleText()
 }
 
 setup()

@@ -27,9 +27,16 @@ const exampleText = 'It\'s a state of mind'
 const controlPanel = ControlPanel()
 const content = Content(exampleText)
 
+function calculateCurrentSizeForClasses(classes) {
+  return classes.map(className => {
+    return { name: className, value: '16px' }
+  })
+}
+
 function setup() {
   controlPanel.updateSizes(sizes)
   controlPanel.updateLimits(limits)
+  controlPanel.updateClasses(calculateCurrentSizeForClasses(classes))
   controlPanel.setActiveBreakpoint(activeBreakPoint)
   content.updateClasses(classes)
   content.updateExampleText(exampleText)

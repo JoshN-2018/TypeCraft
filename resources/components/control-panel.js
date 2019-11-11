@@ -1,4 +1,4 @@
-import createControlElement from '../lib/create-control-element.js'
+import { createControlElement, createOutputElement } from '../lib/create-element.js'
 
 // This function accepts two elements, the wrapper elements for the 
 // breakpoint-icons and the breakpoint-inputs, and the sizes array. It loops 
@@ -43,7 +43,7 @@ function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
 // It selects the group root (the article element), loops over the sizes and for
 // each size, it creates an input element which is adds to the controlGroup 
 // element
-function displayControlElements(formBlockElement, key) {
+function displayFormElements(formBlockElement, key, createElementFunction) {
   return function (dataList) {
     const controlGroupSelector = '[data-control-group]'
     const controlGroup = formBlockElement.querySelector(controlGroupSelector)
@@ -51,10 +51,10 @@ function displayControlElements(formBlockElement, key) {
     controlGroup.innerHTML = ''
 
     dataList.forEach(dataObject => {
-      const size = dataObject[key]
+      const value = dataObject[key]
       const name = dataObject.name
       const breakpoint = dataObject.breakpoint
-      const controlElement = createControlElement({name, size, breakpoint})
+      const controlElement = createElementFunction({name, value, breakpoint})
       controlGroup.appendChild(controlElement)
     })
   }
@@ -83,6 +83,7 @@ export default function() {
   const formBlockBaseTypeSize = controlPanelRoot.querySelector('[data-form-block="base-type"]')
   const formBlockTypeScale = controlPanelRoot.querySelector('[data-form-block="type-scale"]')
   const formBlockLimits = controlPanelRoot.querySelector('[data-form-block="limits"]')
+  const outputBlock = controlPanelRoot.querySelector('[data-output-block]')
 
   // the click handler for the control panel toggle. It sets a data attribute 
   // if it should be open or closed
@@ -95,9 +96,10 @@ export default function() {
   })
 
   // Create an update controls function specific for the Type Scale formBlockElement
-  const updateBaseTypeControls = displayControlElements(formBlockBaseTypeSize, 'baseType')
-  const updateTypeScaleControls = displayControlElements(formBlockTypeScale, 'typeScale')
-  const updateLimitsControls = displayControlElements(formBlockLimits, 'value')
+  const updateBaseTypeControls = displayFormElements(formBlockBaseTypeSize, 'baseType', createControlElement)
+  const updateTypeScaleControls = displayFormElements(formBlockTypeScale, 'typeScale', createControlElement)
+  const updateLimitsControls = displayFormElements(formBlockLimits, 'value', createControlElement)
+  const updateOutputValues = displayFormElements(outputBlock, 'value', createOutputElement)
 
   return {
     el: controlPanelRoot,
@@ -117,6 +119,10 @@ export default function() {
 
     updateLimits(newLimits) {
       updateLimitsControls(newLimits)
+    },
+
+    updateClasses(newClasses) {
+      updateOutputValues(newClasses)
     }
   }
 }

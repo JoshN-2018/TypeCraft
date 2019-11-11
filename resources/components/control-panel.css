@@ -268,7 +268,8 @@ input.alwaysOn {
    fill: var(--color-blue);
 }
 
-.cp-control {
+.cp-control,
+.cp-output-wrapper {
   --text-color: black;
   display: flex;
   justify-content: space-between;

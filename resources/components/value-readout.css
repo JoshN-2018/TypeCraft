@@ -1,4 +1,12 @@
+.value-readout {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .value-readout::after {
+  position: absolute;
   margin-left: 1rem;
   padding: 0 0.5rem;
   vertical-align: top;

@@ -41,6 +41,7 @@ function markActiveControlElement(formBlockElement, breakpoint) {
 export default function() {
   const controlPanelRoot = document.querySelector('[data-control-panel]')
   const toggleButton = controlPanelRoot.querySelector('[data-toggle]')
+  const formBlockBaseTypeSize = controlPanelRoot.querySelector('[data-form-block="base-type"]')
   const formBlockTypeScale = controlPanelRoot.querySelector('[data-form-block="type-scale"]')
 
   // the click handler for the control panel toggle. It sets a data attribute 
@@ -54,16 +55,19 @@ export default function() {
   })
 
   // Create an update controls function specific for the Type Scale formBlockElement
+  const updateBaseTypeControls = displaySizeControlElements(formBlockBaseTypeSize, 'baseType')
   const updateTypeScaleControls = displaySizeControlElements(formBlockTypeScale, 'typeScale')
 
   return {
     el: controlPanelRoot,
     
     updateSizes(newSizes){
+      updateBaseTypeControls(newSizes);
       updateTypeScaleControls(newSizes);
     },
     
     setActiveBreakpoint(newBreakpoint) {
+      markActiveControlElement(formBlockBaseTypeSize, newBreakpoint)
       markActiveControlElement(formBlockTypeScale, newBreakpoint)
     }
   }

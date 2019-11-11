@@ -1,0 +1,21 @@
+.container {
+  padding: 0 1rem;
+}
+
+@media (min-width: 720px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 6rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    padding: 0 8rem;
+  }
+}

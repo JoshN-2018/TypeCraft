@@ -1,7 +1,9 @@
 import ControlPanel from  './components/control-panel.js'
 import Content from './components/content.js'
 import BreakBg from './components/break-bg.js'
+import HeadCss from './components/head-css.js'
 import calculateFontSizes from './lib/calculate-font-sizes.js'
+import generateCss from './lib/generate-css.js'
 
 let activeBreakPoint = 720
 
@@ -34,6 +36,8 @@ const classes = [
 
 let classesWithCurrentSizes = []
 
+let css = ''
+
 // The text to be displayed
 const exampleText = 'It\'s a state of mind'
 
@@ -41,6 +45,7 @@ const exampleText = 'It\'s a state of mind'
 const controlPanel = ControlPanel()
 const content = Content(exampleText)
 const breakBg = BreakBg()
+const headCss = HeadCss()
 
 function getActiveSizeObject() {
   const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
@@ -70,6 +75,10 @@ function updateExampleText() {
   content.updateExampleText(exampleText)
 }
 
+function updateCss() {
+  headCss.updateCss(css)
+}
+
 function setClassesWithCurrentSizes() {
   const activeSizeObj = getActiveSizeObject()
   classesWithCurrentSizes = calculateFontSizes(activeSizeObj, classes, limits)
@@ -85,6 +94,11 @@ function setActiveBreakpoint() {
   }
 }
 
+function setCSS() {
+  css = generateCss(sizes, classes, limits)
+  updateCss()
+}
+
 function setup() {
   updateSizes()
   updateLimits()
@@ -92,6 +106,7 @@ function setup() {
   setActiveBreakpoint()
 
   window.addEventListener('resize', setActiveBreakpoint)
+  setCSS()
 }
 
 setup()

@@ -9,10 +9,9 @@
   z-index: -1;
 }
 
-#break-line-1,
-#break-line-2,
-#break-line-3,
-#break-line-4 {
+.breakpoint-indicator {
+  position: absolute;
+  left: 0;
   border-right: 1px dashed var(--color-light-grey);
   height: 100%;
   display: flex;
@@ -20,10 +19,7 @@
   justify-content: flex-end;
 }
 
-#break-line-1,
-#break-line-2,
-#break-line-3,
-#break-line-4 p {
+.breakpoint-indicator p {
   font-size: 12px;
   padding: 0 1rem 1rem 0;
   color: var(--color-mid-grey);

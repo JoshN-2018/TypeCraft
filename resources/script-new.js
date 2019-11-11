@@ -1,5 +1,6 @@
 import ControlPanel from  './components/control-panel.js'
 import Content from './components/content.js'
+import BreakBg from './components/break-bg.js'
 
 let activeBreakPoint = 720
 
@@ -26,6 +27,7 @@ const exampleText = 'It\'s a state of mind'
 // Get a reference to the control panel object
 const controlPanel = ControlPanel()
 const content = Content(exampleText)
+const breakBg = BreakBg()
 
 function calculateCurrentSizeForClasses(classes) {
   return classes.map(className => {
@@ -38,6 +40,7 @@ function setup() {
   controlPanel.updateLimits(limits)
   controlPanel.updateClasses(calculateCurrentSizeForClasses(classes))
   controlPanel.setActiveBreakpoint(activeBreakPoint)
+  breakBg.updateBreakpoints(sizes)
   content.updateClasses(classes)
   content.updateExampleText(exampleText)
 }

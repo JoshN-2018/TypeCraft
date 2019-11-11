@@ -60,7 +60,7 @@ function updateSizes() {
 
 function updateClasses() {
   controlPanel.updateClasses(classesWithCurrentSizes)
-  content.updateClasses(classes)
+  content.updateClasses(classesWithCurrentSizes)
 }
 
 function updateLimits() {

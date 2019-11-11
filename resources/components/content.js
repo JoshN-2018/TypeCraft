@@ -15,7 +15,9 @@ export default function content() {
       classes.forEach(classObject => {
         const element = document.createElement('p') // Create the element
         element.classList.add(classObject.name)     // Add the class
+        element.classList.add('value-readout')     // Add the class
         element.innerText = exampleText             // Add the text
+        element.dataset.content = `${classObject.name}: ${classObject.typeSize}`
         contentRoot.appendChild(element)            // Add to the DOM
       })
     }

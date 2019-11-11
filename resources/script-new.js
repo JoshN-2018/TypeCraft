@@ -57,12 +57,24 @@ function updateExampleText() {
   content.updateExampleText(exampleText)
 }
 
+function setActiveBreakpoint() {
+  const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const activeSizeObj = sizes.find(size => size.breakpoint > width)
+  if (activeSizeObj.breakpoint !== activeBreakPoint) {
+    activeBreakPoint = activeSizeObj.breakpoint
+    updateActiveBreakpoint()
+  }
+}
+
 function setup() {
   updateSizes()
   updateClasses()
   updateLimits()
   updateActiveBreakpoint()
   updateExampleText()
+  setActiveBreakpoint()
+
+  window.addEventListener('resize', setActiveBreakpoint)
 }
 
 setup()

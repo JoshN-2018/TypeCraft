@@ -3,6 +3,12 @@ import Content from './components/content.js'
 
 let activeBreakPoint = 720
 
+const limits = [
+  { name: 'minimum size', value: 0, },
+  { name: 'body-small', value: 16 },
+  { name: 'body-x-small', value: 16 },
+]
+
 const sizes = [
   { name: 'small',     baseType: 16, typeScale: 1.2,   breakpoint: 720, icon: 'icon-phone' },
   { name: 'medium',    baseType: 16, typeScale: 1.25,  breakpoint: 1024, icon: 'icon-tablet' },
@@ -23,6 +29,7 @@ const content = Content(exampleText)
 
 function setup() {
   controlPanel.updateSizes(sizes)
+  controlPanel.updateLimits(limits)
   controlPanel.setActiveBreakpoint(activeBreakPoint)
   content.updateClasses(classes)
   content.updateExampleText(exampleText)

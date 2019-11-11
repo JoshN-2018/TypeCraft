@@ -1,12 +1,12 @@
 // Helper function to create an control element
-export default function createSizesControlElement({name, size, breakpoint}) {
+export default function createControlElement({name, size, breakpoint}) {
   const control = document.createElement('label')
   const label = document.createElement('span')
   const input = document.createElement('input')
 
-  control.classList.add('cp-sizes-control')
-  label.classList.add('cp-sizes-label')
-  input.classList.add('cp-sizes-input')
+  control.classList.add('cp-control')
+  label.classList.add('cp-label')
+  input.classList.add('cp-input')
 
   input.type = "number"
   input.step = "0.01"
@@ -14,7 +14,9 @@ export default function createSizesControlElement({name, size, breakpoint}) {
 
   label.innerText = name
 
-  control.dataset.breakpoint = breakpoint
+  if (breakpoint) {
+    control.dataset.breakpoint = breakpoint
+  }
   control.appendChild(label)
   control.appendChild(input)
   

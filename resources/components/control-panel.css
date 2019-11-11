@@ -268,24 +268,27 @@ input.alwaysOn {
    fill: var(--color-blue);
 }
 
-.cp-sizes-control {
+.cp-control {
   --text-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.cp-control[data-breakpoint] {
   opacity: 0.3;
 }
 
-.cp-sizes-control[data-active="true"] {
+.cp-control[data-active="true"] {
   --text-color: var(--color-blue);
   opacity: 1;
 }
 
-.cp-sizes-label {
+.cp-label {
   color: var(--text-color);
   font-size: 13.5px;
   line-height: 1.5;
 }
-.cp-sizes-input {
+.cp-input {
   color: var(--text-color);
 }

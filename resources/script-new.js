@@ -1,6 +1,7 @@
 import ControlPanel from  './components/control-panel.js'
 import Content from './components/content.js'
 import BreakBg from './components/break-bg.js'
+import calculateFontSizes from './lib/calculate-font-sizes.js'
 
 let activeBreakPoint = 720
 
@@ -19,7 +20,19 @@ const sizes = [
 ]
 
 // All avaiable classes
-const classes = ['hero', 'h1', 'h2', 'h3', 'h4', 'body-big', 'body', 'body-small', 'body-x-small'];
+const classes = [
+  {name: 'hero' },
+  {name: 'h1' },
+  {name: 'h2' },
+  {name: 'h3' },
+  {name: 'h4' },
+  {name: 'body-big', basis: true },
+  {name: 'body' },
+  {name: 'body-small' },
+  {name: 'body-x-small' },
+];
+
+let classesWithCurrentSizes = []
 
 // The text to be displayed
 const exampleText = 'It\'s a state of mind'
@@ -29,10 +42,10 @@ const controlPanel = ControlPanel()
 const content = Content(exampleText)
 const breakBg = BreakBg()
 
-function calculateCurrentSizeForClasses(classes) {
-  return classes.map(className => {
-    return { name: className, value: '16px' }
-  })
+function getActiveSizeObject() {
+  const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const activeSizeObj = sizes.find(size => size.breakpoint > width)
+  return activeSizeObj
 }
 
 function updateSizes() {
@@ -41,7 +54,7 @@ function updateSizes() {
 }
 
 function updateClasses() {
-  controlPanel.updateClasses(calculateCurrentSizeForClasses(classes))
+  controlPanel.updateClasses(classesWithCurrentSizes)
   content.updateClasses(classes)
 }
 
@@ -57,20 +70,24 @@ function updateExampleText() {
   content.updateExampleText(exampleText)
 }
 
+function setClassesWithCurrentSizes() {
+  const activeSizeObj = getActiveSizeObject()
+  classesWithCurrentSizes = calculateFontSizes(activeSizeObj, classes, limits)
+}
+
 function setActiveBreakpoint() {
-  const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  const activeSizeObj = sizes.find(size => size.breakpoint > width)
+  const activeSizeObj = getActiveSizeObject()
   if (activeSizeObj.breakpoint !== activeBreakPoint) {
     activeBreakPoint = activeSizeObj.breakpoint
+    setClassesWithCurrentSizes()
     updateActiveBreakpoint()
+    updateClasses()
   }
 }
 
 function setup() {
   updateSizes()
-  updateClasses()
   updateLimits()
-  updateActiveBreakpoint()
   updateExampleText()
   setActiveBreakpoint()
 

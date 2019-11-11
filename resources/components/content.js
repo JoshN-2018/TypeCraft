@@ -12,9 +12,9 @@ export default function content() {
   function updateExampleElements() {
     if (classes && exampleText) {
       contentRoot.innerHTML = ''
-      classes.forEach(className => {
+      classes.forEach(classObject => {
         const element = document.createElement('p') // Create the element
-        element.classList.add(className)            // Add the class
+        element.classList.add(classObject.name)     // Add the class
         element.innerText = exampleText             // Add the text
         contentRoot.appendChild(element)            // Add to the DOM
       })

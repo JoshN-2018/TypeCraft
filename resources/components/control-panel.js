@@ -99,7 +99,7 @@ export default function() {
   const updateBaseTypeControls = displayFormElements(formBlockBaseTypeSize, 'baseType', createControlElement)
   const updateTypeScaleControls = displayFormElements(formBlockTypeScale, 'typeScale', createControlElement)
   const updateLimitsControls = displayFormElements(formBlockLimits, 'value', createControlElement)
-  const updateOutputValues = displayFormElements(outputBlock, 'value', createOutputElement)
+  const updateOutputValues = displayFormElements(outputBlock, 'typeSize', createOutputElement)
 
   return {
     el: controlPanelRoot,

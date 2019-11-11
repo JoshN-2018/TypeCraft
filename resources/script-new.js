@@ -4,11 +4,11 @@ import Content from './components/content.js'
 let activeBreakPoint = 720
 
 const sizes = [
-  { name: 'small',     baseType: 16, typeScale: 1.2,   breakpoint: 720 },
-  { name: 'medium',    baseType: 16, typeScale: 1.25,  breakpoint: 1024 },
-  { name: 'large',     baseType: 16, typeScale: 1.33,  breakpoint: 1440 },
-  { name: 'x-large',   baseType: 16, typeScale: 1.414, breakpoint: 1920 },
-  { name: 'xx-large',  baseType: 16, typeScale: 1.5,   breakpoint: Infinity },
+  { name: 'small',     baseType: 16, typeScale: 1.2,   breakpoint: 720, icon: 'icon-phone' },
+  { name: 'medium',    baseType: 16, typeScale: 1.25,  breakpoint: 1024, icon: 'icon-tablet' },
+  { name: 'large',     baseType: 16, typeScale: 1.33,  breakpoint: 1440, icon: 'icon-laptop' },
+  { name: 'x-large',   baseType: 16, typeScale: 1.414, breakpoint: 1920, icon: 'icon-desktop' },
+  { name: 'xx-large',  baseType: 16, typeScale: 1.5,   breakpoint: Infinity, icon: 'icon-tv' },
 ]
 
 // All avaiable classes

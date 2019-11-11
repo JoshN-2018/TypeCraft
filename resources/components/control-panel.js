@@ -1,5 +1,42 @@
 import createSizesControlElement from '../lib/create-sizes-control-element.js'
 
+// This function accepts two elements, the wrapper elements for the 
+// breakpoint-icons and the breakpoint-inputs, and the sizes array. It loops 
+// over the sizes array and creates new elements to be displayed
+function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
+  breakpointIcons.innerHTML = ''
+  breakpointInputs.innerHTML = ''
+
+  sizes.forEach(sizeObj => {
+    const { breakpoint, icon } = sizeObj
+
+    const imgElement = document.createElement('img')
+    imgElement.src = `resources/images/${icon}.svg`
+    imgElement.alt = ''
+    imgElement.dataset.breakpoint = breakpoint
+    imgElement.dataset.isFilled = false
+
+    const imgFilledElement = imgElement.cloneNode()
+    imgElement.src = `resources/images/${icon}-fill.svg`
+    imgElement.dataset.isFilled = true
+
+    breakpointIcons.appendChild(imgElement)
+    breakpointIcons.appendChild(imgFilledElement)
+
+    if (breakpoint !== Infinity) {
+      const divider = document.createElement('div')
+      divider.classList.add('divider')
+      breakpointIcons.appendChild(divider)
+
+      const inputElement = document.createElement('input')
+      inputElement.type = 'number'
+      inputElement.value = breakpoint
+      inputElement.dataset.breakpoint = breakpoint
+      breakpointInputs.appendChild(inputElement)
+    }
+  })
+}
+
 // This function accepts an formBlockElement (the root of the Type Scale 
 // article) for example, and a key from the sizes object associated with that
 // formBlock (for the Type Scale, that would be typeScale).
@@ -41,6 +78,8 @@ function markActiveControlElement(formBlockElement, breakpoint) {
 export default function() {
   const controlPanelRoot = document.querySelector('[data-control-panel]')
   const toggleButton = controlPanelRoot.querySelector('[data-toggle]')
+  const formBreakpointIcons = controlPanelRoot.querySelector('[data-breakpoint-icons]')
+  const formBreakpointInputs = controlPanelRoot.querySelector('[data-breakpoint-inputs]')
   const formBlockBaseTypeSize = controlPanelRoot.querySelector('[data-form-block="base-type"]')
   const formBlockTypeScale = controlPanelRoot.querySelector('[data-form-block="type-scale"]')
 
@@ -64,11 +103,14 @@ export default function() {
     updateSizes(newSizes){
       updateBaseTypeControls(newSizes);
       updateTypeScaleControls(newSizes);
+      displayBreakpointIndicator(formBreakpointIcons, formBreakpointInputs, newSizes)
     },
     
     setActiveBreakpoint(newBreakpoint) {
       markActiveControlElement(formBlockBaseTypeSize, newBreakpoint)
       markActiveControlElement(formBlockTypeScale, newBreakpoint)
+      markActiveControlElement(formBreakpointIcons, newBreakpoint)
+      markActiveControlElement(formBreakpointInputs, newBreakpoint)
     }
   }
 }

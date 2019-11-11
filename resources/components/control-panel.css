@@ -156,10 +156,10 @@ output {
    margin: 0 3px;
 }
 .cp-break-wrapper .divider {
-   height: 12px;
-   width: 2px;
-   background-color: var(--color-black);
-   opacity: 0.5;
+  height: 12px;
+  width: 2px;
+  background-color: var(--color-black);
+  opacity: 0.5;
 }
 
 .cp-form-block .break-title {
@@ -175,8 +175,20 @@ output {
    display: none;
 }
 
-.cp-break-inputs {
+.cp-break-wrapper--icons img[data-is-filled="true"],
+.cp-break-wrapper--icons img[data-is-filled="false"][data-active="true"] {
+  display: none;
+}
+.cp-break-wrapper--icons img[data-is-filled="true"][data-active="true"] {
+  display: block;
+}
+
+.cp-break-wrapper--inputs {
    margin-top: 0.3rem !important;
+}
+
+.cp-break-wrapper--inputs input[data-active="true"] {
+  color: var(--color-blue);
 }
 
 .control-panel input,

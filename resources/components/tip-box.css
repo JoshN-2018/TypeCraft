@@ -5,15 +5,31 @@
   margin-top: 0.25rem;
   margin-bottom: 0.75rem;
   transform-origin: top;
-  display: none;
-  max-height: 0;
   background-color: var(--color-canvas);
   transition: max-height 1s ease-in;
+  display: flex;
+  align-items: flex-start;
+}
+
+.tip-box[data-tipbox="hide"] {
+  max-height: 0;
+  visibility: none;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.tip-box[data-tipbox="hide"] button {
+  display: none;
 }
 
 .tip-message {
   opacity: 0;
+}
+.tip-box[data-tipbox="show"] .tip-message {
   transition: opacity 1s ease;
+  opacity: 1;
 }
 
 .tip-box img {
@@ -29,17 +45,4 @@
 
 .tip-box p {
   margin-top: 0;
-}
-
-/* js classes */
-.tip-show {
-  display: flex !important;
-}
-
-.tip-draw {
-  max-height: 500px;
-}
-
-.tip-message-show {
-  opacity: 1;
 }

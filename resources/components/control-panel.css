@@ -256,15 +256,27 @@ input.alwaysOn {
    display: flex;
 }
 
+.sect-title button {
+  margin-left: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  height: 16px;
+}
+
 .sect-title svg {
    cursor: pointer;
-   padding-left: 0.75rem;
    transition: all 0.3s ease;
    height: 16px;
    fill: var(--color-light-grey);
 }
 
-.sect-title svg:hover {
+.sect-title button:hover,
+.sect-title button:focus {
+  outline: none;
+}
+
+.sect-title button:hover svg,
+.sect-title button:focus svg {
    fill: var(--color-blue);
 }
 

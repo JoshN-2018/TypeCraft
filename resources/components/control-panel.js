@@ -111,6 +111,7 @@ export default function() {
   const formBlockTypeScale = controlPanelRoot.querySelector('[data-form-block="type-scale"]')
   const formBlockLimits = controlPanelRoot.querySelector('[data-form-block="limits"]')
   const outputBlock = controlPanelRoot.querySelector('[data-output-block]')
+  const infoButtons = controlPanelRoot.querySelectorAll('[data-info-button]')
 
   // the click handler for the control panel toggle. It sets a data attribute 
   // if it should be open or closed
@@ -120,6 +121,17 @@ export default function() {
     } else {
       controlPanelRoot.dataset.controlPanel = 'close'
     }
+  })
+
+  infoButtons.forEach(infoButton => {
+    const target = document.getElementById(infoButton.dataset.infoButton)
+    infoButton.addEventListener('click', (event) => {
+      if (target.dataset.tipbox === 'hide') {
+        target.dataset.tipbox = 'show'
+      } else {
+        target.dataset.tipbox = 'hide'
+      }
+    })
   })
 
   // Create an update controls functions for each formBlockElement

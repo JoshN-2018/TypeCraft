@@ -5,13 +5,21 @@ import HeadCss from './components/head-css.js'
 import calculateFontSizes from './lib/calculate-font-sizes.js'
 import generateCss from './lib/generate-css.js'
 
-let activeBreakPoint = 720
-
 const limits = [
   { name: 'minimum size', value: 0, },
   { name: 'body-small', value: 16 },
   { name: 'body-x-small', value: 16 },
 ]
+function setLimits(event) {
+  const controlGroup = event.type.replace('change:', '')
+  const {name, key, value} = event.detail
+  const limitObj = limits.find(limitObj => limitObj.name === name)
+  if (limitObj) {
+    limitObj[key] = value
+  }
+  update()
+}
+
 
 const sizes = [
   { name: 'small',     baseType: 16, typeScale: 1.2,   breakpoint: 720, icon: 'icon-phone' },
@@ -20,6 +28,16 @@ const sizes = [
   { name: 'x-large',   baseType: 16, typeScale: 1.414, breakpoint: 1920, icon: 'icon-desktop' },
   { name: 'xx-large',  baseType: 16, typeScale: 1.5,   breakpoint: Infinity, icon: 'icon-tv' },
 ]
+function setSizes(event) {
+  const controlGroup = event.type.replace('change:', '')
+  const {name, key, value} = event.detail
+  const sizeObj = sizes.find(sizeObj => sizeObj.name === name)
+  if (sizeObj) {
+    sizeObj[key] = value
+  }
+  update()
+}
+
 
 // All avaiable classes
 const classes = [
@@ -33,104 +51,45 @@ const classes = [
   {name: 'body-small' },
   {name: 'body-x-small' },
 ];
+function setClasses() { /* Not implemented yet */ update() }
+
 
 let classesWithCurrentSizes = []
+function calculateClassesWithCurrentSizes() {
+  classesWithCurrentSizes = calculateFontSizes(activeSizeForBreakpoint, classes, limits)
+}
+
+
+let activeSizeForBreakpoint = undefined;
+function setActiveSizeForBreakpoint(event) {
+  const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  const sizeForCurrentBreakpoint = sizes.find(size => size.breakpoint > width)
+
+  if (activeSizeForBreakpoint !== sizeForCurrentBreakpoint) {
+    activeSizeForBreakpoint = sizeForCurrentBreakpoint
+    update()
+  }
+}
+
 
 let css = ''
+function calculateCSS() {
+  css = generateCss(sizes, classes, limits)
+}
 
 // The text to be displayed
-const exampleText = 'It\'s a state of mind'
+let exampleText = 'It\'s a state of mind'
+function setExampleText(newText) { 
+  exampleText = newText;
+  update()
+}
+
 
 // Get a reference to the control panel object
 const controlPanel = ControlPanel()
 const content = Content(exampleText)
 const breakBg = BreakBg()
 const headCss = HeadCss()
-
-function getActiveSizeObject() {
-  const width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  const activeSizeObj = sizes.find(size => size.breakpoint > width)
-  return activeSizeObj
-}
-
-function updateSizes() {
-  controlPanel.updateSizes(sizes)
-  breakBg.updateBreakpoints(sizes)
-}
-
-function updateClasses() {
-  controlPanel.updateClasses(classesWithCurrentSizes)
-  content.updateClasses(classesWithCurrentSizes)
-}
-
-function updateLimits() {
-  controlPanel.updateLimits(limits)
-}
-
-function updateActiveBreakpoint() {
-  controlPanel.setActiveBreakpoint(activeBreakPoint)
-}
-
-function updateExampleText() {
-  content.updateExampleText(exampleText)
-}
-
-function updateCss() {
-  headCss.updateCss(css)
-}
-
-function setClassesWithCurrentSizes() {
-  const activeSizeObj = getActiveSizeObject()
-  classesWithCurrentSizes = calculateFontSizes(activeSizeObj, classes, limits)
-}
-
-function setActiveBreakpoint() {
-  const activeSizeObj = getActiveSizeObject()
-  if (activeSizeObj.breakpoint !== activeBreakPoint) {
-    activeBreakPoint = activeSizeObj.breakpoint
-    setClassesWithCurrentSizes()
-    updateActiveBreakpoint()
-    updateClasses()
-  }
-}
-
-function setSizes(event) {
-  const controlGroup = event.type.replace('change:', '')
-  const {name, key, value} = event.detail
-  const sizeObj = sizes.find(sizeObj => sizeObj.name === name)
-  if (sizeObj) {
-    sizeObj[key] = value
-  }
-  setClassesWithCurrentSizes()
-  setCSS()
-  updateSizes()
-  updateClasses()
-  setActiveBreakpoint()
-  updateActiveBreakpoint()
-  reselectElement(controlGroup, name)
-}
-
-function setLimits(event) {
-  const controlGroup = event.type.replace('change:', '')
-  const {name, key, value} = event.detail
-  const limitObj = limits.find(limitObj => limitObj.name === name)
-  if (limitObj) {
-    limitObj[key] = value
-  }
-  updateLimits()
-  setClassesWithCurrentSizes()
-  setCSS()
-  updateSizes()
-  updateClasses() 
-  setActiveBreakpoint()
-  updateActiveBreakpoint()
-  reselectElement(controlGroup, name)
-}
-
-function setCSS() {
-  css = generateCss(sizes, classes, limits)
-  updateCss()
-}
 
 function reselectElement(formBlockName, name) {
   const input = document.querySelector(`[data-form-block="${formBlockName}"] input[name="${name}"]`)
@@ -139,21 +98,38 @@ function reselectElement(formBlockName, name) {
   }
 }
 
-function setup() {
-  updateSizes()
-  updateLimits()
-  updateExampleText()
-  setActiveBreakpoint()
+function calculateValues() {
+  calculateClassesWithCurrentSizes()
+  calculateCSS()
+}
 
-  window.addEventListener('resize', setActiveBreakpoint)
+function update() {
+  calculateValues()
+  headCss.updateCss(css)
+  
+  breakBg.updateBreakpoints(sizes)
+  
+  content.updateExampleText(exampleText)
+  content.updateClasses(classesWithCurrentSizes)
+  
+  controlPanel.updateSizes(sizes)
+  controlPanel.updateLimits(limits)
+  controlPanel.updateClasses(classesWithCurrentSizes)
+  controlPanel.setActiveBreakpoint(activeSizeForBreakpoint.breakpoint)
+}
+
+function setup() {
+  window.addEventListener('resize', setActiveSizeForBreakpoint)
   window.addEventListener('change:base-type', setSizes)
   window.addEventListener('change:type-scale', setSizes)
-  window.addEventListener('change:breakpoints', setSizes)
+  window.addEventListener('change:breakpoints', event => {setSizes(event); setActiveSizeForBreakpoint()})
   window.addEventListener('change:limits', setLimits)
-  setCSS()
+
+  setActiveSizeForBreakpoint()
 }
 
 setup()
 
 window.content = content
 window.controlPanel = controlPanel
+window.setExampleText = setExampleText

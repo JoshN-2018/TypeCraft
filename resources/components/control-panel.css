@@ -284,12 +284,16 @@ input.alwaysOn {
   color: var(--text-color);
   font-size: 13.5px;
   line-height: 1.5;
-  opacity: 0.3;
 }
 .cp-input {
   color: var(--text-color);
+}
+
+[data-breakpoint] .cp-label,
+[data-breakpoint] .cp-input {
   opacity: 0.3;
 }
+
 .cp-control[data-active="true"] .cp-label,
 .cp-control[data-active="true"] .cp-input {
   opacity: 1;

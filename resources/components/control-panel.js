@@ -1,6 +1,14 @@
-import { createControlElement, createOutputElement } from '../lib/create-element.js'
+import { createControlElement, createOutputElement, createBreakpointIndicatorElement, createBreakpointControlElement } from '../lib/create-element.js'
 
-// This function is the event handler creator. The execute function insode of it 
+// A helper function to get an DOM element from a provided parent element based
+// on the data-name attribute.
+function getExistingElementIn(parentElement) {
+  return function execute(sizesObj) {
+    return parentElement.querySelector(`[data-name="${sizesObj.name}"]`)
+  }
+}
+
+// This function is an event handler creator. The execute function inside of it 
 // is the actual event handler. The event handler takes info from the target
 // element and creates a new event. This is needed because the new event is
 // dispatched on the window object. Because all input elements are replaced when
@@ -32,48 +40,25 @@ const dispatchChangeLimits = createChangeEventHandler('limits')
 
 // This function accepts two elements, the wrapper elements for the 
 // breakpoint-icons and the breakpoint-inputs, and the sizes array. It loops 
-// over the sizes array and creates new elements to be displayed
+// over the sizes array and creates new elements to be displayed. If the 
+// elements already exists, it does not add them again to the DOM
 function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
+  sizes
+    .forEach(sizeObj => {
+      const { breakpoint, icon, name } = sizeObj
+      const existingImg = breakpointIcons.querySelector(`[data-name="${sizeObj.name}"][data-is-filled="false"]`)
+      const existingImgFilled = breakpointIcons.querySelector(`[data-name="${sizeObj.name}"][data-is-filled="true"]`)
+      const existingDivider = breakpointIcons.querySelector(`.divider[data-name="${sizeObj.name}"]`)
+      const existingInput = breakpointInputs.querySelector(`[data-name="${sizeObj.name}"]`)
 
-  // cleanup all existing event handler before the wrapper element is cleared
-  breakpointInputs
-    .querySelectorAll('input')
-    .forEach(input => input.removeEventListener('change', dispatchChangeBreakpoint))
+      const [img, imgFilled, divider] = createBreakpointIndicatorElement(existingImg, existingImgFilled, existingDivider, { breakpoint, icon, name })
+      const input = createBreakpointControlElement(existingInput, { name, breakpoint, key: 'breakpoint', eventHandler: dispatchChangeBreakpoint })
 
-  breakpointIcons.innerHTML = ''
-  breakpointInputs.innerHTML = ''
-
-  sizes.forEach(sizeObj => {
-    const { breakpoint, icon, name } = sizeObj
-
-    const imgElement = document.createElement('img')
-    imgElement.src = `resources/images/${icon}.svg`
-    imgElement.alt = ''
-    imgElement.dataset.breakpoint = breakpoint
-    imgElement.dataset.isFilled = false
-
-    const imgFilledElement = imgElement.cloneNode()
-    imgElement.src = `resources/images/${icon}-fill.svg`
-    imgElement.dataset.isFilled = true
-
-    breakpointIcons.appendChild(imgElement)
-    breakpointIcons.appendChild(imgFilledElement)
-
-    if (breakpoint !== Infinity) {
-      const divider = document.createElement('div')
-      divider.classList.add('divider')
-      breakpointIcons.appendChild(divider)
-
-      const inputElement = document.createElement('input')
-      inputElement.type = 'number'
-      inputElement.value = breakpoint
-      inputElement.name = name
-      inputElement.dataset.breakpoint = breakpoint
-      inputElement.dataset.key = 'breakpoint'
-      inputElement.addEventListener('change', dispatchChangeBreakpoint)
-      breakpointInputs.appendChild(inputElement)
-    }
-  })
+      if (img.parentNode !== breakpointIcons) { breakpointIcons.appendChild(img) }
+      if (imgFilled.parentNode !== breakpointIcons) { breakpointIcons.appendChild(imgFilled) }
+      if (divider && divider.parentNode !== breakpointIcons) { breakpointIcons.appendChild(divider) }
+      if (input && input.parentNode !== breakpointInputs) { breakpointInputs.appendChild(input) }
+    })
 }
 
 // This function accepts an formBlockElement (the root of the Type Scale 
@@ -81,26 +66,24 @@ function displayBreakpointIndicator(breakpointIcons, breakpointInputs, sizes) {
 // formBlock (for the Type Scale, that would be typeScale).
 // It selects the group root (the article element), loops over the sizes and for
 // each size, it creates an input element which is adds to the controlGroup 
-// element
+// element. If the input element already exists, it only updates its values
 function displayFormElements(formBlockElement, key, createElementFunction, eventHandler) {
-  return function (dataList) {
+  return function (sizes) {
     const controlGroupSelector = '[data-control-group]'
     const controlGroup = formBlockElement.querySelector(controlGroupSelector)
+    const getExistingElement = getExistingElementIn(controlGroup)
 
-    // cleanup all existing event handler before the wrapper element is cleared
-    controlGroup
-      .querySelectorAll('input')
-      .forEach(input => input.removeEventListener('change', eventHandler))
-
-    controlGroup.innerHTML = ''
-
-    dataList.forEach(dataObject => {
-      const value = dataObject[key]
-      const name = dataObject.name
-      const breakpoint = dataObject.breakpoint
-      const controlElement = createElementFunction({name, value, breakpoint, key, eventHandler})
-      controlGroup.appendChild(controlElement)
-    })
+    sizes
+      .forEach(sizeObject => {
+        const existingElement = getExistingElement(sizeObject)
+        const value = sizeObject[key]
+        const name = sizeObject.name
+        const breakpoint = sizeObject.breakpoint
+        const controlElement = createElementFunction(existingElement, {name, value, breakpoint, key, eventHandler})
+        if (controlElement.parentElement !== controlGroup) {
+          controlGroup.appendChild(controlElement)
+        }
+      })
   }
 }
 

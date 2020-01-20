@@ -7,8 +7,8 @@ import generateCss from './lib/generate-css.js'
 
 const limits = [
   { name: 'minimum size', value: 0, },
-  { name: 'body-small', value: 16 },
-  { name: 'body-x-small', value: 16 },
+  { name: 'body-small', value: 12 },
+  { name: 'body-x-small', value: 10 },
 ]
 function setLimits(event) {
   const controlGroup = event.type.replace('change:', '')

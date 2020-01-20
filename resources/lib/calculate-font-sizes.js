@@ -59,7 +59,7 @@ export default function calculateFontSizes(activeSizeObj, _classes, limits) {
     const limit = limits.find(limit => limit.name === classObj.name)
     let typeSizeValue = Math.round(level * typeBase)
     let typeSize = `${typeSizeValue}px`
-    if (limit && limit.value < typeSizeValue) {
+    if (limit && limit.value > typeSizeValue) {
       typeSizeValue = limit.value
       typeSize = `${typeSizeValue}px`
     }

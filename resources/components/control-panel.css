@@ -54,12 +54,24 @@
    z-index: 3;
    background-color: var(--color-white);
    transition: all 0.3s ease;
+   border: none;
+   cursor: pointer;
 }
 
-.cp-button img {
+.cp-button:focus {
+  outline: none; /* TODO: add proper focus state */
+}
+
+[data-control-panel] .cp-button__img {
    padding-top: 1.3rem;
    padding-left: 0.25rem;
-   transform: rotate(-45deg);
+   transform: rotate(-45deg) translate(-6px, -5px);
+   display: none;
+}
+
+[data-control-panel="open"] .cp-button__img--open,
+[data-control-panel="close"] .cp-button__img--close {
+  display: block;
 }
 
 .cp-button:hover {
@@ -144,10 +156,10 @@ output {
    margin: 0 3px;
 }
 .cp-break-wrapper .divider {
-   height: 12px;
-   width: 2px;
-   background-color: var(--color-black);
-   opacity: 0.5;
+  height: 12px;
+  width: 2px;
+  background-color: var(--color-black);
+  opacity: 0.5;
 }
 
 .cp-form-block .break-title {
@@ -163,8 +175,20 @@ output {
    display: none;
 }
 
-.cp-break-inputs {
+.cp-break-wrapper--icons img[data-is-filled="true"],
+.cp-break-wrapper--icons img[data-is-filled="false"][data-active="true"] {
+  display: none;
+}
+.cp-break-wrapper--icons img[data-is-filled="true"][data-active="true"] {
+  display: block;
+}
+
+.cp-break-wrapper--inputs {
    margin-top: 0.3rem !important;
+}
+
+.cp-break-wrapper--inputs input[data-active="true"] {
+  color: var(--color-blue);
 }
 
 .control-panel input,
@@ -179,7 +203,6 @@ output {
    border-right: 0;
    border-color: var(--color-mid-grey);
    text-align: right;
-   opacity: 0.3;
 }
 
 output,
@@ -203,8 +226,8 @@ input.alwaysOn {
    margin-top: 0;
 }
 
-/* js classes */
-.cp-shift {
+/* js attributes */
+[data-control-panel="open"] {
    transform: translateX(0px);
    box-shadow: -6px 0px 35px var(--color-v-light-grey);
 }
@@ -233,14 +256,61 @@ input.alwaysOn {
    display: flex;
 }
 
+.sect-title button {
+  margin-left: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  height: 16px;
+}
+
 .sect-title svg {
    cursor: pointer;
-   padding-left: 0.75rem;
    transition: all 0.3s ease;
    height: 16px;
    fill: var(--color-light-grey);
 }
 
-.sect-title svg:hover {
+.sect-title button:hover,
+.sect-title button:focus {
+  outline: none;
+}
+
+.sect-title button:hover svg,
+.sect-title button:focus svg {
    fill: var(--color-blue);
+}
+
+.cp-control,
+.cp-output-wrapper {
+  --text-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cp-control[data-active="true"] {
+  --text-color: var(--color-blue);
+}
+
+.cp-label {
+  color: var(--text-color);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+.cp-input {
+  color: var(--text-color);
+}
+
+[data-breakpoint] .cp-label,
+[data-breakpoint] .cp-input {
+  opacity: 0.3;
+}
+
+.cp-control[data-active="true"] .cp-label,
+.cp-control[data-active="true"] .cp-input {
+  opacity: 1;
+}
+
+.cp-input:focus {
+  color: var(--color-black);
 }
